@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BoughtProduct" representedClassName="BoughtProduct" syncable="YES">
+        <attribute name="deliveryDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="deliverySpeed" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="trackingStatus" optional="YES" attributeType="String"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="bought" inverseEntity="User"/>
+    </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sale" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="salePercentage" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tags" optional="YES" attributeType="Transformable"/>
+        <relationship name="review" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="product" inverseEntity="Review"/>
+    </entity>
+    <entity name="Review" representedClassName="Review" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="review" inverseEntity="Product"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="review" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="balance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="cart" optional="YES" attributeType="Transformable"/>
+        <attribute name="creditCard" optional="YES" attributeType="Transformable"/>
+        <attribute name="netBanking" optional="YES" attributeType="Transformable"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+        <attribute name="profilePicture" optional="YES" attributeType="Transformable"/>
+        <attribute name="searchHistory" optional="YES" attributeType="Transformable"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <attribute name="wishlist" optional="YES" attributeType="Transformable"/>
+        <relationship name="bought" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BoughtProduct" inverseName="owner" inverseEntity="BoughtProduct"/>
+        <relationship name="review" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="user" inverseEntity="Review"/>
+    </entity>
+    <elements>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="224"/>
+        <element name="Product" positionX="-54" positionY="72" width="128" height="149"/>
+        <element name="Review" positionX="-36" positionY="108" width="128" height="89"/>
+        <element name="BoughtProduct" positionX="-18" positionY="153" width="128" height="134"/>
+    </elements>
+</model>
