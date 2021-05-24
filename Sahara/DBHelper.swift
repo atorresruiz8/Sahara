@@ -24,11 +24,8 @@ class DBHelper{
         if((object["email"]) != nil){
             user.email = object["email"]
         }
-        if((object["address"]) != nil){
-            user.address = object["address"]
-        }
         if((object["phone"]) != nil){
-            user.address = object["phone"]
+            user.phoneNumber = object["phoneNumber"]
         }
         user.name = object["name"]
         user.password = object["password"]
@@ -65,11 +62,8 @@ class DBHelper{
             if((object["email"]) != nil){
                 user.email = object["email"]
             }
-            if((object["address"]) != nil){
-                user.address = object["address"]
-            }
             if((object["phone"]) != nil){
-                user.address = object["phone"]
+                user.phoneNumber = object["phoneNumber"]
             }
             user.password = object["password"]
             user.balance = 0.0

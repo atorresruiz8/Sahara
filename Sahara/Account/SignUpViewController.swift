@@ -13,7 +13,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var phoneText: UITextField!
     
     @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var addressText: UITextField!
     @IBOutlet weak var passText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,10 +80,8 @@ class SignUpViewController: UIViewController {
             
             inputData = Data(inputString!.utf8)
             hashed = SHA256.hash(data: inputData!)
-            object = ["phone" : phoneText.text!, "name" : nameField.text!, "pass" : String(describing : hashed)]
-            if(!(addressText.text == "")){
-                object["address"] = addressText.text!
-            }
+            object = ["phoneNumber" : phoneText.text!, "name" : nameField.text!, "pass" : String(describing : hashed)]
+         
             DBHelper.inst.addNewUser(object: object)
             
             
@@ -96,9 +93,7 @@ class SignUpViewController: UIViewController {
             inputData = Data(inputString!.utf8)
             hashed = SHA256.hash(data: inputData!)
             object = ["email" : emailText.text!, "name" : nameField.text!, "pass" : String(describing : hashed)]
-            if(!(addressText.text == "")){
-                object["address"] = addressText.text!
-            }
+            
             DBHelper.inst.addNewUser(object: object)
         }
         //if both email and number works
@@ -108,9 +103,7 @@ class SignUpViewController: UIViewController {
             inputData = Data(inputString!.utf8)
             hashed = SHA256.hash(data: inputData!)
             object = ["email" : emailText.text!, "phone" : phoneText.text!, "name" : nameField.text!, "pass" : String(describing : hashed)]
-            if(!(addressText.text == "")){
-                object["address"] = addressText.text!
-            }
+           
             DBHelper.inst.addNewUser(object: object)
         }
         //if we can't make a new user

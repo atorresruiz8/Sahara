@@ -16,18 +16,18 @@ extension User {
         return NSFetchRequest<User>(entityName: "User")
     }
 
-    @NSManaged public var address: String?
+    @NSManaged public var address: Address?
     @NSManaged public var balance: Double
     @NSManaged public var cart: NSObject?
     @NSManaged public var creditCard: NSObject?
+    @NSManaged public var email: String?
+    @NSManaged public var name: String?
     @NSManaged public var netBanking: NSObject?
     @NSManaged public var password: String?
     @NSManaged public var phoneNumber: String?
     @NSManaged public var profilePicture: NSObject?
     @NSManaged public var searchHistory: NSObject?
-    @NSManaged public var email: String?
     @NSManaged public var wishlist: NSObject?
-    @NSManaged public var name: String?
     @NSManaged public var bought: NSSet?
     @NSManaged public var review: NSSet?
 
