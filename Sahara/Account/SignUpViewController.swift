@@ -12,6 +12,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var phoneText: UITextField!
     
+    @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var addressText: UITextField!
     @IBOutlet weak var passText: UITextField!
     override func viewDidLoad() {
@@ -25,11 +26,19 @@ class SignUpViewController: UIViewController {
         let numCheck = checkNumber(num: phoneText.text!)
         let emCheck = emailCheck(email: emailText.text!)
         //if both fields are empty
+        if(nameField.text == ""){
+            let alMess = "Please input a name."
+            let alert = UIAlertController(title: "No Name", message: alMess, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+            return
+        }
         if(emailText.text == "" && phoneText.text == ""){
             let alMess = "You need to have an email, a phone number, or both."
             let alert = UIAlertController(title: "No sign in method", message: alMess, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
             self.present(alert, animated: true)
+            return
         }
         //if email empty and number works
         else if(emailText.text == "" && numCheck){
