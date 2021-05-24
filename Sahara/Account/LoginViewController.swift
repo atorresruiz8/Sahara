@@ -21,6 +21,10 @@ class LoginViewController: UIViewController {
     
     //button for logging in
     @IBAction func login(_ sender: Any) {
+        let inputString = uPass.text!  + "423"
+        
+        let inputData = Data(inputString.utf8)
+        let hashed = SHA256.hash(data: inputData)
         if(uName.text == ""){
             let alMess = "Please enter login credintials"
             let alert = UIAlertController(title: "Error text field blank", message: alMess, preferredStyle: .alert)
@@ -28,13 +32,13 @@ class LoginViewController: UIViewController {
             self.present(alert, animated: true)
             return
         }
-        if(uName.text!.contains("@'")){
-            if(DBHelper.inst.validateEmailPass(uName: uName.text!, uPass: uPass.text!)){
+        if(uName.text!.contains("@")){
+            if(DBHelper.inst.validateEmailPass(uName: uName.text!, uPass: String(describing: hashed))){
                 //login
             }
         }
         else{
-            if(DBHelper.inst.validatePhonePass(uName: uName.text!, uPass: uPass.text!)){
+            if(DBHelper.inst.validatePhonePass(uName: uName.text!, uPass: String(describing: hashed))){
                 //login
             }
         }

@@ -126,4 +126,52 @@ class DBHelper{
             return false
         }
     }
+    func fetcheEmailUser( query : String) -> User?{
+        var neededUser : User?
+        DBHelper.dataCheck = false
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
+        fetchReq.predicate = NSPredicate(format: "email == %@", query)
+        do{
+            let usr = try context!.fetch(fetchReq)
+            let users = usr as! [User]
+            for data in users{
+                if(data.email == query){
+                    neededUser = data
+                    DBHelper.dataCheck = true
+                    return neededUser
+                }
+                else {
+                    continue
+                }
+            }
+            return neededUser
+        }
+        catch{
+            return neededUser
+        }
+    }
+    func fetchePhoneUser( query : String) -> User?{
+        var neededUser : User?
+        DBHelper.dataCheck = false
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
+        fetchReq.predicate = NSPredicate(format: "phoneNumber == %@", query)
+        do{
+            let usr = try context!.fetch(fetchReq)
+            let users = usr as! [User]
+            for data in users{
+                if(data.phoneNumber == query){
+                    neededUser = data
+                    DBHelper.dataCheck = true
+                    return neededUser
+                }
+                else {
+                    continue
+                }
+            }
+            return neededUser
+        }
+        catch{
+            return neededUser
+        }
+    }
 }

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import CryptoKit
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
@@ -23,8 +23,36 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUp(_ sender: Any) {
         print("pressed")
-        let numCheck = checkNumber(num: phoneText.text!)
-        let emCheck = emailCheck(email: emailText.text!)
+        var emCheck = false
+        if(!(emailText.text == "")){
+            emCheck = emailCheck(email: emailText.text!)
+            DBHelper.inst.fetcheEmailUser(query: emailText.text!)
+            if(DBHelper.dataCheck){
+                let alMess = "A user with that email already exists."
+                let alert = UIAlertController(title: "Can't Sign up", message: alMess, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+                return
+                
+            }
+        }
+        var numCheck = false
+        if(!(phoneText.text == "")){
+            numCheck = checkNumber(num: phoneText.text!)
+            DBHelper.inst.fetchePhoneUser(query:phoneText.text!)
+            if(DBHelper.dataCheck){
+                let alMess = "A user with that phone number already exists."
+                let alert = UIAlertController(title: "Can't Sign up", message: alMess, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+                return
+                
+            }
+        }
+        var inputString :String?
+        var inputData : Data?
+        var hashed : SHA256.Digest
+        var object : [String : String]
         //if both fields are empty
         if(nameField.text == ""){
             let alMess = "Please input a name."
@@ -43,16 +71,41 @@ class SignUpViewController: UIViewController {
         //if email empty and number works
         else if(emailText.text == "" && numCheck){
             print("here")
+            inputString = passText.text!  + "423"
+            
+            inputData = Data(inputString!.utf8)
+            hashed = SHA256.hash(data: inputData!)
+            object = ["phone" : phoneText.text!, "name" : nameField.text!, "pass" : String(describing : hashed)]
+            if(!(addressText.text == "")){
+                object["address"] = addressText.text!
+            }
+            DBHelper.inst.addNewUser(object: object)
             
             
         }
         //if number empty and email works
         else if(phoneText.text == "" && emCheck){
+            inputString = passText.text! + "423"
             
+            inputData = Data(inputString!.utf8)
+            hashed = SHA256.hash(data: inputData!)
+            object = ["email" : emailText.text!, "name" : nameField.text!, "pass" : String(describing : hashed)]
+            if(!(addressText.text == "")){
+                object["address"] = addressText.text!
+            }
+            DBHelper.inst.addNewUser(object: object)
         }
         //if both email and number works
         else if(numCheck && emCheck){
+            inputString = passText.text! + "423"
             
+            inputData = Data(inputString!.utf8)
+            hashed = SHA256.hash(data: inputData!)
+            object = ["email" : emailText.text!, "phone" : phoneText.text!, "name" : nameField.text!, "pass" : String(describing : hashed)]
+            if(!(addressText.text == "")){
+                object["address"] = addressText.text!
+            }
+            DBHelper.inst.addNewUser(object: object)
         }
         //if we can't make a new user
         else{
