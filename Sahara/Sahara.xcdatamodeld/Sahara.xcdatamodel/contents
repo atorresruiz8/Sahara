@@ -30,20 +30,21 @@
         <attribute name="balance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="cart" optional="YES" attributeType="Transformable"/>
         <attribute name="creditCard" optional="YES" attributeType="Transformable"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="netBanking" optional="YES" attributeType="Transformable"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
         <attribute name="profilePicture" optional="YES" attributeType="Transformable"/>
         <attribute name="searchHistory" optional="YES" attributeType="Transformable"/>
-        <attribute name="username" optional="YES" attributeType="String"/>
         <attribute name="wishlist" optional="YES" attributeType="Transformable"/>
         <relationship name="bought" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BoughtProduct" inverseName="owner" inverseEntity="BoughtProduct"/>
         <relationship name="review" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="user" inverseEntity="Review"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="224"/>
+        <element name="BoughtProduct" positionX="-18" positionY="153" width="128" height="134"/>
         <element name="Product" positionX="-54" positionY="72" width="128" height="149"/>
         <element name="Review" positionX="-36" positionY="108" width="128" height="89"/>
-        <element name="BoughtProduct" positionX="-18" positionY="153" width="128" height="134"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="239"/>
     </elements>
 </model>
