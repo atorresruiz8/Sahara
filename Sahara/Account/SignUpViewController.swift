@@ -49,6 +49,12 @@ class SignUpViewController: UIViewController {
                 
             }
         }
+        if(passText.text!.count < 6){
+            let alMess = "please make sure that your password has at least 6 characters."
+            let alert = UIAlertController(title: "Password too short", message: alMess, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        }
         var inputString :String?
         var inputData : Data?
         var hashed : SHA256.Digest
