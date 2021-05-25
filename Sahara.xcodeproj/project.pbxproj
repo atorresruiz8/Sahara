@@ -29,6 +29,7 @@
 		8BB1580E265BFE6C003F7AA3 /* MainStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1580D265BFE6C003F7AA3 /* MainStoreViewController.swift */; };
 		8BB15810265BFE97003F7AA3 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1580F265BFE97003F7AA3 /* DashboardViewController.swift */; };
 		8BB15818265C3195003F7AA3 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB15817265C3195003F7AA3 /* CartTableViewController.swift */; };
+		8BE13802265D6001001E0662 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE13801265D6001001E0662 /* DBHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		8BB1580D265BFE6C003F7AA3 /* MainStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStoreViewController.swift; sourceTree = "<group>"; };
 		8BB1580F265BFE97003F7AA3 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		8BB15817265C3195003F7AA3 /* CartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
+		8BE13801265D6001001E0662 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				8B17AB8D2658146A00CDAA01 /* LaunchScreen.storyboard */,
 				8B17AB902658146A00CDAA01 /* Info.plist */,
 				8B17AB882658146700CDAA01 /* Sahara.xcdatamodeld */,
+				8BE13801265D6001001E0662 /* DBHelper.swift */,
 			);
 			path = Sahara;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				8BB15806265BFD08003F7AA3 /* ReviewProductViewController.swift in Sources */,
 				8B17AB9F26581B6000CDAA01 /* User+CoreDataProperties.swift in Sources */,
 				8BB15800265BFCDA003F7AA3 /* ProfileViewController.swift in Sources */,
+				8BE13802265D6001001E0662 /* DBHelper.swift in Sources */,
 				8BB15810265BFE97003F7AA3 /* DashboardViewController.swift in Sources */,
 				8B17AB822658146700CDAA01 /* SceneDelegate.swift in Sources */,
 				8B17AB8A2658146700CDAA01 /* Sahara.xcdatamodeld in Sources */,
