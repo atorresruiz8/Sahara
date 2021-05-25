@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840A6327265BFC13005485C5 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840A6326265BFC13005485C5 /* Account.storyboard */; };
+		840A632C265BFC70005485C5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A632B265BFC70005485C5 /* LoginViewController.swift */; };
+		840A632F265C00B0005485C5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A632E265C00B0005485C5 /* SignUpViewController.swift */; };
+		840A6335265C1317005485C5 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A6334265C1317005485C5 /* DBHelper.swift */; };
+		840A6338265C3CFE005485C5 /* address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A6337265C3CFE005485C5 /* address.swift */; };
 		8B17AB802658146700CDAA01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB7F2658146700CDAA01 /* AppDelegate.swift */; };
 		8B17AB822658146700CDAA01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB812658146700CDAA01 /* SceneDelegate.swift */; };
 		8B17AB842658146700CDAA01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB832658146700CDAA01 /* ViewController.swift */; };
@@ -33,6 +38,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840A6326265BFC13005485C5 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		840A632B265BFC70005485C5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		840A632E265C00B0005485C5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		840A6334265C1317005485C5 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		840A6337265C3CFE005485C5 /* address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = address.swift; sourceTree = "<group>"; };
 		8B17AB7C2658146700CDAA01 /* Sahara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sahara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B17AB7F2658146700CDAA01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B17AB812658146700CDAA01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +81,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840A6329265BFC23005485C5 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				840A6326265BFC13005485C5 /* Account.storyboard */,
+				840A632B265BFC70005485C5 /* LoginViewController.swift */,
+				840A632E265C00B0005485C5 /* SignUpViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		8B17AB732658146700CDAA01 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +118,7 @@
 		8B17AB7E2658146700CDAA01 /* Sahara */ = {
 			isa = PBXGroup;
 			children = (
+				840A6329265BFC23005485C5 /* Account */,
 				8BB157FC265BFC9F003F7AA3 /* Dashboard */,
 				8B17AB7F2658146700CDAA01 /* AppDelegate.swift */,
 				8B17AB812658146700CDAA01 /* SceneDelegate.swift */,
@@ -107,7 +128,8 @@
 				8B17AB8D2658146A00CDAA01 /* LaunchScreen.storyboard */,
 				8B17AB902658146A00CDAA01 /* Info.plist */,
 				8B17AB882658146700CDAA01 /* Sahara.xcdatamodeld */,
-				8BB15809265BFD38003F7AA3 /* DBHelper.swift */,
+				840A6334265C1317005485C5 /* DBHelper.swift */,
+				840A6337265C3CFE005485C5 /* address.swift */,
 			);
 			path = Sahara;
 			sourceTree = "<group>";
@@ -185,6 +207,7 @@
 			files = (
 				8B17AB8F2658146A00CDAA01 /* LaunchScreen.storyboard in Resources */,
 				8B17AB8C2658146A00CDAA01 /* Assets.xcassets in Resources */,
+				840A6327265BFC13005485C5 /* Account.storyboard in Resources */,
 				8B17AB872658146700CDAA01 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,13 +231,17 @@
 				8B17AB8A2658146700CDAA01 /* Sahara.xcdatamodeld in Sources */,
 				8BB15804265BFCF0003F7AA3 /* SettingsViewController.swift in Sources */,
 				8B17ABA226581B6000CDAA01 /* Product+CoreDataClass.swift in Sources */,
+				840A6335265C1317005485C5 /* DBHelper.swift in Sources */,
 				8B17ABA526581B6000CDAA01 /* Review+CoreDataProperties.swift in Sources */,
+				840A632F265C00B0005485C5 /* SignUpViewController.swift in Sources */,
 				8B17ABA426581B6000CDAA01 /* Review+CoreDataClass.swift in Sources */,
 				8BB1580A265BFD38003F7AA3 /* DBHelper.swift in Sources */,
 				8BB15818265C3195003F7AA3 /* CartTableViewController.swift in Sources */,
 				8B17ABA026581B6000CDAA01 /* BoughtProduct+CoreDataClass.swift in Sources */,
 				8BB1580E265BFE6C003F7AA3 /* MainStoreViewController.swift in Sources */,
 				8B17ABA126581B6000CDAA01 /* BoughtProduct+CoreDataProperties.swift in Sources */,
+				840A632C265BFC70005485C5 /* LoginViewController.swift in Sources */,
+				840A6338265C3CFE005485C5 /* address.swift in Sources */,
 				8B17AB9E26581B6000CDAA01 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
