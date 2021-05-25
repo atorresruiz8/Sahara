@@ -19,14 +19,6 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-      //  roundedViews()
-    }
-    
-    func roundedViews() {
-        departmentView.layer.cornerRadius = 15.0
-        departmentView.layer.masksToBounds = true
-        accountView.layer.cornerRadius = 15.0
-        accountView.layer.masksToBounds = true
     }
     
     @IBAction func showOrders(_ sender: Any) {

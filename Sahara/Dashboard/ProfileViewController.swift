@@ -20,18 +20,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-       // viewCurves()
-    }
-    
-    func viewCurves() {
-        userView.layer.cornerRadius = 15.0
-        userView.layer.masksToBounds = true
-        
-        accountView.layer.cornerRadius = 15.0
-        accountView.layer.masksToBounds = true
-        
-        walletView.layer.cornerRadius = 15.0
-        walletView.layer.masksToBounds = true
     }
     
     @IBAction func showCurrentOrders(_ sender: Any) {
@@ -46,9 +34,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func showCart(_ sender: Any) {
-        let cart = self.storyboard?.instantiateViewController(identifier: "cart") as! CartTableViewController
-        cart.modalPresentationStyle = .fullScreen
-        self.present(cart, animated: true, completion: nil)
+        self.tabBarController?.selectedIndex = 2
     }
     
     

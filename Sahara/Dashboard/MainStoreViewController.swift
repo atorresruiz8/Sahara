@@ -22,18 +22,6 @@ class MainStoreViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-       // roundedViews()
-    }
-    
-    func roundedViews() {
-        dailyDealView.layer.cornerRadius = 15.0
-        dailyDealView.layer.masksToBounds = true
-        recentView.layer.cornerRadius = 15.0
-        recentView.layer.masksToBounds = true
-        inspiredView.layer.cornerRadius = 15.0
-        inspiredView.layer.masksToBounds = true
-        exploreItemView.layer.cornerRadius = 15.0
-        exploreItemView.layer.masksToBounds = true
     }
     
     @IBAction func delivery(_ sender: Any) {
