@@ -16,69 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h2d-fh-9g0">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h2d-fh-9g0" customClass="BodyView" customModule="Sahara" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logo Goes Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbb-Kf-Ms6">
-                                        <rect key="frame" x="8" y="39" width="123" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6W-C1-jlO">
                                         <rect key="frame" x="373" y="43" width="20" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" image="magnifyingglass" catalog="system"/>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioA-KX-tQ2">
-                                        <rect key="frame" x="17" y="85" width="380" height="426"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioA-KX-tQ2" customClass="CustomView" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="17" y="85" width="380" height="314"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jn3-1e-VqE">
-                                                <rect key="frame" x="51" y="159" width="121" height="44"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4R-Lf-um6" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="51" y="62" width="121" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                <state key="normal" title="Your Account">
+                                                <state key="normal" title="Current Orders">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="showAccount:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="bw5-1j-2fk"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Er-ZR-3HJ">
-                                                <rect key="frame" x="232" y="62" width="113" height="41"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                <state key="normal" title="Buy Again">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buyAgain:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="TrL-Ye-9lp"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zx7-AW-BlQ">
-                                                <rect key="frame" x="232" y="159" width="113" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                <state key="normal" title="Wishlist">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="showWishlist:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="GF5-vb-IHa"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4R-Lf-um6">
-                                                <rect key="frame" x="51" y="62" width="121" height="41"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                <state key="normal" title="Your Orders">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="showOrders:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="E2N-bm-ykn"/>
+                                                    <action selector="showCurrentOrders:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="74L-q7-Iwo"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDv-jM-rQ7">
@@ -88,52 +48,51 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frog" translatesAutoresizingMaskIntoConstraints="NO" id="dCe-3A-W6u">
-                                                <rect key="frame" x="8" y="247" width="175" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6he-zt-hud">
-                                                <rect key="frame" x="18" y="388" width="94" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="See all orders"/>
-                                                <connections>
-                                                    <action selector="displayOrders:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="Rml-DN-Yeb"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XX3-Eo-EpT">
-                                                <rect key="frame" x="232" y="247" width="113" height="44"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XX3-Eo-EpT" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="51" y="208" width="121" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <state key="normal" title="See all orders">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="showAllOrders:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="8yw-ed-YU5"/>
+                                                    <action selector="showAllOrders:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="bKM-al-zay"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3C-IV-xH8">
-                                                <rect key="frame" x="232" y="333" width="113" height="42"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3C-IV-xH8" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="220" y="208" width="113" height="42"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                <state key="normal" title="Add to Cart">
+                                                <state key="normal" title="View Cart">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addToCart:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="X6B-Dh-CVz"/>
+                                                    <action selector="showCart:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="yyh-1s-t1j"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Orders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4Y-55-fBo">
-                                                <rect key="frame" x="18" y="211" width="123" height="29"/>
+                                                <rect key="frame" x="28" y="143" width="123" height="29"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zx7-AW-BlQ" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="220" y="62" width="113" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <state key="normal" title="Wishlist">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showWishlist:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="YJr-hZ-kkQ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x2B-YZ-5mF">
-                                        <rect key="frame" x="17" y="519" width="380" height="141"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x2B-YZ-5mF" customClass="CustomView" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="17" y="417" width="380" height="243"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3df-Ou-kwR">
@@ -143,36 +102,47 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7R-Yl-G86">
-                                                <rect key="frame" x="17" y="55" width="139" height="43"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7R-Yl-G86" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="31" y="65" width="139" height="43"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <state key="normal" title="Browsing History">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="browsingHistory:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="fNR-WA-4vp"/>
+                                                    <action selector="showBrowsingHistory:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="ykb-jZ-aJa"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwC-Lq-4vC">
-                                                <rect key="frame" x="203" y="55" width="144" height="43"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jn3-1e-VqE" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="130" y="141" width="121" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <state key="normal" title="Your Account">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showAccount:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="DLt-Fu-luE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwC-Lq-4vC" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="205" y="65" width="144" height="43"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <state key="normal" title="Subscription">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="subscribeServices:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="8u2-2x-dTo"/>
+                                                    <action selector="showSubscriptionServices:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="w6V-Oa-jVe"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mD5-Ki-UD6">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mD5-Ki-UD6" customClass="CustomView" customModule="Sahara" customModuleProvider="target">
                                         <rect key="frame" x="17" y="668" width="380" height="137"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ac2-tX-SWP">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ac2-tX-SWP" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
                                                 <rect key="frame" x="17" y="53" width="144" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -181,10 +151,10 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="refundOrders:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="S3j-l1-BFu"/>
+                                                    <action selector="showRefunds:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="tUJ-bO-Brf"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6W-Cs-qSb">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6W-Cs-qSb" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
                                                 <rect key="frame" x="204" y="53" width="139" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -192,7 +162,7 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addToWalletBalance:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="OF0-yQ-sTf"/>
+                                                    <action selector="addToWalletBalance:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="1nU-dM-dNA"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wallet Balance: $0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ba-QV-sUj">
@@ -205,6 +175,13 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logo Goes Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbb-Kf-Ms6">
+                                        <rect key="frame" x="8" y="44" width="123" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -214,22 +191,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" selectedImage="person.fill" id="8bD-9Y-bT9"/>
                     <connections>
-                        <outlet property="accountBut" destination="Jn3-1e-VqE" id="hf5-VI-lm0"/>
                         <outlet property="accountView" destination="x2B-YZ-5mF" id="F7g-Zp-jFv"/>
-                        <outlet property="addToCartBut" destination="F3C-IV-xH8" id="DZy-aG-cA8"/>
                         <outlet property="bodyView" destination="h2d-fh-9g0" id="tPf-DQ-yB5"/>
-                        <outlet property="buyAgainBut" destination="1Er-ZR-3HJ" id="mDu-vn-QkY"/>
                         <outlet property="helloMessage" destination="pDv-jM-rQ7" id="G81-xm-CZ1"/>
-                        <outlet property="histBut" destination="M7R-Yl-G86" id="IVn-Za-XDW"/>
-                        <outlet property="ordersBut" destination="x4R-Lf-um6" id="Zvk-9j-CIW"/>
-                        <outlet property="refundBut" destination="Ac2-tX-SWP" id="Hxa-Aj-eWE"/>
-                        <outlet property="reloadBut" destination="s6W-Cs-qSb" id="Syf-ih-NLk"/>
-                        <outlet property="showOrdersBut" destination="XX3-Eo-EpT" id="SIi-Uu-wn4"/>
-                        <outlet property="subBut" destination="NwC-Lq-4vC" id="Dk1-RP-wjg"/>
                         <outlet property="userView" destination="ioA-KX-tQ2" id="SqU-xO-MK2"/>
                         <outlet property="walletBalance" destination="1Ba-QV-sUj" id="YOc-wX-TJT"/>
                         <outlet property="walletView" destination="mD5-Ki-UD6" id="uhU-Sd-tVa"/>
-                        <outlet property="wishlistBut" destination="Zx7-AW-BlQ" id="alL-6t-6bD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUr-xJ-fVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -244,7 +211,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZBk-Lp-Vls">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZBk-Lp-Vls" customClass="HeaderView" customModule="Sahara" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -266,7 +233,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.16048464079999999" green="0.36521553379999999" blue="0.62876457249999995" alpha="0.22095070419999999" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yKQ-EM-fIp">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yKQ-EM-fIp" customClass="BodyView" customModule="Sahara" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="121" width="414" height="692"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -280,7 +247,7 @@
                                             <action selector="delivery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k8q-71-QXF"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEq-gi-TOo">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEq-gi-TOo" customClass="CustomView" customModule="Sahara" customModuleProvider="target">
                                         <rect key="frame" x="8" y="304" width="124" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -301,7 +268,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XMT-lh-MzZ">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XMT-lh-MzZ" customClass="CustomView" customModule="Sahara" customModuleProvider="target">
                                         <rect key="frame" x="7" y="442" width="399" height="242"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -337,7 +304,7 @@
                                         <rect key="frame" x="0.0" y="42" width="414" height="254"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qel-PT-v4o">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qel-PT-v4o" customClass="CustomView" customModule="Sahara" customModuleProvider="target">
                                         <rect key="frame" x="283" y="304" width="123" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -353,7 +320,7 @@ explore</string>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FBI-xH-VSn">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FBI-xH-VSn" customClass="CustomView" customModule="Sahara" customModuleProvider="target">
                                         <rect key="frame" x="140" y="306" width="135" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -366,22 +333,6 @@ your wishlist</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dbc-LN-2lv">
-                                                <rect key="frame" x="0.0" y="0.0" width="135" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvJ-ZZ-bqD">
-                                                        <rect key="frame" x="8" y="8" width="95" height="41"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <string key="text">Inspired by
-your wishlist</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
@@ -411,16 +362,16 @@ your wishlist</string>
         <!--Cart Table View Controller-->
         <scene sceneID="3vQ-vh-M3e">
             <objects>
-                <viewController id="wbh-u3-AU4" customClass="CartTableViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cart" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wbh-u3-AU4" customClass="CartTableViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GBa-9i-Pre">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ikp-wg-Y6g">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ikp-wg-Y6g" customClass="BodyView" customModule="Sahara" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKz-VH-yC8">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKz-VH-yC8" customClass="HeaderView" customModule="Sahara" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -469,7 +420,7 @@ your wishlist</string>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u38-G6-qb4">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u38-G6-qb4" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
                                         <rect key="frame" x="8" y="597" width="398" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -508,11 +459,11 @@ your wishlist</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjb-BX-Ha2">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjb-BX-Ha2" customClass="BodyView" customModule="Sahara" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="120" width="414" height="693"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iFE-8w-b5l">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iFE-8w-b5l" customClass="CustomView" customModule="Sahara" customModuleProvider="target">
                                         <rect key="frame" x="16" y="336" width="382" height="314"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -523,7 +474,7 @@ your wishlist</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6d-Gh-fhs">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6d-Gh-fhs" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
                                                 <rect key="frame" x="34" y="64" width="313" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -535,7 +486,7 @@ your wishlist</string>
                                                     <action selector="elecDept:" destination="Hqq-An-VVB" eventType="touchUpInside" id="QkB-0t-yfn"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTp-gp-HZy">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTp-gp-HZy" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
                                                 <rect key="frame" x="34" y="108" width="313" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -547,7 +498,7 @@ your wishlist</string>
                                                     <action selector="clothingDept:" destination="Hqq-An-VVB" eventType="touchUpInside" id="Kcs-4z-qlg"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCa-Co-ixq">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCa-Co-ixq" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
                                                 <rect key="frame" x="34" y="153" width="313" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -559,7 +510,7 @@ your wishlist</string>
                                                     <action selector="outdoorsDept:" destination="Hqq-An-VVB" eventType="touchUpInside" id="y6R-sT-352"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdN-NS-C70">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdN-NS-C70" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
                                                 <rect key="frame" x="34" y="198" width="313" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -571,7 +522,7 @@ your wishlist</string>
                                                     <action selector="cookingDept:" destination="Hqq-An-VVB" eventType="touchUpInside" id="3w3-nU-BvP"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8E-cc-MQh">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8E-cc-MQh" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
                                                 <rect key="frame" x="34" y="243" width="313" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -586,7 +537,7 @@ your wishlist</string>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HHM-7B-Evw">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HHM-7B-Evw" customClass="CustomView" customModule="Sahara" customModuleProvider="target">
                                         <rect key="frame" x="16" y="29" width="379" height="276"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -651,7 +602,7 @@ your wishlist</string>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ewm-bn-fhJ">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ewm-bn-fhJ" customClass="HeaderView" customModule="Sahara" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -682,13 +633,8 @@ your wishlist</string>
                     <connections>
                         <outlet property="accountView" destination="HHM-7B-Evw" id="rMJ-kx-lAE"/>
                         <outlet property="bodyView" destination="kjb-BX-Ha2" id="3WD-bM-ulT"/>
-                        <outlet property="clothingBut" destination="cTp-gp-HZy" id="dIo-UO-2NE"/>
-                        <outlet property="cookingBut" destination="LdN-NS-C70" id="23n-bW-QnR"/>
                         <outlet property="departmentView" destination="iFE-8w-b5l" id="rhx-4U-9eC"/>
-                        <outlet property="elecBut" destination="X6d-Gh-fhs" id="rML-L1-hoa"/>
-                        <outlet property="furnitureBut" destination="G8E-cc-MQh" id="4OK-zB-EBk"/>
                         <outlet property="headerView" destination="Ewm-bn-fhJ" id="mIC-s2-CL6"/>
-                        <outlet property="outdoorsBut" destination="RCa-Co-ixq" id="7dH-IA-SoD"/>
                         <outlet property="searchField" destination="FbO-Sf-ABJ" id="rMT-o2-rFA"/>
                     </connections>
                 </viewController>
@@ -715,7 +661,7 @@ your wishlist</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pU-R7-18l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-551" y="521"/>
+            <point key="canvasLocation" x="-568" y="508"/>
         </scene>
     </scenes>
     <resources>
