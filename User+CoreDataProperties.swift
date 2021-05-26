@@ -26,7 +26,7 @@ extension User {
     @NSManaged public var password: String?
     @NSManaged public var phoneNumber: String?
     @NSManaged public var profilePicture: NSObject?
-    @NSManaged public var searchHistory: NSObject?
+    @NSManaged public var searchHistory: [String]?
     @NSManaged public var wishlist: NSObject?
     @NSManaged public var bought: NSSet?
     @NSManaged public var review: NSSet?

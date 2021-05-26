@@ -25,7 +25,7 @@ class SignUpViewController: UIViewController {
         var emCheck = false
         if(!(emailText.text == "")){
             emCheck = emailCheck(email: emailText.text!)
-            DBHelper.inst.fetcheEmailUser(query: emailText.text!)
+            DBHelper.inst.fetchUser(query: emailText.text!)
             if(DBHelper.dataCheck){
                 let alMess = "A user with that email already exists."
                 let alert = UIAlertController(title: "Can't Sign up", message: alMess, preferredStyle: .alert)
@@ -38,7 +38,7 @@ class SignUpViewController: UIViewController {
         var numCheck = false
         if(!(phoneText.text == "")){
             numCheck = checkNumber(num: phoneText.text!)
-            DBHelper.inst.fetchePhoneUser(query:phoneText.text!)
+            DBHelper.inst.fetchUser(query:phoneText.text!)
             if(DBHelper.dataCheck){
                 let alMess = "A user with that phone number already exists."
                 let alert = UIAlertController(title: "Can't Sign up", message: alMess, preferredStyle: .alert)
@@ -80,7 +80,7 @@ class SignUpViewController: UIViewController {
             
             inputData = Data(inputString!.utf8)
             hashed = SHA256.hash(data: inputData!)
-            object = ["phoneNumber" : phoneText.text!, "name" : nameField.text!, "pass" : String(describing : hashed)]
+            object = ["phoneNumber" : phoneText.text!, "name" : nameField.text!, "password" : String(describing : hashed)]
          
             DBHelper.inst.addNewUser(object: object)
             
@@ -92,7 +92,7 @@ class SignUpViewController: UIViewController {
             
             inputData = Data(inputString!.utf8)
             hashed = SHA256.hash(data: inputData!)
-            object = ["email" : emailText.text!, "name" : nameField.text!, "pass" : String(describing : hashed)]
+            object = ["email" : emailText.text!, "name" : nameField.text!, "password" : String(describing : hashed)]
             
             DBHelper.inst.addNewUser(object: object)
         }
@@ -102,7 +102,7 @@ class SignUpViewController: UIViewController {
             
             inputData = Data(inputString!.utf8)
             hashed = SHA256.hash(data: inputData!)
-            object = ["email" : emailText.text!, "phone" : phoneText.text!, "name" : nameField.text!, "pass" : String(describing : hashed)]
+            object = ["email" : emailText.text!, "phone" : phoneText.text!, "name" : nameField.text!, "password" : String(describing : hashed)]
            
             DBHelper.inst.addNewUser(object: object)
         }

@@ -86,9 +86,11 @@ class DBHelper{
         let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
         do{
             fetchReq.predicate =  NSPredicate(format: "email == %@", uName)
+            //print("asdf")
             let usr = try context!.fetch(fetchReq)
             for data in usr {
                 let user = data as! User
+                //print("user" + uPass + " " + user.password!)
                 if(uName == user.email && uPass == user.password){
                     DBHelper.dataCheck = true
                     return true}
@@ -120,7 +122,17 @@ class DBHelper{
             return false
         }
     }
-    func fetcheEmailUser( query : String) -> User?{
+    func fetchUser(query : String) -> User?
+    {
+        if(query.contains("@")){
+            return DBHelper.inst.fetchEmailUser(query: query)
+       
+        }
+        else{
+            return DBHelper.inst.fetchPhoneUser(query: query)
+        }
+    }
+    func fetchEmailUser( query : String) -> User?{
         var neededUser : User?
         DBHelper.dataCheck = false
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
@@ -144,7 +156,7 @@ class DBHelper{
             return neededUser
         }
     }
-    func fetchePhoneUser( query : String) -> User?{
+    func fetchPhoneUser( query : String) -> User?{
         var neededUser : User?
         DBHelper.dataCheck = false
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
@@ -166,6 +178,35 @@ class DBHelper{
         }
         catch{
             return neededUser
+        }
+    }
+    func clearHistory(query : User){
+        
+        query.searchHistory = []
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
+        }
+    }
+    func updateInfo(user : User, object : [String : String]){
+        if(object.keys.contains("phone")){
+            user.phoneNumber = object["phone"]
+        }
+        if(object.keys.contains("email")){
+            user.email = object["email"]
+        }
+        if(object.keys.contains("name")){
+            user.name = object["name"]
+        }
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
         }
     }
 }
