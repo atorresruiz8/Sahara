@@ -223,4 +223,14 @@ class DBHelper{
             print("data not saved")
         }
     }
+    func clearSearchHist(user : User){
+        user.searchHistory = []
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
+        }
+    }
 }
