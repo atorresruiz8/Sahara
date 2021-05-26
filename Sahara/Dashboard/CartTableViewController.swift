@@ -6,13 +6,62 @@
 //
 
 import UIKit
-
-class CartTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+import Speech
+class CartTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SFSpeechRecognizerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var bodyView: UIView!
+    
+    let audioEng = AVAudioEngine()
+    let speechRecog = SFSpeechRecognizer()
+    let req = SFSpeechAudioBufferRecognitionRequest()
+    var rTask : SFSpeechRecognitionTask!
+    var isStart = false
+    
+    func startSpeechRecog() {
+        let nd = audioEng.inputNode
+        let recordF = nd.outputFormat(forBus: 0)
+        
+        nd.installTap(onBus: 0, bufferSize: 1024, format: recordF) { (buffer, _) in
+            self.req.append(buffer)
+        }
+        
+        audioEng.prepare()
+        do {
+            try audioEng.start()
+        } catch let err {
+            print(err)
+        }
+        
+        rTask = speechRecog?.recognitionTask(with: req, resultHandler: { (resp, err) in
+            guard resp != nil else {
+                if err != nil {
+                    print(err.debugDescription)
+                } else {
+                    print("problem in response")
+                }
+                return
+            }
+            
+            let search = resp?.bestTranscription.formattedString
+            print(search!)
+            self.searchField.text = search
+        })
+    }
+    
+    func cancelSpeechRecog() {
+        rTask.finish()
+        rTask.cancel()
+        rTask = nil
+        req.endAudio()
+        audioEng.stop()
+        
+        if audioEng.inputNode.numberOfInputs > 0 {
+            audioEng.inputNode.removeTap(onBus: 0)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +98,12 @@ class CartTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func textToSpeechSearch(_ sender: Any) {
+        isStart = !isStart
+        if isStart {
+            startSpeechRecog()
+        } else {
+            cancelSpeechRecog()
+        }
     }
     
     @IBAction func purchase(_ sender: Any) {
@@ -56,7 +111,13 @@ class CartTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func deliveryAddress(_ sender: Any) {
+        
     }
+    
+    @IBAction func searchStore(_ sender: Any) {
+        
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -20,12 +20,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6W-C1-jlO">
-                                        <rect key="frame" x="373" y="43" width="20" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" systemColor="labelColor"/>
-                                        <state key="normal" image="magnifyingglass" catalog="system"/>
-                                    </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioA-KX-tQ2" customClass="CustomView" customModule="Sahara" customModuleProvider="target">
                                         <rect key="frame" x="17" y="85" width="380" height="314"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -216,18 +210,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Sahara..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cjy-0R-3Tn">
-                                        <rect key="frame" x="18" y="52" width="374" height="34"/>
+                                        <rect key="frame" x="18" y="52" width="364" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVN-TG-GBu">
-                                        <rect key="frame" x="365" y="58" width="17" height="22"/>
+                                        <rect key="frame" x="359" y="58" width="17" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemGray2Color"/>
                                         <state key="normal" image="mic" catalog="system"/>
                                         <connections>
                                             <action selector="textToSpeech:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HJH-R3-fUg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2F-G2-dwD">
+                                        <rect key="frame" x="388" y="58" width="20" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" image="magnifyingglass" catalog="system"/>
+                                        <connections>
+                                            <action selector="searchStore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7dx-TU-nno"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -376,19 +379,28 @@ your wishlist</string>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Sahara..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="COk-fX-X8J">
-                                                <rect key="frame" x="19" y="52" width="372" height="34"/>
+                                                <rect key="frame" x="19" y="52" width="363" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QT8-n0-vSM">
-                                                <rect key="frame" x="357" y="58" width="25" height="22"/>
+                                                <rect key="frame" x="352" y="58" width="25" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="tintColor" systemColor="systemGray2Color"/>
                                                 <state key="normal" image="mic" catalog="system"/>
                                                 <connections>
                                                     <action selector="textToSpeech:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cjc-44-OSe"/>
                                                     <action selector="textToSpeechSearch:" destination="wbh-u3-AU4" eventType="touchUpInside" id="ImQ-qS-dRX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6b-EN-fPT">
+                                                <rect key="frame" x="387" y="58" width="20" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                                <connections>
+                                                    <action selector="searchStore:" destination="wbh-u3-AU4" eventType="touchUpInside" id="Xmg-aa-Hi8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -607,19 +619,28 @@ your wishlist</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Sahara..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FbO-Sf-ABJ">
-                                        <rect key="frame" x="19" y="52" width="372" height="34"/>
+                                        <rect key="frame" x="19" y="52" width="363" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77m-ps-LP1">
-                                        <rect key="frame" x="357" y="58" width="25" height="22"/>
+                                        <rect key="frame" x="352" y="58" width="25" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemGray2Color"/>
                                         <state key="normal" image="mic" catalog="system"/>
                                         <connections>
                                             <action selector="textToSpeech:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K5w-rb-vJu"/>
                                             <action selector="textToSpeechSearch:" destination="Hqq-An-VVB" eventType="touchUpInside" id="6Xv-wb-ZqD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GZ-YW-DEm">
+                                        <rect key="frame" x="387" y="58" width="20" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" image="magnifyingglass" catalog="system"/>
+                                        <connections>
+                                            <action selector="searchStore:" destination="Hqq-An-VVB" eventType="touchUpInside" id="VVX-4f-9La"/>
                                         </connections>
                                     </button>
                                 </subviews>
