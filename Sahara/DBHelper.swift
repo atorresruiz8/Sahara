@@ -201,6 +201,9 @@ class DBHelper{
         if(object.keys.contains("name")){
             user.name = object["name"]
         }
+        if(object.keys.contains("pass")){
+            user.password = object["pass"]
+        }
         do{
             try context!.save()
             print("data saved")
