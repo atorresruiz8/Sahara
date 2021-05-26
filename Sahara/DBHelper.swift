@@ -212,4 +212,15 @@ class DBHelper{
             print("data not saved")
         }
     }
+    func updateAddress(user : String, add : Address){
+        let user = fetchUser(query: user)
+        user!.address = add
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
+        }
+    }
 }
