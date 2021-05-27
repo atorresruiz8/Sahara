@@ -53,7 +53,17 @@ class LoginViewController: UIViewController {
     }
   
     @IBAction func browseLogin(_ sender: Any) {
-        DBHelper.inst.addTempUser()
+        
+        let ret = DBHelper.inst.addTempUser()
+        if(ret == "error"){
+            let alert = UIAlertController(title: "Error making temp account", message: "please close and reopen the app to try again", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
+            present(alert, animated: true)
+                
+        }
+        else{
+            ud.setValue(ret, forKey: "currUser")
+        }
         //login
     }
     @IBAction func remSwitched(_ sender: Any) {
