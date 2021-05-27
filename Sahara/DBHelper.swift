@@ -37,19 +37,22 @@ class DBHelper{
             print("data not saved")
         }
     }
-    func addTempUser(){
+    func addTempUser() -> String{
         let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context!) as! User
         let randInt = Int.random(in: 1000000...9999999)
-        user.name = String(randInt)
+        user.name = "_" + String(randInt)
         
         do{
             try context!.save()
             ud.setValue(user.name, forKey: "currUser")
             print("data saved")
+            return user.name!
         }
         catch{
             print("data not saved")
+            return "error"
         }
+        
     }
     func TempToUser(object : [String : String]) {
         var fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
@@ -86,9 +89,11 @@ class DBHelper{
         let fetchReq = NSFetchRequest<NSManagedObject>.init(entityName: "User")
         do{
             fetchReq.predicate =  NSPredicate(format: "email == %@", uName)
+            //print("asdf")
             let usr = try context!.fetch(fetchReq)
             for data in usr {
                 let user = data as! User
+                //print("user" + uPass + " " + user.password!)
                 if(uName == user.email && uPass == user.password){
                     DBHelper.dataCheck = true
                     return true}
@@ -120,7 +125,46 @@ class DBHelper{
             return false
         }
     }
-    func fetcheEmailUser( query : String) -> User?{
+    func fetchUser(query : String) -> User?
+    {
+        if(query.prefix(1) == "_"){
+            return DBHelper.inst.fetchTempUser(query: query)
+        }
+        if(query.contains("@")){
+            return DBHelper.inst.fetchEmailUser(query: query)
+       
+        }
+        else{
+            return DBHelper.inst.fetchPhoneUser(query: query)
+        }
+    }
+    func fetchTempUser(query : String) -> User?{
+        var neededUser : User?
+        DBHelper.dataCheck = false
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
+        fetchReq.predicate = NSPredicate(format: "name == %@", query)
+        fetchReq.predicate = NSPredicate(format: "email == %@", query)
+        do{
+            let usr = try context!.fetch(fetchReq)
+            let users = usr as! [User]
+            for data in users{
+                if(data.name == query){
+                    neededUser = data
+                    DBHelper.dataCheck = true
+                    return neededUser
+                }
+                else {
+                    continue
+                }
+            }
+            return neededUser
+        }
+        catch{
+            return neededUser
+        }
+        
+    }
+    func fetchEmailUser( query : String) -> User?{
         var neededUser : User?
         DBHelper.dataCheck = false
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
@@ -144,7 +188,7 @@ class DBHelper{
             return neededUser
         }
     }
-    func fetchePhoneUser( query : String) -> User?{
+    func fetchPhoneUser( query : String) -> User?{
         var neededUser : User?
         DBHelper.dataCheck = false
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
@@ -166,6 +210,59 @@ class DBHelper{
         }
         catch{
             return neededUser
+        }
+    }
+    func clearHistory(query : User){
+        
+        query.searchHistory = []
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
+        }
+    }
+    func updateInfo(user : User, object : [String : String]){
+        if(object.keys.contains("phone")){
+            user.phoneNumber = object["phone"]
+        }
+        if(object.keys.contains("email")){
+            user.email = object["email"]
+        }
+        if(object.keys.contains("name")){
+            user.name = object["name"]
+        }
+        if(object.keys.contains("pass")){
+            user.password = object["pass"]
+        }
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
+        }
+    }
+    func updateAddress(user : String, add : Address){
+        let user = fetchUser(query: user)
+        user!.address = add
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
+        }
+    }
+    func clearSearchHist(user : User){
+        user.searchHistory = []
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
         }
     }
 }

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		840A6327265BFC13005485C5 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840A6326265BFC13005485C5 /* Account.storyboard */; };
-		840A632C265BFC70005485C5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A632B265BFC70005485C5 /* LoginViewController.swift */; };
-		840A632F265C00B0005485C5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A632E265C00B0005485C5 /* SignUpViewController.swift */; };
 		840A6338265C3CFE005485C5 /* address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A6337265C3CFE005485C5 /* address.swift */; };
 		8B17AB802658146700CDAA01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB7F2658146700CDAA01 /* AppDelegate.swift */; };
 		8B17AB822658146700CDAA01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB812658146700CDAA01 /* SceneDelegate.swift */; };
@@ -26,6 +24,15 @@
 		8B17ABA326581B6000CDAA01 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB9B26581B6000CDAA01 /* Product+CoreDataProperties.swift */; };
 		8B17ABA426581B6000CDAA01 /* Review+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB9C26581B6000CDAA01 /* Review+CoreDataClass.swift */; };
 		8B17ABA526581B6000CDAA01 /* Review+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB9D26581B6000CDAA01 /* Review+CoreDataProperties.swift */; };
+		8B2CACD1265FE9D800BB4131 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CACC8265FE9D700BB4131 /* ForgotPasswordViewController.swift */; };
+		8B2CACD2265FE9D800BB4131 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CACC9265FE9D700BB4131 /* SearchHistoryViewController.swift */; };
+		8B2CACD3265FE9D800BB4131 /* AddressUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CACCA265FE9D700BB4131 /* AddressUpdateViewController.swift */; };
+		8B2CACD4265FE9D800BB4131 /* WishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CACCB265FE9D700BB4131 /* WishListTableViewCell.swift */; };
+		8B2CACD5265FE9D800BB4131 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CACCC265FE9D700BB4131 /* LoginViewController.swift */; };
+		8B2CACD6265FE9D800BB4131 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CACCD265FE9D700BB4131 /* WishListViewController.swift */; };
+		8B2CACD7265FE9D800BB4131 /* ProfileEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CACCE265FE9D700BB4131 /* ProfileEditorViewController.swift */; };
+		8B2CACD8265FE9D800BB4131 /* SearchHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CACCF265FE9D800BB4131 /* SearchHistoryTableViewCell.swift */; };
+		8B2CACD9265FE9D800BB4131 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CACD0265FE9D800BB4131 /* SignUpViewController.swift */; };
 		8BB15800265BFCDA003F7AA3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB157FF265BFCDA003F7AA3 /* ProfileViewController.swift */; };
 		8BB15804265BFCF0003F7AA3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB15803265BFCF0003F7AA3 /* SettingsViewController.swift */; };
 		8BB15806265BFD08003F7AA3 /* ReviewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB15805265BFD08003F7AA3 /* ReviewProductViewController.swift */; };
@@ -42,8 +49,6 @@
 
 /* Begin PBXFileReference section */
 		840A6326265BFC13005485C5 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
-		840A632B265BFC70005485C5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		840A632E265C00B0005485C5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		840A6337265C3CFE005485C5 /* address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = address.swift; sourceTree = "<group>"; };
 		8B17AB7C2658146700CDAA01 /* Sahara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sahara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B17AB7F2658146700CDAA01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +67,15 @@
 		8B17AB9B26581B6000CDAA01 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8B17AB9C26581B6000CDAA01 /* Review+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8B17AB9D26581B6000CDAA01 /* Review+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8B2CACC8265FE9D700BB4131 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		8B2CACC9265FE9D700BB4131 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
+		8B2CACCA265FE9D700BB4131 /* AddressUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressUpdateViewController.swift; sourceTree = "<group>"; };
+		8B2CACCB265FE9D700BB4131 /* WishListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListTableViewCell.swift; sourceTree = "<group>"; };
+		8B2CACCC265FE9D700BB4131 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8B2CACCD265FE9D700BB4131 /* WishListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		8B2CACCE265FE9D700BB4131 /* ProfileEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditorViewController.swift; sourceTree = "<group>"; };
+		8B2CACCF265FE9D800BB4131 /* SearchHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		8B2CACD0265FE9D800BB4131 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8BB157FF265BFCDA003F7AA3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8BB15803265BFCF0003F7AA3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8BB15805265BFD08003F7AA3 /* ReviewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProductViewController.swift; sourceTree = "<group>"; };
@@ -91,8 +105,15 @@
 			isa = PBXGroup;
 			children = (
 				840A6326265BFC13005485C5 /* Account.storyboard */,
-				840A632B265BFC70005485C5 /* LoginViewController.swift */,
-				840A632E265C00B0005485C5 /* SignUpViewController.swift */,
+				8B2CACCA265FE9D700BB4131 /* AddressUpdateViewController.swift */,
+				8B2CACC8265FE9D700BB4131 /* ForgotPasswordViewController.swift */,
+				8B2CACCC265FE9D700BB4131 /* LoginViewController.swift */,
+				8B2CACCE265FE9D700BB4131 /* ProfileEditorViewController.swift */,
+				8B2CACCF265FE9D800BB4131 /* SearchHistoryTableViewCell.swift */,
+				8B2CACC9265FE9D700BB4131 /* SearchHistoryViewController.swift */,
+				8B2CACD0265FE9D800BB4131 /* SignUpViewController.swift */,
+				8B2CACCB265FE9D700BB4131 /* WishListTableViewCell.swift */,
+				8B2CACCD265FE9D700BB4131 /* WishListViewController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -246,28 +267,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B17ABA326581B6000CDAA01 /* Product+CoreDataProperties.swift in Sources */,
+				8B2CACD6265FE9D800BB4131 /* WishListViewController.swift in Sources */,
 				8BB15808265BFD2D003F7AA3 /* ItemSearchViewController.swift in Sources */,
 				8B17AB842658146700CDAA01 /* ViewController.swift in Sources */,
 				8B17AB802658146700CDAA01 /* AppDelegate.swift in Sources */,
+				8B2CACD4265FE9D800BB4131 /* WishListTableViewCell.swift in Sources */,
 				8BE13809265D777C001E0662 /* DBHelper.swift in Sources */,
 				8BB15806265BFD08003F7AA3 /* ReviewProductViewController.swift in Sources */,
 				8B17AB9F26581B6000CDAA01 /* User+CoreDataProperties.swift in Sources */,
+				8B2CACD2265FE9D800BB4131 /* SearchHistoryViewController.swift in Sources */,
 				8BB15800265BFCDA003F7AA3 /* ProfileViewController.swift in Sources */,
 				8BB15810265BFE97003F7AA3 /* DashboardViewController.swift in Sources */,
 				8B17AB822658146700CDAA01 /* SceneDelegate.swift in Sources */,
+				8B2CACD1265FE9D800BB4131 /* ForgotPasswordViewController.swift in Sources */,
 				8B17AB8A2658146700CDAA01 /* Sahara.xcdatamodeld in Sources */,
 				8BB15804265BFCF0003F7AA3 /* SettingsViewController.swift in Sources */,
 				8B17ABA226581B6000CDAA01 /* Product+CoreDataClass.swift in Sources */,
 				8B17ABA526581B6000CDAA01 /* Review+CoreDataProperties.swift in Sources */,
-				840A632F265C00B0005485C5 /* SignUpViewController.swift in Sources */,
 				8B17ABA426581B6000CDAA01 /* Review+CoreDataClass.swift in Sources */,
+				8B2CACD5265FE9D800BB4131 /* LoginViewController.swift in Sources */,
 				8BB15818265C3195003F7AA3 /* CartTableViewController.swift in Sources */,
 				8B17ABA026581B6000CDAA01 /* BoughtProduct+CoreDataClass.swift in Sources */,
+				8B2CACD9265FE9D800BB4131 /* SignUpViewController.swift in Sources */,
+				8B2CACD8265FE9D800BB4131 /* SearchHistoryTableViewCell.swift in Sources */,
 				8BB1580E265BFE6C003F7AA3 /* MainStoreViewController.swift in Sources */,
+				8B2CACD3265FE9D800BB4131 /* AddressUpdateViewController.swift in Sources */,
 				8B17ABA126581B6000CDAA01 /* BoughtProduct+CoreDataProperties.swift in Sources */,
+				8B2CACD7265FE9D800BB4131 /* ProfileEditorViewController.swift in Sources */,
 				8BE1380F265D9964001E0662 /* CustomButton.swift in Sources */,
 				8BE13816265DA243001E0662 /* CustomView.swift in Sources */,
-				840A632C265BFC70005485C5 /* LoginViewController.swift in Sources */,
 				8BE13811265D9FA1001E0662 /* BodyView.swift in Sources */,
 				840A6338265C3CFE005485C5 /* address.swift in Sources */,
 				8B17AB9E26581B6000CDAA01 /* User+CoreDataClass.swift in Sources */,

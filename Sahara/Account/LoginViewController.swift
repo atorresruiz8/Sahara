@@ -31,21 +31,39 @@ class LoginViewController: UIViewController {
             alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
             self.present(alert, animated: true)
             return
+            
         }
         if(uName.text!.contains("@")){
             if(DBHelper.inst.validateEmailPass(uName: uName.text!, uPass: String(describing: hashed))){
-                //login
+                print("here")
+                ud.setValue(uName.text!, forKey: "currUser")
+                let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+                let wel = sb.instantiateViewController(withIdentifier: "ProfileEdit") as! ProfileEditorViewController
+                present(wel, animated: true, completion: nil)
             }
         }
         else{
             if(DBHelper.inst.validatePhonePass(uName: uName.text!, uPass: String(describing: hashed))){
-                //login
+                ud.setValue(uName.text!, forKey: "currUser")
+                let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+                let wel = sb.instantiateViewController(withIdentifier: "ProfileEdit") as! ProfileEditorViewController
+                present(wel, animated: true, completion: nil)
             }
         }
     }
   
     @IBAction func browseLogin(_ sender: Any) {
-        DBHelper.inst.addTempUser()
+        
+        let ret = DBHelper.inst.addTempUser()
+        if(ret == "error"){
+            let alert = UIAlertController(title: "Error making temp account", message: "please close and reopen the app to try again", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
+            present(alert, animated: true)
+                
+        }
+        else{
+            ud.setValue(ret, forKey: "currUser")
+        }
         //login
     }
     @IBAction func remSwitched(_ sender: Any) {
