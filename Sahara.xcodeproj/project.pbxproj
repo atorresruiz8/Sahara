@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		840A6327265BFC13005485C5 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840A6326265BFC13005485C5 /* Account.storyboard */; };
 		840A6338265C3CFE005485C5 /* address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A6337265C3CFE005485C5 /* address.swift */; };
+		840A6364265D9B78005485C5 /* ProfileEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A6363265D9B78005485C5 /* ProfileEditorViewController.swift */; };
 		8B17AB802658146700CDAA01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB7F2658146700CDAA01 /* AppDelegate.swift */; };
 		8B17AB822658146700CDAA01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB812658146700CDAA01 /* SceneDelegate.swift */; };
 		8B17AB842658146700CDAA01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB832658146700CDAA01 /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		840A6326265BFC13005485C5 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		840A6337265C3CFE005485C5 /* address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = address.swift; sourceTree = "<group>"; };
+		840A6363265D9B78005485C5 /* ProfileEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorViewController.swift; sourceTree = "<group>"; };
 		8B17AB7C2658146700CDAA01 /* Sahara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sahara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B17AB7F2658146700CDAA01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B17AB812658146700CDAA01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
