@@ -13,6 +13,13 @@ class ProductCreation{
     let sale = [false, true, false, true, false, false, true, false, false, false, false,false, false, false, false, true, true, true, false, true, true, false, false, false, false, false, false, false, false, false]
     let salePercent = [1, 0.85, 1, 0.95, 1, 1, 0.70, 1, 1, 1, 1, 1, 1, 1, 1, 0.83, 0.000042, 0.95, 1, 0.80, 0.66, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     let tags = [["Outdoors", "Decorations"],["Outdoors", "Cooking", "Decorations"], ["Electronics", "Decorations"], ["Electronics", "Decorations"], ["Clothing", "Decorations"], ["Electronics", "Decorations"], ["Cooking", "Decorations"], ["Electronics", "Outdoors", "Clothing", "Cooking", "Decorations"], ["Clothing", "Decorations"], ["Clothing", "Decorations"], ["Decorations"], ["Electronics", "Decorations"], ["Electronics", "Decorations"],  ["Clothing", "Decorations"], ["Decorations"], ["Electronics", "Outdoors", "Decorations"], ["Electronics", "Outdoors", "Decorations"],  ["Electronics", "Decorations"], ["Outdoors", "Decorations"], ["Electronics", "Decorations"], ["Electronics", "Decorations"], ["Electronics", "Decorations"], ["Outdoors", "Cooking", "Decorations"], ["Outdoors", "Decorations"], ["Outdoors", "Decorations"], ["Decorations"], ["Decorations"], ["Electronics", "Decorations"], ["Electronics", "Cooking", "Decorations"], ["Electronics", "Cooking", "Decorations"]]
+    func remakeAll(){
+        //DBHelper.inst.clearProducts()
+        for i in 1...names.count{
+            //DBHelper.inst.makeProduct(name: names[i-1], price: price[i-1], sale : sale[i-1], saleP : salePercent[i-1], tags: tags[i-1])
+            
+        }
+    }
 }
 
 
