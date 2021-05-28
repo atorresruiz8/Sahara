@@ -8,7 +8,8 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    let ud = UserDefaults.standard
+    var user : User?
     @IBOutlet weak var walletBalance: UILabel!
     @IBOutlet weak var walletView: UIView!
     @IBOutlet weak var accountView: UIView!
@@ -20,6 +21,13 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
+            helloMessage.text = "Guest"
+        } else {
+            user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
+            
+            helloMessage.text = "\(String(describing: user!.name!))"
+        }
     }
     
     @IBAction func showCurrentOrders(_ sender: Any) {

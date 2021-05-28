@@ -9,6 +9,8 @@ import UIKit
 import Speech
 class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
 
+    let ud = UserDefaults.standard
+    var user : User?
     @IBOutlet weak var dailyDealView: UIView!
     @IBOutlet weak var recentView: UIView!
     @IBOutlet weak var inspiredView: UIView!
@@ -17,6 +19,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var bodyView: UIView!
     @IBOutlet weak var searchQuery: UITextField!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var welcomeMessage: UILabel!
     
     let audioEng = AVAudioEngine()
     let speechRecog = SFSpeechRecognizer()
@@ -71,6 +74,16 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
+            welcomeMessage.text = "Hi, Guest"
+            deliverToUser.isHidden = true
+        } else {
+            user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
+            welcomeMessage.text = "Hi, \(String(describing: user!.name!))"
+            
+            deliverToUser.setTitle("Deliver to \(String(describing: user!.name!)) - [City, Zip Code]", for: UIButton.State.normal)
+        }
+
     }
     
     @IBAction func delivery(_ sender: Any) {

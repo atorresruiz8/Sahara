@@ -37,17 +37,25 @@ class LoginViewController: UIViewController {
             if(DBHelper.inst.validateEmailPass(uName: uName.text!, uPass: String(describing: hashed))){
                 print("here")
                 ud.setValue(uName.text!, forKey: "currUser")
-                let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
-                let wel = sb.instantiateViewController(withIdentifier: "ProfileEdit") as! ProfileEditorViewController
-                present(wel, animated: true, completion: nil)
+//                let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+//                let wel = sb.instantiateViewController(withIdentifier: "ProfileEdit") as! ProfileEditorViewController
+//                present(wel, animated: true, completion: nil)
+                let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let dash = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
+                dash.modalPresentationStyle = .fullScreen
+                present(dash, animated: true, completion: nil)
             }
         }
         else{
             if(DBHelper.inst.validatePhonePass(uName: uName.text!, uPass: String(describing: hashed))){
                 ud.setValue(uName.text!, forKey: "currUser")
-                let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
-                let wel = sb.instantiateViewController(withIdentifier: "ProfileEdit") as! ProfileEditorViewController
-                present(wel, animated: true, completion: nil)
+//                let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+//                let wel = sb.instantiateViewController(withIdentifier: "ProfileEdit") as! ProfileEditorViewController
+//                present(wel, animated: true, completion: nil)
+                let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let dash = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
+                dash.modalPresentationStyle = .fullScreen
+                present(dash, animated: true, completion: nil)
             }
         }
     }
@@ -65,6 +73,14 @@ class LoginViewController: UIViewController {
             ud.setValue(ret, forKey: "currUser")
         }
         //login
+        
+        // Instantiate the dashboard screen from the "Main" storyboard to allow the user to visit the store
+        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let dash = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
+        // display the segue in full screen
+        dash.modalPresentationStyle = .fullScreen
+        // present the view controller
+        present(dash, animated: true, completion: nil)
     }
     @IBAction func remSwitched(_ sender: Any) {
         if(remState.isOn){

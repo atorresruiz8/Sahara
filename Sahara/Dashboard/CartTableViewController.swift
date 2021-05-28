@@ -8,11 +8,14 @@
 import UIKit
 import Speech
 class CartTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SFSpeechRecognizerDelegate {
+    let ud = UserDefaults.standard
+    var user : User?
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var bodyView: UIView!
+    @IBOutlet weak var deliveryAddress: UIButton!
     
     let audioEng = AVAudioEngine()
     let speechRecog = SFSpeechRecognizer()
@@ -71,6 +74,14 @@ class CartTableViewController: UIViewController, UITableViewDelegate, UITableVie
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
+            deliveryAddress.isHidden = true
+        } else {
+            user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
+            
+            deliveryAddress.setTitle("Deliver to \(String(describing: user!.name!)) - [City, Zip Code]", for: UIButton.State.normal)
+        }
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
