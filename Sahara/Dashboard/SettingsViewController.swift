@@ -77,12 +77,24 @@ class SettingsViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
     
     @IBAction func showWishlist(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+        let wish = sb.instantiateViewController(withIdentifier: "Wish") as! WishListViewController
+        wish.modalPresentationStyle = .fullScreen
+        present(wish, animated: true, completion: nil)
     }
     
     @IBAction func showAccount(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+        let prof = sb.instantiateViewController(withIdentifier: "ProfileEdit") as! ProfileEditorViewController
+        prof.modalPresentationStyle = .fullScreen
+        present(prof, animated: true, completion: nil)
     }
     
     @IBAction func showBrowsingHistory(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+        let sh = sb.instantiateViewController(withIdentifier: "SearchHistory") as! SearchHistoryViewController
+        sh.modalPresentationStyle = .fullScreen
+        present(sh, animated: true, completion: nil)
     }
     
     @IBAction func elecDept(_ sender: Any) {

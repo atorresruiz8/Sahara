@@ -39,7 +39,11 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     
-
+    @IBAction func returnToProfile(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        // override viewDidAppear if any data needs to change and update because above line doesn't call viewDidLoad in view controller below
+    }
+    
    
 
 }

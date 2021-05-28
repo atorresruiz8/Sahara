@@ -27,7 +27,7 @@ public class Address : NSObject, NSCoding{
         coder.encode(city, forKey: "city")
         coder.encode(state, forKey: "state")
         coder.encode(country, forKey: "country")
-        coder.encode(zipcode, forKey: "zaipcode")
+        coder.encode(zipcode, forKey: "zipcode")
     }
     
     required public init?(coder decod: NSCoder) {
