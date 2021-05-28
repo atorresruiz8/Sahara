@@ -143,7 +143,7 @@ class DBHelper{
         DBHelper.dataCheck = false
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
         fetchReq.predicate = NSPredicate(format: "name == %@", query)
-        fetchReq.predicate = NSPredicate(format: "email == %@", query)
+       // fetchReq.predicate = NSPredicate(format: "email == %@", query)
         do{
             let usr = try context!.fetch(fetchReq)
             let users = usr as! [User]
