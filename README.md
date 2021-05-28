@@ -34,9 +34,9 @@ git clone https://github.com/atorresruiz8/Sahara
 
 
 ## Contributors
-* Antonio Torres-Ruiz, project leader, admin functionality designer, primarily set up and developed the CoreData functions, designed user functionality once logged in, and implemented Facebook integration.
-* Peter Gray, primarily developed the dynamically created quizzes, including displaying said quizzes onto the screen. Also helped with UI design.
-* Justin Horner, designed functionality to pass the user between the different screens of the app, along with helping calculate the rankings for each user based on scores and designed the user profile page.
+* Antonio Torres-Ruiz, project leader, 
+* Peter Gray, 
+* Justin Horner,
 
 ## License
 
