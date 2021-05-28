@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SaharaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="hu0-vH-d2y">
-                                        <rect key="frame" x="167" y="41" width="81" height="56"/>
+                                        <rect key="frame" x="8" y="37" width="81" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -123,7 +123,7 @@
         <!--Profile Editor View Controller-->
         <scene sceneID="aXu-hW-BRV">
             <objects>
-                <viewController storyboardIdentifier="ProfileEdit" id="kLv-Ut-tSk" customClass="ProfileEditorViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileEdit" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kLv-Ut-tSk" customClass="ProfileEditorViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NAp-GS-4n2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SaharaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="9Vx-gx-squ">
-                                        <rect key="frame" x="156" y="41" width="81" height="56"/>
+                                        <rect key="frame" x="8" y="41" width="81" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -151,16 +151,31 @@
                                             <segue destination="P6J-AL-axX" kind="presentation" modalPresentationStyle="fullScreen" id="aui-Uh-Cdm"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySU-no-5ua" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="167" y="452" width="80" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submit:" destination="kLv-Ut-tSk" eventType="touchUpInside" id="cOG-dJ-Cv3"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecV-e3-bef">
+                                        <rect key="frame" x="16" y="135" width="113" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User's Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B21-zK-tgp">
+                                        <rect key="frame" x="16" y="20" width="108" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User's Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B21-zK-tgp">
-                                <rect key="frame" x="20" y="123" width="108" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qWm-Da-f7O">
                                 <rect key="frame" x="20" y="169" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -168,24 +183,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0v-Iw-sya" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                <rect key="frame" x="152" y="127" width="43" height="34"/>
+                                <rect key="frame" x="152" y="127" width="59" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="edit"/>
+                                <state key="normal" title="Edit"/>
                                 <connections>
                                     <action selector="editname:" destination="kLv-Ut-tSk" eventType="touchUpInside" id="m1n-f7-UtC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecV-e3-bef">
-                                <rect key="frame" x="15" y="240" width="113" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2k-q6-CiA" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                <rect key="frame" x="152" y="239" width="43" height="34"/>
+                                <rect key="frame" x="152" y="239" width="59" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="edit"/>
+                                <state key="normal" title="Edit"/>
                                 <connections>
                                     <action selector="editEmail:" destination="kLv-Ut-tSk" eventType="touchUpInside" id="DIs-Fd-cUF"/>
                                 </connections>
@@ -204,9 +212,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-Ex-2jT" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                <rect key="frame" x="152" y="360" width="43" height="38"/>
+                                <rect key="frame" x="152" y="360" width="59" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="edit"/>
+                                <state key="normal" title="Edit"/>
                                 <connections>
                                     <action selector="editPhone:" destination="kLv-Ut-tSk" eventType="touchUpInside" id="UY6-zm-yeV"/>
                                 </connections>
@@ -225,14 +233,6 @@
                                     <action selector="clearHistory:" destination="kLv-Ut-tSk" eventType="touchUpInside" id="LYU-Em-ZoT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySU-no-5ua" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                <rect key="frame" x="170" y="573" width="80" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submit:" destination="kLv-Ut-tSk" eventType="touchUpInside" id="cOG-dJ-Cv3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="buD-Hi-XQR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -245,12 +245,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5PE-Al-5Oe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="934.78260869565224" y="196.875"/>
+            <point key="canvasLocation" x="947.82608695652186" y="145.98214285714286"/>
         </scene>
         <!--Address Update View Controller-->
         <scene sceneID="qNj-kK-Xim">
             <objects>
-                <viewController id="P6J-AL-axX" customClass="AddressUpdateViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Addr" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P6J-AL-axX" customClass="AddressUpdateViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uVW-sF-lnV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -258,6 +258,36 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nia-sT-bWi" customClass="BodyView" customModule="Sahara" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="103" width="414" height="793"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGx-1W-rd5">
+                                        <rect key="frame" x="34" y="247" width="61" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Zip Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhu-B7-jgo">
+                                        <rect key="frame" x="266" y="247" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="State (2 Letters)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lQ-dT-S64">
+                                        <rect key="frame" x="266" y="139" width="124" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbJ-OP-QUZ">
+                                        <rect key="frame" x="34" y="28" width="47" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KRs-mN-qR5" customClass="HeaderView" customModule="Sahara" customModuleProvider="target">
@@ -269,39 +299,14 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Back"/>
                                         <connections>
-                                            <segue destination="kLv-Ut-tSk" kind="presentation" modalPresentationStyle="fullScreen" id="XCn-JA-qWW"/>
+                                            <action selector="returnToDashboard:" destination="P6J-AL-axX" eventType="touchUpInside" id="96C-Qt-gce"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SaharaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="7SM-AP-EJ0">
-                                        <rect key="frame" x="167" y="41" width="81" height="56"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbJ-OP-QUZ">
-                                <rect key="frame" x="38" y="120" width="45" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9E-iX-lSv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9E-iX-lSv">
                                 <rect key="frame" x="38" y="239" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGx-1W-rd5">
-                                <rect key="frame" x="38" y="329" width="59" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="zipcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhu-B7-jgo">
-                                <rect key="frame" x="292" y="338" width="61" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -345,13 +350,6 @@
                                     <action selector="update:" destination="P6J-AL-axX" eventType="touchUpInside" id="0tk-kf-tTZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="state(2 letters)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lQ-dT-S64">
-                                <rect key="frame" x="231" y="239" width="122" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jTi-xR-01A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -366,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ail-JH-AWG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660.8695652173915" y="169.41964285714286"/>
+            <point key="canvasLocation" x="1649" y="146"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Q4L-Ac-rgk">
@@ -379,12 +377,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tL-gs-x8c" customClass="HeaderView" customModule="Sahara" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SaharaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="AVG-t4-SFF">
-                                        <rect key="frame" x="167" y="41" width="81" height="56"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r5D-EN-bPG" customClass="BodyView" customModule="Sahara" customModuleProvider="target">
@@ -545,7 +537,7 @@
         <!--Wish List View Controller-->
         <scene sceneID="L7T-t2-yIB">
             <objects>
-                <viewController id="AJZ-LH-6l3" customClass="WishListViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Wish" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AJZ-LH-6l3" customClass="WishListViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ar6-VG-4Sb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -553,12 +545,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srC-HW-5xn" customClass="HeaderView" customModule="Sahara" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SaharaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="svD-tJ-wf4">
-                                        <rect key="frame" x="167" y="41" width="81" height="56"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3C1-jN-3kb" customClass="BodyView" customModule="Sahara" customModuleProvider="target">
@@ -609,9 +595,12 @@
                                 <rect key="frame" x="20" y="44" width="78" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="returnToProfile:" destination="AJZ-LH-6l3" eventType="touchUpInside" id="gif-uE-GcK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wish List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2s-iI-Req">
-                                <rect key="frame" x="124" y="113" width="167" height="21"/>
+                                <rect key="frame" x="124" y="117" width="167" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -627,12 +616,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAt-8r-Lxy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634.7826086956522" y="906.69642857142856"/>
+            <point key="canvasLocation" x="1635" y="917"/>
         </scene>
         <!--Search History View Controller-->
         <scene sceneID="70p-O9-6Aa">
             <objects>
-                <viewController id="wVS-4M-xpT" customClass="SearchHistoryViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchHistory" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wVS-4M-xpT" customClass="SearchHistoryViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZQs-IL-wo6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -640,6 +629,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNo-UD-hNb" customClass="BodyView" customModule="Sahara" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="102" width="414" height="794"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfT-85-7w8">
+                                        <rect key="frame" x="125" y="22" width="165" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgC-tW-oXH" customClass="HeaderView" customModule="Sahara" customModuleProvider="target">
@@ -650,19 +648,18 @@
                                         <rect key="frame" x="8" y="42" width="87" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="returnToProfile:" destination="wVS-4M-xpT" eventType="touchUpInside" id="dki-0V-Uo2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4e-MH-R9j" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                        <rect key="frame" x="282" y="42" width="124" height="41"/>
+                                        <rect key="frame" x="313" y="42" width="93" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Clear All"/>
                                         <connections>
                                             <action selector="clearHistory:" destination="wVS-4M-xpT" eventType="touchUpInside" id="7aG-sn-UCf"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SaharaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Q9o-FP-FkN">
-                                        <rect key="frame" x="167" y="42" width="81" height="56"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                             </view>
@@ -697,13 +694,6 @@
                                     <outlet property="delegate" destination="wVS-4M-xpT" id="89y-ct-dA8"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfT-85-7w8">
-                                <rect key="frame" x="134" y="123" width="146" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P6J-gn-vF6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -714,12 +704,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4V-bz-WlR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2307.2463768115945" y="903.34821428571422"/>
+            <point key="canvasLocation" x="2306" y="917"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="aui-Uh-Cdm"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="SaharaLogo" width="1024" height="896"/>
         <systemColor name="systemBackgroundColor">

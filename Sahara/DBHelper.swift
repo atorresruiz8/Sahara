@@ -24,7 +24,7 @@ class DBHelper{
         if((object["email"]) != nil){
             user.email = object["email"]
         }
-        if((object["phone"]) != nil){
+        if((object["phoneNumber"]) != nil){
             user.phoneNumber = object["phoneNumber"]
         }
         user.name = object["name"]
@@ -223,8 +223,8 @@ class DBHelper{
         }
     }
     func updateInfo(user : User, object : [String : String]){
-        if(object.keys.contains("phone")){
-            user.phoneNumber = object["phone"]
+        if(object.keys.contains("phoneNumber")){
+            user.phoneNumber = object["phoneNumber"]
         }
         if(object.keys.contains("email")){
             user.email = object["email"]

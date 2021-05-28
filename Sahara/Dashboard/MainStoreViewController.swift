@@ -80,14 +80,20 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
         } else {
             user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
             welcomeMessage.text = "Hi, \(String(describing: user!.name!))"
-            
-            deliverToUser.setTitle("Deliver to \(String(describing: user!.name!)) - [City, Zip Code]", for: UIButton.State.normal)
+            if (user!.address != nil) {
+                deliverToUser.setTitle(" Deliver to \(String(describing: user!.name!)) - City: \(String(describing: user!.address!.city)), Zip Code: \(String(describing: user!.address!.zipcode))", for: UIButton.State.normal)
+            } else {
+                deliverToUser.setTitle("Deliver to \(String(describing: user!.name!)) - City: N/A, Zip Code: N/A", for: UIButton.State.normal)
+            }
         }
 
     }
     
     @IBAction func delivery(_ sender: Any) {
-        
+        let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+        let addr = sb.instantiateViewController(withIdentifier: "Addr") as! AddressUpdateViewController
+        addr.modalPresentationStyle = .fullScreen
+        present(addr, animated: true, completion: nil)
     }
     
     @IBAction func textToSpeech(_ sender: Any) {
@@ -101,6 +107,21 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     @IBAction func searchStore(_ sender: Any) {
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
+            welcomeMessage.text = "Hi, Guest"
+            deliverToUser.isHidden = true
+        } else {
+            user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
+            welcomeMessage.text = "Hi, \(String(describing: user!.name!))"
+            if (user!.address != nil) {
+                deliverToUser.setTitle(" Deliver to \(String(describing: user!.name!)) - City: \(String(describing: user!.address!.city)), Zip Code: \(String(describing: user!.address!.zipcode))", for: UIButton.State.normal)
+            } else {
+                deliverToUser.setTitle("Deliver to \(String(describing: user!.name!)) - City: N/A, Zip Code: N/A", for: UIButton.State.normal)
+            }
+        }
     }
     /*
     // MARK: - Navigation

@@ -39,7 +39,7 @@ class ProfileEditorViewController: UIViewController {
         }
         if(userPhone.text != ""){
             if(checkNumber(num: userPhone.text!)){
-                objec["phone"] = userPhone.text!
+                objec["phoneNumber"] = userPhone.text!
             }
             else{
                 return
@@ -51,7 +51,8 @@ class ProfileEditorViewController: UIViewController {
         userEmail.isUserInteractionEnabled = false
         userPhone.isUserInteractionEnabled = false
         
-        
+        self.dismiss(animated: true, completion: nil)
+        // override viewDidAppear if any data needs to change and update because above line doesn't call viewDidLoad in view controller below
     }
     
     @IBAction func editEmail(_ sender: Any) {
