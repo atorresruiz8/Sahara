@@ -170,7 +170,7 @@
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SaharaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="8ec-bJ-Tpw">
-                                        <rect key="frame" x="8" y="32" width="81" height="56"/>
+                                        <rect key="frame" x="8" y="33" width="81" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -207,13 +207,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Sahara..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cjy-0R-3Tn">
-                                        <rect key="frame" x="18" y="52" width="364" height="34"/>
+                                        <rect key="frame" x="18" y="57" width="355" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVN-TG-GBu">
-                                        <rect key="frame" x="359" y="58" width="17" height="22"/>
+                                        <rect key="frame" x="349" y="62" width="17" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemGray2Color"/>
                                         <state key="normal" image="mic" catalog="system"/>
@@ -222,7 +222,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2F-G2-dwD">
-                                        <rect key="frame" x="388" y="58" width="20" height="22"/>
+                                        <rect key="frame" x="383" y="62" width="20" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" image="magnifyingglass" catalog="system"/>
@@ -361,6 +361,34 @@ your wishlist</string>
             </objects>
             <point key="canvasLocation" x="940.57971014492762" y="-1060.0446428571429"/>
         </scene>
+        <!--Search Results Table View Controller-->
+        <scene sceneID="dhh-D9-09c">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchResults" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aXl-0z-37J" customClass="SearchResultsTableViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qVd-2C-jfe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Search" rowHeight="240" id="u4A-b4-6g1">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="240"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u4A-b4-6g1" id="JFM-Dw-RUD">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aXl-0z-37J" id="wIh-SW-AQH"/>
+                            <outlet property="delegate" destination="aXl-0z-37J" id="UXB-Vf-UnK"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IK4-9V-O3G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037.68115942029" y="-1060.0446428571429"/>
+        </scene>
         <!--Cart Table View Controller-->
         <scene sceneID="3vQ-vh-M3e">
             <objects>
@@ -377,31 +405,10 @@ your wishlist</string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Sahara..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="COk-fX-X8J">
-                                                <rect key="frame" x="19" y="52" width="363" height="34"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SaharaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="iNm-sq-WGJ">
+                                                <rect key="frame" x="8" y="33" width="81" height="56"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QT8-n0-vSM">
-                                                <rect key="frame" x="352" y="58" width="25" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" systemColor="systemGray2Color"/>
-                                                <state key="normal" image="mic" catalog="system"/>
-                                                <connections>
-                                                    <action selector="textToSpeech:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cjc-44-OSe"/>
-                                                    <action selector="textToSpeechSearch:" destination="wbh-u3-AU4" eventType="touchUpInside" id="ImQ-qS-dRX"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6b-EN-fPT">
-                                                <rect key="frame" x="387" y="58" width="20" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" systemColor="labelColor"/>
-                                                <state key="normal" image="magnifyingglass" catalog="system"/>
-                                                <connections>
-                                                    <action selector="searchStore:" destination="wbh-u3-AU4" eventType="touchUpInside" id="Xmg-aa-Hi8"/>
-                                                </connections>
-                                            </button>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.16048464079999999" green="0.36521553379999999" blue="0.62876457249999995" alpha="0.22095070419999999" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
@@ -456,7 +463,6 @@ your wishlist</string>
                         <outlet property="bodyView" destination="ikp-wg-Y6g" id="iLt-rm-9fq"/>
                         <outlet property="deliveryAddress" destination="NDZ-Ds-dtZ" id="6Xn-hH-dgI"/>
                         <outlet property="headerView" destination="wKz-VH-yC8" id="wAC-X1-fUA"/>
-                        <outlet property="searchField" destination="COk-fX-X8J" id="jh5-Do-XBx"/>
                         <outlet property="tableView" destination="PJ0-Fs-5Ox" id="0SO-4w-xuF"/>
                     </connections>
                 </viewController>
@@ -619,31 +625,10 @@ your wishlist</string>
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Sahara..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FbO-Sf-ABJ">
-                                        <rect key="frame" x="19" y="52" width="363" height="34"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SaharaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Hcj-t1-F80">
+                                        <rect key="frame" x="8" y="33" width="81" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77m-ps-LP1">
-                                        <rect key="frame" x="352" y="58" width="25" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" systemColor="systemGray2Color"/>
-                                        <state key="normal" image="mic" catalog="system"/>
-                                        <connections>
-                                            <action selector="textToSpeech:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K5w-rb-vJu"/>
-                                            <action selector="textToSpeechSearch:" destination="Hqq-An-VVB" eventType="touchUpInside" id="6Xv-wb-ZqD"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GZ-YW-DEm">
-                                        <rect key="frame" x="387" y="58" width="20" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" systemColor="labelColor"/>
-                                        <state key="normal" image="magnifyingglass" catalog="system"/>
-                                        <connections>
-                                            <action selector="searchStore:" destination="Hqq-An-VVB" eventType="touchUpInside" id="VVX-4f-9La"/>
-                                        </connections>
-                                    </button>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.16048464079999999" green="0.36521553379999999" blue="0.62876457249999995" alpha="0.22095070419999999" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -657,7 +642,6 @@ your wishlist</string>
                         <outlet property="bodyView" destination="kjb-BX-Ha2" id="3WD-bM-ulT"/>
                         <outlet property="departmentView" destination="iFE-8w-b5l" id="rhx-4U-9eC"/>
                         <outlet property="headerView" destination="Ewm-bn-fhJ" id="mIC-s2-CL6"/>
-                        <outlet property="searchField" destination="FbO-Sf-ABJ" id="rMT-o2-rFA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nE-aI-Lnq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

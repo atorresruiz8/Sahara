@@ -11,6 +11,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
 
     let ud = UserDefaults.standard
     var user : User?
+    static var search = ""
     @IBOutlet weak var dailyDealView: UIView!
     @IBOutlet weak var recentView: UIView!
     @IBOutlet weak var inspiredView: UIView!
@@ -106,7 +107,11 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
     
     @IBAction func searchStore(_ sender: Any) {
-        
+        MainStoreViewController.search = searchQuery.text!
+        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let sr = sb.instantiateViewController(withIdentifier: "SearchResults") as! SearchResultsTableViewController
+        sr.modalPresentationStyle = .fullScreen
+        present(sr, animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
