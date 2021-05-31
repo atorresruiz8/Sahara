@@ -12,14 +12,13 @@ Sahara is a web shop app created by Antonio Torres-Ruiz, Peter Gray and Justin H
 * Stores user's selected products in a cart or wishlist that the user has regular access to.
 * Displays the user's latest 5 searches and can clear their entire search history.
 * The user can ask for refunds from their purchased products to receive money in their Sahara online wallet.
-* Sahara "Silk Road," a subscription feature for expediated shipping of products.
 * User can pay for their product with either cash on delivery, net banking, or credit/debit card.
 * User can edit their shipping address, account information, or payment information at any time and have it instantly updated.
 * Users can create temporary user accounts to browse the store and make a wishlist.
 * Though temporary users cannot buy products, they can choose to upgrade and finish account creation to become a full fledged user and purchase goods from the store.
 
 ## TODO
-* Implement a manner to let user choose their own profile picture, cancel orders, list retail vs sales prices for each product.
+* Implement a manner to let user choose their own profile picture, cancel orders, list retail vs sales prices for each product. Add the "Silk Road," a subscription feature for expediated shipping of products.
 
 ## Getting Started
 git clone https://github.com/atorresruiz8/Sahara
