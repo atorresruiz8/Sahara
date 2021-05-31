@@ -46,6 +46,13 @@ class SettingsViewController: UIViewController {
         present(sh, animated: true, completion: nil)
     }
     
+    @IBAction func showRefunds(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+        let refund = sb.instantiateViewController(withIdentifier: "Refund") as! RefundViewController
+        refund.modalPresentationStyle = .fullScreen
+        present(refund, animated: true, completion: nil)
+    }
+    
     @IBAction func elecDept(_ sender: Any) {
     }
     

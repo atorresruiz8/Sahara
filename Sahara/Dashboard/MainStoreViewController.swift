@@ -110,7 +110,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
         MainStoreViewController.search = searchQuery.text!
         let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sr = sb.instantiateViewController(withIdentifier: "SearchResults") as! SearchResultsTableViewController
-        sr.modalPresentationStyle = .fullScreen
+        //sr.modalPresentationStyle = .fullScreen
         present(sr, animated: true, completion: nil)
     }
     

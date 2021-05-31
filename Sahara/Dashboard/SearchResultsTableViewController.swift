@@ -48,15 +48,38 @@ class SearchResultsTableViewController: UITableViewController {
         // Configure the cell...
         if (search == "") {
             cell.textLabel?.text = "You did not search for anything. Please try again."
+        } else if (search != "") {
+            if (search.contains("#tech")) {
+                cell.textLabel?.text = "You searched for: Technology"
+            } else if (search.contains("#clothing")) {
+                cell.textLabel?.text = "You searched for: Clothing"
+            } else if (search.contains("#decoration")) {
+                cell.textLabel?.text = "You searched for: Decoration"
+            } else if (search.contains("#outdoor")) {
+                cell.textLabel?.text = "You searched for: Outdoor"
+            } else if (search.contains("#cooking")) {
+                cell.textLabel?.text = "You searched for: Cooking"
+            } else {
+                cell.textLabel?.text = "Could not find anything. Please try a new search."
+            }
         }
-        // just for testing
-//        if (search.contains("Hello")) {
-//            cell.textLabel?.text = "You searched for: 'Hello.'"
-//        }
 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (search != "") {
+            switch indexPath.item {
+            case 0:
+                let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+                let prod = sb.instantiateViewController(withIdentifier: "Product") as! ProductViewController
+                prod.modalPresentationStyle = .fullScreen
+                present(prod, animated: true, completion: nil)
+            default:
+                print("Did not select anything.")
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

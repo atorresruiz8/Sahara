@@ -59,7 +59,11 @@ class ProfileViewController: UIViewController {
     
     
     
-    @IBAction func showSubscriptionServices(_ sender: Any) {
+    @IBAction func showRefunds(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+        let refund = sb.instantiateViewController(withIdentifier: "Refund") as! RefundViewController
+        refund.modalPresentationStyle = .fullScreen
+        present(refund, animated: true, completion: nil)
     }
     
     
@@ -71,10 +75,22 @@ class ProfileViewController: UIViewController {
     }
     
     
-    @IBAction func showRefunds(_ sender: Any) {
+    @IBAction func changeAddressInfo(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+        let addr = sb.instantiateViewController(withIdentifier: "Addr") as! AddressUpdateViewController
+        addr.modalPresentationStyle = .fullScreen
+        present(addr, animated: true, completion: nil)
+    }
+    
+    @IBAction func paymentInfo(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+        let pay = sb.instantiateViewController(withIdentifier: "Payment") as! PaymentViewController
+        pay.modalPresentationStyle = .fullScreen
+        present(pay, animated: true, completion: nil)
     }
     
     @IBAction func addToWalletBalance(_ sender: Any) {
+        
     }
     
     /*
