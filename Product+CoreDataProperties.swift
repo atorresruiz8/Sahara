@@ -19,7 +19,7 @@ extension Product {
     @NSManaged public var id: String?
     @NSManaged public var price: Double
     @NSManaged public var name: String?
-    @NSManaged public var tags: NSObject?
+    @NSManaged public var tags: [String]?
     @NSManaged public var image: String?
     @NSManaged public var sale: Bool
     @NSManaged public var salePercentage: Double

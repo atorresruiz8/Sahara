@@ -264,4 +264,52 @@ class DBHelper{
             print("data not saved")
         }
     }
+    func addSearchHist(user : String, newSt : String){
+        var currUser = fetchUser(query: user)
+        if((currUser!.searchHistory) != nil){
+            currUser!.searchHistory!.append(newSt)
+        }
+        else{
+            currUser!.searchHistory = [newSt]
+        }
+       
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
+        }
+    }
+    func addProduct(price : Double, name : String, tags : [String], sale : Bool, salePerc : Double){
+        var id : Int
+        var idChecked = false
+        repeat{
+            id = Int.random(in: 1000000...9999999)
+            let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "Product")
+            fetchReq.predicate = NSPredicate(format: "id == %@", id)
+            do{
+                let usr = try context!.fetch(fetchReq)
+                let users = usr as! [Product]
+                idChecked = !(users.count > 0)
+            }
+            catch{
+               idChecked = true
+            }
+        }while(!idChecked)
+        let prod = NSEntityDescription.insertNewObject(forEntityName: "Product", into: context!) as! Product
+        prod.id = String(id)
+        prod.price = price
+        prod.name = name
+        prod.tags = tags
+        prod.sale = sale
+        prod.salePercentage = salePerc
+        do{
+            try context!.save()
+            print("data saved")
+        }
+        catch{
+            print("data not saved")
+        }
+    }
 }
