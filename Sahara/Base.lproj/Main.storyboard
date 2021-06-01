@@ -163,7 +163,7 @@
                                                 <rect key="frame" x="204" y="53" width="139" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                <state key="normal" title="Reload Balance">
+                                                <state key="normal" title="Balance">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
@@ -171,7 +171,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wallet Balance: $0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ba-QV-sUj">
-                                                <rect key="frame" x="17" y="8" width="227" height="29"/>
+                                                <rect key="frame" x="17" y="8" width="355" height="29"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <nil key="textColor"/>
@@ -184,6 +184,14 @@
                                         <rect key="frame" x="8" y="33" width="81" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIJ-el-7nF" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="299" y="37" width="86" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Log Out"/>
+                                        <connections>
+                                            <action selector="logOut:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="wpX-7J-feo"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -204,6 +212,117 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUr-xJ-fVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="940.57971014492762" y="-157.36607142857142"/>
+        </scene>
+        <!--Wallet View Controller-->
+        <scene sceneID="BAF-H7-ZS3">
+            <objects>
+                <viewController storyboardIdentifier="Wallet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ucg-W5-E5J" customClass="WalletViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bb7-yS-NNG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FWX-NN-3FP" customClass="HeaderView" customModule="Sahara" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRP-lz-Pxs" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="44" width="78" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="&lt; Back"/>
+                                        <connections>
+                                            <action selector="returnToProfile:" destination="Ucg-W5-E5J" eventType="touchUpInside" id="S4y-to-p01"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ibq-n7-gXH" customClass="BodyView" customModule="Sahara" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="102" width="414" height="794"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGO-gG-kLH" customClass="CustomView" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="36" width="398" height="345"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdK-Dy-yLP" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="76" width="89" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="$10"/>
+                                                <connections>
+                                                    <action selector="add10ToBalance:" destination="Ucg-W5-E5J" eventType="touchUpInside" id="G3V-tz-Ve7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCO-jR-sbu" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="250" y="76" width="91" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="$25"/>
+                                                <connections>
+                                                    <action selector="add25ToBalance:" destination="Ucg-W5-E5J" eventType="touchUpInside" id="UML-dy-Stc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bV-h0-VgE" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="190" width="89" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="$50"/>
+                                                <connections>
+                                                    <action selector="add50ToBalance:" destination="Ucg-W5-E5J" eventType="touchUpInside" id="eRi-e7-RBy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIT-RP-4Z7" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="250" y="190" width="91" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="$100"/>
+                                                <connections>
+                                                    <action selector="add100ToBalance:" destination="Ucg-W5-E5J" eventType="touchUpInside" id="ehv-nY-rSq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IL-EK-2Vi" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="284" width="203" height="53"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Add Custom Amount"/>
+                                                <connections>
+                                                    <action selector="addCustomAmount:" destination="Ucg-W5-E5J" eventType="touchUpInside" id="jui-N0-ePP"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4uM-sq-1ng">
+                                                <rect key="frame" x="233" y="294" width="108" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add to Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6V-2o-OgV">
+                                                <rect key="frame" x="10" y="8" width="380" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aad-GN-kII" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="452" width="315" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Display Balance"/>
+                                        <connections>
+                                            <action selector="displayWalletBalance:" destination="Ucg-W5-E5J" eventType="touchUpInside" id="dIS-3E-YHu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BNG-C4-L1S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="custAmt" destination="4uM-sq-1ng" id="6z4-rp-eLb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wih-ht-2H4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037.68115942029" y="-157.36607142857142"/>
         </scene>
         <!--Main Store View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -278,7 +397,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bla-ne-IPY" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                                <rect key="frame" x="23" y="49" width="76" height="30"/>
+                                                <rect key="frame" x="24" y="56" width="76" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Explore"/>
                                             </button>
@@ -335,7 +454,7 @@ explore</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRb-P8-mHA" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                                <rect key="frame" x="22" y="49" width="76" height="30"/>
+                                                <rect key="frame" x="22" y="57" width="76" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Explore"/>
                                             </button>
@@ -356,7 +475,7 @@ your wishlist</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amH-ET-PCU" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                                <rect key="frame" x="29" y="49" width="76" height="30"/>
+                                                <rect key="frame" x="29" y="54" width="76" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Explore"/>
                                             </button>
@@ -731,6 +850,9 @@ your wishlist</string>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -23,14 +23,18 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
         if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
             helloMessage.text = "Guest"
+            walletBalance.text = "Wallet Balance: N/A"
         } else {
             user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
             
             helloMessage.text = "\(String(describing: user!.name!))"
+            
+            walletBalance.text = "Wallet Balance: $\(user!.balance)"
         }
     }
     
     @IBAction func showCurrentOrders(_ sender: Any) {
+        
     }
     
     
@@ -43,6 +47,7 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func showAllOrders(_ sender: Any) {
+        
     }
     
     @IBAction func showCart(_ sender: Any) {
@@ -90,7 +95,25 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func addToWalletBalance(_ sender: Any) {
-        
+        if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
+            let alert = UIAlertController(title: "No Wallet Found.", message: "Guests do not have a wallet. Please make a full account to access your wallet.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
+            present(alert, animated: true)
+        } else {
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let wallet = sb.instantiateViewController(withIdentifier: "Wallet") as! WalletViewController
+            wallet.modalPresentationStyle = .fullScreen
+            present(wallet, animated: true, completion: nil)
+        }
+    }
+    
+    
+    @IBAction func logOut(_ sender: Any) {
+        ud.setValue("", forKey: "currUser")
+        let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+        let login = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+        login.modalPresentationStyle = .fullScreen
+        present(login, animated: true, completion: nil)
     }
     
     /*

@@ -17,6 +17,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // initializes the arrays with the products filtered by tags
+        DBHelper.inst.arrayMaker()
+        DBHelper.inst.checkProducts()
     }
     
     //button for logging in
@@ -58,6 +61,17 @@ class LoginViewController: UIViewController {
   
     @IBAction func browseLogin(_ sender: Any) {
         
+        // saves the current temp user ID so they can log into the same temp user multiple times
+        if (ud.string(forKey: "currUser") != nil && ud.string(forKey: "currUser")!.hasPrefix("_")) {
+            let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let dash = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
+            // display the segue in full screen
+            dash.modalPresentationStyle = .fullScreen
+            // present the view controller
+            present(dash, animated: true, completion: nil)
+            return
+        }
+        
         let ret = DBHelper.inst.addTempUser()
         if(ret == "error"){
             let alert = UIAlertController(title: "Error making temp account", message: "please close and reopen the app to try again", preferredStyle: .alert)
@@ -71,6 +85,7 @@ class LoginViewController: UIViewController {
         //login
         
         // Instantiate the dashboard screen from the "Main" storyboard to allow the user to visit the store
+
         let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let dash = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
         // display the segue in full screen

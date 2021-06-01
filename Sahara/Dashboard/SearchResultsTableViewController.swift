@@ -18,7 +18,10 @@ class SearchResultsTableViewController: UITableViewController {
     
     // Using the static variable "search" from Main Store VC to parse the search text field from said VC
    let search = MainStoreViewController.search
-
+    var ud = UserDefaults.standard
+    var prodArr : [Product] = []
+    var oneSearch : [Product] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +41,23 @@ class SearchResultsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        if (search.contains("#tech")) {
+            return DBHelper.inst.electronics.count
+        } else if (search.contains("#clothing")) {
+            return DBHelper.inst.clothing.count
+        } else if (search.contains("#decoration")) {
+            return DBHelper.inst.decorations.count
+        } else if (search.contains("#cooking")) {
+            return DBHelper.inst.cooking.count
+        } else if (search.contains("#outdoor")) {
+            return DBHelper.inst.outdoors.count
+        } else if (!search.hasPrefix("#")) {
+            //oneSearch = DBHelper.inst.fetchProduct(search)
+            return oneSearch.count
+        } else {
+            print("There was an error with parsing the arrays.")
+            return 1
+        }
     }
 
     
@@ -46,22 +65,29 @@ class SearchResultsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Search", for: indexPath)
 
         // Configure the cell...
-        if (search == "") {
+        if (search == "") { // empty search
             cell.textLabel?.text = "You did not search for anything. Please try again."
-        } else if (search != "") {
+        } else if (search.hasPrefix("#")) {
             if (search.contains("#tech")) {
-                cell.textLabel?.text = "You searched for: Technology"
+                //prodArr?.append(DBHelper.inst.fetchProduct(DBHelper.inst.electronics[indexPath.row]))
+                cell.textLabel?.text = DBHelper.inst.electronics[indexPath.row]
             } else if (search.contains("#clothing")) {
-                cell.textLabel?.text = "You searched for: Clothing"
+                //prodArr?.append(DBHelper.inst.fetchProduct(DBHelper.inst.clothing[indexPath.row]))
+                cell.textLabel?.text =  DBHelper.inst.clothing[indexPath.row]
             } else if (search.contains("#decoration")) {
-                cell.textLabel?.text = "You searched for: Decoration"
+                //prodArr?.append(DBHelper.inst.fetchProduct(DBHelper.inst.decorations[indexPath.row]))
+                cell.textLabel?.text =  DBHelper.inst.decorations[indexPath.row]
             } else if (search.contains("#outdoor")) {
-                cell.textLabel?.text = "You searched for: Outdoor"
+                //prodArr?.append(DBHelper.inst.fetchProduct(DBHelper.inst.outdoors[indexPath.row]))
+                cell.textLabel?.text =  DBHelper.inst.outdoors[indexPath.row]
             } else if (search.contains("#cooking")) {
-                cell.textLabel?.text = "You searched for: Cooking"
+                //prodArr?.append(DBHelper.inst.fetchProduct(DBHelper.inst.cooking[indexPath.row]))
+                cell.textLabel?.text =  DBHelper.inst.cooking[indexPath.row]
             } else {
                 cell.textLabel?.text = "Could not find anything. Please try a new search."
             }
+        } else { // check if search contains a product name as a string
+            //cell.textLabel?.text = DBHelper.inst.fetchProduct(search)
         }
 
         return cell
@@ -69,15 +95,12 @@ class SearchResultsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (search != "") {
-            switch indexPath.item {
-            case 0:
-                let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
-                let prod = sb.instantiateViewController(withIdentifier: "Product") as! ProductViewController
-                prod.modalPresentationStyle = .fullScreen
-                present(prod, animated: true, completion: nil)
-            default:
-                print("Did not select anything.")
-            }
+            ud.setValue(indexPath.row, forKey: "prodID")
+            let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+            let prod = sb.instantiateViewController(withIdentifier: "Product") as! ProductViewController
+            //prod.modalPresentationStyle = .fullScreen
+            present(prod, animated: true, completion: nil)
+        
         }
     }
 

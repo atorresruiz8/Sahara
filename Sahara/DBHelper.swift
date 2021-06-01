@@ -14,11 +14,11 @@ class DBHelper{
     static var dataCheck = false
     var ud = UserDefaults.standard
     let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-    var electronics : [String]?
-    var outdoors : [String]?
-    var clothing : [String]?
-    var cooking : [String]?
-    var decorations : [String]?
+    var electronics : [String] = []
+    var outdoors : [String] = []
+    var clothing : [String] = []
+    var cooking : [String] = []
+    var decorations : [String] = []
     func addNewUser(object : [String:String]){
         
        
@@ -59,7 +59,7 @@ class DBHelper{
         
     }
     func TempToUser(object : [String : String]) {
-        var fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "User")
         let query = ud.string(forKey: "currUser")!
         fetchReq.predicate = NSPredicate(format: "name == %@", query)
         do{
@@ -269,7 +269,7 @@ class DBHelper{
         }
     }
     func addSearchHist(user : String, newSt : String){
-        var currUser = fetchUser(query: user)
+        let currUser = fetchUser(query: user)
         if((currUser!.searchHistory) != nil){
             currUser!.searchHistory!.append(newSt)
         }
@@ -291,7 +291,7 @@ class DBHelper{
         repeat{
             id = Int.random(in: 1000000...9999999)
             let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "Product")
-            fetchReq.predicate = NSPredicate(format: "id == %@", id)
+            fetchReq.predicate = NSPredicate(format: "id == %@", String(id))
             do{
                 let usr = try context!.fetch(fetchReq)
                 let users = usr as! [Product]
@@ -311,49 +311,80 @@ class DBHelper{
         do{
             try context!.save()
             print("data saved")
-            if(tags.contains("electronics")){
-                if(electronics != nil){
-                    electronics!.append(prod.id!)
-                }
-                else{
-                    electronics = [prod.id!]
-                }
+            if(tags.contains("Electronics")){
+                electronics.append(prod.id!)
             }
-            if(tags.contains("outdoors")){
-                if(outdoors != nil){
-                    outdoors!.append(prod.id!)
-                }
-                else{
-                    outdoors = [prod.id!]
-                }
+            if(tags.contains("Outdoors")){
+                outdoors.append(prod.id!)
             }
-            if(tags.contains("clothing")){
-                if(clothing != nil){
-                    clothing!.append(prod.id!)
-                }
-                else{
-                    clothing = [prod.id!]
-                }
+            if(tags.contains("Clothing")){
+                clothing.append(prod.id!)
             }
-            if(tags.contains("cooking")){
-                if(cooking != nil){
-                    cooking!.append(prod.id!)
-                }
-                else{
-                    cooking = [prod.id!]
-                }
+            if(tags.contains("Cooking")){
+                cooking.append(prod.id!)
             }
-            if(tags.contains("decorations")){
-                if(decorations != nil){
-                    decorations!.append(prod.id!)
-                }
-                else{
-                    decorations = [prod.id!]
-                }
+            if(tags.contains("Decorations")){
+                decorations.append(prod.id!)
             }
+            
+            print(String(id))
 
         }
         catch{
+            print("data not saved")
+        }
+    }
+    
+    func arrayMaker() {
+        if (decorations.count != 0) {
+            return
+        }
+        
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "Product")
+        do {
+            let res = try context!.fetch(fetchReq) as! [Product]
+            for prod in res {
+                if(prod.tags!.contains("Electronics")){
+                    electronics.append(prod.id!)
+                }
+                if(prod.tags!.contains("Outdoors")){
+                    outdoors.append(prod.id!)
+                }
+                if(prod.tags!.contains("Clothing")){
+                    clothing.append(prod.id!)
+                }
+                if(prod.tags!.contains("Cooking")){
+                    cooking.append(prod.id!)
+                }
+                if(prod.tags!.contains("Decorations")){
+                    decorations.append(prod.id!)
+                }
+            }
+        } catch {
+            print("data not saved")
+        }
+    }
+    
+    func checkProducts() {
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "Product")
+        do {
+            let res = try context!.fetch(fetchReq) as! [Product]
+            if (res.count == 0) {
+                let mp = ProductCreator()
+                mp.remakeAll()
+            }
+        } catch {
+            print("data not saved")
+        }
+    }
+    
+    func updateBalance(amount: Double, query: String) {
+        let user = fetchUser(query: query)
+        user!.balance += amount
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
             print("data not saved")
         }
     }
