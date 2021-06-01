@@ -14,7 +14,11 @@ class DBHelper{
     static var dataCheck = false
     var ud = UserDefaults.standard
     let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-
+    var electronics : [String]?
+    var outdoors : [String]?
+    var clothing : [String]?
+    var cooking : [String]?
+    var decorations : [String]?
     func addNewUser(object : [String:String]){
         
        
@@ -307,6 +311,47 @@ class DBHelper{
         do{
             try context!.save()
             print("data saved")
+            if(tags.contains("electronics")){
+                if(electronics != nil){
+                    electronics!.append(prod.id!)
+                }
+                else{
+                    electronics = [prod.id!]
+                }
+            }
+            if(tags.contains("outdoors")){
+                if(outdoors != nil){
+                    outdoors!.append(prod.id!)
+                }
+                else{
+                    outdoors = [prod.id!]
+                }
+            }
+            if(tags.contains("clothing")){
+                if(clothing != nil){
+                    clothing!.append(prod.id!)
+                }
+                else{
+                    clothing = [prod.id!]
+                }
+            }
+            if(tags.contains("cooking")){
+                if(cooking != nil){
+                    cooking!.append(prod.id!)
+                }
+                else{
+                    cooking = [prod.id!]
+                }
+            }
+            if(tags.contains("decorations")){
+                if(decorations != nil){
+                    decorations!.append(prod.id!)
+                }
+                else{
+                    decorations = [prod.id!]
+                }
+            }
+
         }
         catch{
             print("data not saved")
