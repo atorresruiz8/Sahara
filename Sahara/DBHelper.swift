@@ -406,6 +406,21 @@ class DBHelper{
         }
         
         return p
+    func addToWishlist(prodID : String, uName : String){
+        var user = fetchUser(query: uName)
+        //var prod = fetchProduct(prodId : prodID)
+//        if(user!.wishlist == nil){
+//            user!.wishlist = [prod]
+//        }
+//        else{
+//            user!.wishlist!.append(prod)
+//        }
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
     }
     
     func fetchProduct(name: String)->[Product]? {
@@ -421,5 +436,16 @@ class DBHelper{
         }
         
         return p
+    func removeFromWishlist(prodID : String, uName : String){
+        var user = fetchUser(query: uName)
+        //var prod = fetchProduct(prodId : prodID)
+        user!.wishlist = user!.wishlist!.filter({$0.id != prodID})
+
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
     }
 }
