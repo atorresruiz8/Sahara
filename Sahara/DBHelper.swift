@@ -388,4 +388,20 @@ class DBHelper{
             print("data not saved")
         }
     }
+    func addToWishlist(prodID : String, uName : String){
+        var user = fetchUser(query: uName)
+        //var prod = fetchProduct(prodId : prodID)
+//        if(user!.wishlist == nil){
+//            user!.wishlist = [prod]
+//        }
+//        else{
+//            user!.wishlist!.append(prod)
+//        }
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
 }
