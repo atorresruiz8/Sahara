@@ -52,8 +52,21 @@ class SearchResultsTableViewController: UITableViewController {
         } else if (search.contains("#outdoor")) {
             return DBHelper.inst.outdoors.count
         } else if (!search.hasPrefix("#")) {
-            //oneSearch = DBHelper.inst.fetchProduct(search)
-            return oneSearch.count
+            oneSearch = DBHelper.inst.fetchProduct(name: search)!
+            
+            if (oneSearch.count > 0) {
+                return oneSearch.count
+            } else {
+                tableView.isHidden = true
+                let alert = UIAlertController(title: "Search does not exist.", message: "We could not find a product similar to your search. Please try again.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: {_ in
+                    MainStoreViewController.search = ""
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                present(alert, animated: true)
+                //self.dismiss(animated: true, completion: nil)
+                return 0
+            }
         } else {
             print("There was an error with parsing the arrays.")
             return 1
@@ -62,33 +75,39 @@ class SearchResultsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Search", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Search", for: indexPath) as! SearchResultsTableViewCell
 
         // Configure the cell...
         if (search == "") { // empty search
-            cell.textLabel?.text = "You did not search for anything. Please try again."
+            cell.productLB.text = "You did not search for anything. Please try again."
         } else if (search.hasPrefix("#")) {
             if (search.contains("#tech")) {
-                //prodArr?.append(DBHelper.inst.fetchProduct(DBHelper.inst.electronics[indexPath.row]))
-                cell.textLabel?.text = DBHelper.inst.electronics[indexPath.row]
+                prodArr.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.electronics[indexPath.row])!)
+                cell.productLB.text = prodArr[indexPath.row].name
             } else if (search.contains("#clothing")) {
-                //prodArr?.append(DBHelper.inst.fetchProduct(DBHelper.inst.clothing[indexPath.row]))
-                cell.textLabel?.text =  DBHelper.inst.clothing[indexPath.row]
+                prodArr.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.clothing[indexPath.row])!)
+                cell.productLB.text = prodArr[indexPath.row].name
             } else if (search.contains("#decoration")) {
-                //prodArr?.append(DBHelper.inst.fetchProduct(DBHelper.inst.decorations[indexPath.row]))
-                cell.textLabel?.text =  DBHelper.inst.decorations[indexPath.row]
+                prodArr.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.decorations[indexPath.row])!)
+                cell.productLB.text = prodArr[indexPath.row].name
             } else if (search.contains("#outdoor")) {
-                //prodArr?.append(DBHelper.inst.fetchProduct(DBHelper.inst.outdoors[indexPath.row]))
-                cell.textLabel?.text =  DBHelper.inst.outdoors[indexPath.row]
+                prodArr.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.outdoors[indexPath.row])!)
+                cell.productLB.text = prodArr[indexPath.row].name
             } else if (search.contains("#cooking")) {
-                //prodArr?.append(DBHelper.inst.fetchProduct(DBHelper.inst.cooking[indexPath.row]))
-                cell.textLabel?.text =  DBHelper.inst.cooking[indexPath.row]
+                prodArr.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.cooking[indexPath.row])!)
+                cell.productLB.text = prodArr[indexPath.row].name
             } else {
-                cell.textLabel?.text = "Could not find anything. Please try a new search."
+                cell.productLB.text = "Could not find anything. Please try a new search."
             }
+            
+            let sale = prodArr[indexPath.row].salePercentage * prodArr[indexPath.row].price
+            cell.priceLB.text = String(format: "$%.2f", sale)
         } else { // check if search contains a product name as a string
-            //cell.textLabel?.text = DBHelper.inst.fetchProduct(search)
+            cell.productLB.text = oneSearch[indexPath.row].name
+            let sale = oneSearch[indexPath.row].salePercentage * oneSearch[indexPath.row].price
+            cell.priceLB.text = String(format: "$%.2f", sale)
         }
+        
 
         return cell
     }

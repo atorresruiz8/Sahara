@@ -9,6 +9,8 @@ import UIKit
 import Speech
 class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
 
+    @IBOutlet weak var priceOfDailySavings: UILabel!
+    @IBOutlet weak var dailySavings: UILabel!
     let ud = UserDefaults.standard
     var user : User?
     static var search = ""
@@ -88,6 +90,36 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
             }
         }
 
+        dailyDeal()
+    }
+    
+    func shuffle(array : [Product]) -> [Product] {
+        var source = array
+
+        var shuffled = [Product]()
+        while source.count > 0 {
+            let randomIndex = Int(arc4random()%UInt32(source.count))
+            let item = source.remove(at: randomIndex)
+            shuffled.append(item)
+        }
+        return shuffled
+    }
+    
+    func dailyDeal() {
+        let rand = "abcdefghijklmnopqrstuvwxyz"
+        let randInt = Int.random(in: 0...25)
+        let randChar = Array(rand)[randInt]
+        var dailyProd = DBHelper.inst.fetchProduct(name: String(randChar))
+        dailyProd = dailyProd!.filter({$0.sale == true})
+        if (dailyProd!.count == 0) {
+            dailyDeal()
+            return
+        } else {
+            dailyProd = shuffle(array: dailyProd!)
+        }
+        
+        dailySavings.text = "Save on " + dailyProd![0].name! + "..."
+        priceOfDailySavings.text = "Original $" + String(dailyProd![0].price) + "/SALE!!!! $" + String(dailyProd![0].price * dailyProd![0].salePercentage)
     }
     
     @IBAction func delivery(_ sender: Any) {
@@ -108,6 +140,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     @IBAction func searchStore(_ sender: Any) {
         MainStoreViewController.search = searchQuery.text!
+        DBHelper.inst.addSearchHist(user: ud.string(forKey: "currUser")!, newSt: searchQuery.text!)
         let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sr = sb.instantiateViewController(withIdentifier: "SearchResults") as! SearchResultsTableViewController
         //sr.modalPresentationStyle = .fullScreen
@@ -127,6 +160,8 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
                 deliverToUser.setTitle("Deliver to \(String(describing: user!.name!)) - City: N/A, Zip Code: N/A", for: UIButton.State.normal)
             }
         }
+        
+        searchQuery.text! = MainStoreViewController.search
     }
     
     /*

@@ -427,7 +427,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sc-oo-5UT">
-                                                <rect key="frame" x="22" y="213" width="140" height="21"/>
+                                                <rect key="frame" x="22" y="213" width="369" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -493,10 +493,12 @@ your wishlist</string>
                     <connections>
                         <outlet property="bodyView" destination="yKQ-EM-fIp" id="iL7-y5-Z2q"/>
                         <outlet property="dailyDealView" destination="XMT-lh-MzZ" id="Yte-fb-uMG"/>
+                        <outlet property="dailySavings" destination="01Z-1H-KKc" id="k09-Pr-TLc"/>
                         <outlet property="deliverToUser" destination="nfP-Md-n3w" id="gn7-6A-Llb"/>
                         <outlet property="exploreItemView" destination="qel-PT-v4o" id="mYv-WI-NVg"/>
                         <outlet property="headerView" destination="ZBk-Lp-Vls" id="UEt-d5-NbP"/>
                         <outlet property="inspiredView" destination="FBI-xH-VSn" id="iCN-zJ-6JU"/>
+                        <outlet property="priceOfDailySavings" destination="7sc-oo-5UT" id="Iom-lL-01k"/>
                         <outlet property="recentView" destination="sEq-gi-TOo" id="zb0-F9-IKq"/>
                         <outlet property="searchQuery" destination="Cjy-0R-3Tn" id="g1O-2R-Y7g"/>
                         <outlet property="welcomeMessage" destination="pBq-of-9dC" id="W5Q-gh-UeW"/>
@@ -515,13 +517,33 @@ your wishlist</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Search" rowHeight="240" id="u4A-b4-6g1">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="240"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Search" rowHeight="66" id="u4A-b4-6g1" customClass="SearchResultsTableViewCell" customModule="Sahara" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u4A-b4-6g1" id="JFM-Dw-RUD">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edf-te-eqT">
+                                            <rect key="frame" x="20" y="22" width="320" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufl-fA-Ahx">
+                                            <rect key="frame" x="328" y="22" width="86" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="priceLB" destination="Ufl-fA-Ahx" id="yjT-ZY-njx"/>
+                                    <outlet property="productLB" destination="edf-te-eqT" id="IgZ-c6-7qw"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

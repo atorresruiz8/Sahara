@@ -38,6 +38,7 @@ class SearchHistoryViewController: UIViewController, UITableViewDataSource, UITa
 
     @IBAction func clearHistory(_ sender: Any) {
         DBHelper.inst.clearSearchHist(user: user!)
+        self.tableView.reloadData()
     }
     
 

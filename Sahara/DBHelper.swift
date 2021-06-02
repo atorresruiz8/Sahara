@@ -388,4 +388,38 @@ class DBHelper{
             print("data not saved")
         }
     }
+    
+    func fetchProduct(id: String)->Product? {
+        var p : Product?
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "Product")
+        fetchReq.predicate = NSPredicate(format: "id == %@", id)
+        do{
+            let prod = try context!.fetch(fetchReq)
+            let prods = prod as! [Product]
+            
+            if (prods.count != 0) {
+                p = prods[0]
+            }
+        }
+        catch{
+           print("data not fetched")
+        }
+        
+        return p
+    }
+    
+    func fetchProduct(name: String)->[Product]? {
+        var p : [Product]?
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "Product")
+        fetchReq.predicate = NSPredicate(format: "name CONTAINS[cd] %@", name)
+        do{
+            let prod = try context!.fetch(fetchReq)
+            p = prod as? [Product]
+        }
+        catch{
+           print("data not fetched")
+        }
+        
+        return p
+    }
 }

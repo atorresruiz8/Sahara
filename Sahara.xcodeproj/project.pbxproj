@@ -48,6 +48,7 @@
 		8BB1580E265BFE6C003F7AA3 /* MainStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1580D265BFE6C003F7AA3 /* MainStoreViewController.swift */; };
 		8BB15810265BFE97003F7AA3 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1580F265BFE97003F7AA3 /* DashboardViewController.swift */; };
 		8BB15818265C3195003F7AA3 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB15817265C3195003F7AA3 /* CartTableViewController.swift */; };
+		8BBBFBBB26682AD600411F46 /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBBFBBA26682AD600411F46 /* SearchResultsTableViewCell.swift */; };
 		8BCB68CF2666C81700225B97 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCB68CE2666C81700225B97 /* WalletViewController.swift */; };
 		8BE13809265D777C001E0662 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE13808265D777C001E0662 /* DBHelper.swift */; };
 		8BE1380F265D9964001E0662 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE1380E265D9964001E0662 /* CustomButton.swift */; };
@@ -100,6 +101,7 @@
 		8BB1580D265BFE6C003F7AA3 /* MainStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStoreViewController.swift; sourceTree = "<group>"; };
 		8BB1580F265BFE97003F7AA3 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		8BB15817265C3195003F7AA3 /* CartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
+		8BBBFBBA26682AD600411F46 /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
 		8BCB68CE2666C81700225B97 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		8BE13808265D777C001E0662 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		8BE1380E265D9964001E0662 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				8BB15817265C3195003F7AA3 /* CartTableViewController.swift */,
 				8BB15803265BFCF0003F7AA3 /* SettingsViewController.swift */,
 				8B75180B266408B500556E0C /* SearchResultsTableViewController.swift */,
+				8BBBFBBA26682AD600411F46 /* SearchResultsTableViewCell.swift */,
 				8BCB68CE2666C81700225B97 /* WalletViewController.swift */,
 			);
 			path = Dashboard;
@@ -329,6 +332,7 @@
 				8B2CACD5265FE9D800BB4131 /* LoginViewController.swift in Sources */,
 				8BB15818265C3195003F7AA3 /* CartTableViewController.swift in Sources */,
 				8B17ABA026581B6000CDAA01 /* BoughtProduct+CoreDataClass.swift in Sources */,
+				8BBBFBBB26682AD600411F46 /* SearchResultsTableViewCell.swift in Sources */,
 				84F626322661937C00D9EF6D /* ProductMaker.swift in Sources */,
 				8B2CACD9265FE9D800BB4131 /* SignUpViewController.swift in Sources */,
 				8B2CACD8265FE9D800BB4131 /* SearchHistoryTableViewCell.swift in Sources */,
