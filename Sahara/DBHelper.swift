@@ -406,6 +406,8 @@ class DBHelper{
         }
         
         return p
+    }
+    
     func addToWishlist(prodID : String, uName : String){
         var user = fetchUser(query: uName)
         //var prod = fetchProduct(prodId : prodID)
@@ -436,6 +438,8 @@ class DBHelper{
         }
         
         return p
+    }
+    
     func removeFromWishlist(prodID : String, uName : String){
         var user = fetchUser(query: uName)
         //var prod = fetchProduct(prodId : prodID)

@@ -119,7 +119,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
         
         dailySavings.text = "Save on " + dailyProd![0].name! + "..."
-        priceOfDailySavings.text = "Original $" + String(dailyProd![0].price) + "/SALE!!!! $" + String(dailyProd![0].price * dailyProd![0].salePercentage)
+        priceOfDailySavings.text = "Original " + String(format: "$%.2f", dailyProd![0].price) + "/SALE!!!! " + String(format: "$%.2f", dailyProd![0].price * dailyProd![0].salePercentage)
     }
     
     @IBAction func delivery(_ sender: Any) {
