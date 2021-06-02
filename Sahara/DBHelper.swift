@@ -404,4 +404,16 @@ class DBHelper{
             print("data not saved")
         }
     }
+    func removeFromWishlist(prodID : String, uName : String){
+        var user = fetchUser(query: uName)
+        //var prod = fetchProduct(prodId : prodID)
+        user!.wishlist = user!.wishlist!.filter({$0.id != prodID})
+
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
 }
