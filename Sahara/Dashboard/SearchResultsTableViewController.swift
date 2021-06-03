@@ -60,7 +60,6 @@ class SearchResultsTableViewController: UITableViewController {
                 tableView.isHidden = true
                 let alert = UIAlertController(title: "Search does not exist.", message: "We could not find a product similar to your search. Please try again.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: {_ in
-                    MainStoreViewController.search = ""
                     self.dismiss(animated: true, completion: nil)
                 }))
                 present(alert, animated: true)

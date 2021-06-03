@@ -118,8 +118,9 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
             dailyProd = shuffle(array: dailyProd!)
         }
         
-        dailySavings.text = "Save on " + dailyProd![0].name! + "..."
+        dailySavings.text = "Save on... " + dailyProd![0].name! + "!"
         priceOfDailySavings.text = "Original " + String(format: "$%.2f", dailyProd![0].price) + "/SALE!!!! " + String(format: "$%.2f", dailyProd![0].price * dailyProd![0].salePercentage)
+        // have it display the product's image here too
     }
     
     @IBAction func delivery(_ sender: Any) {
@@ -141,6 +142,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
     @IBAction func searchStore(_ sender: Any) {
         MainStoreViewController.search = searchQuery.text!
         DBHelper.inst.addSearchHist(user: ud.string(forKey: "currUser")!, newSt: searchQuery.text!)
+        searchQuery.text = ""
         let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sr = sb.instantiateViewController(withIdentifier: "SearchResults") as! SearchResultsTableViewController
         //sr.modalPresentationStyle = .fullScreen
