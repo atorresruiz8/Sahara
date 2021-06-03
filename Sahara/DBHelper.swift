@@ -285,7 +285,7 @@ class DBHelper{
             print("data not saved")
         }
     }
-    func addProduct(price : Double, name : String, tags : [String], sale : Bool, salePerc : Double){
+    func addProduct(price : Double, name : String, tags : [String], sale : Bool, salePerc : Double, image : String){
         var id : Int
         var idChecked = false
         repeat{
@@ -308,6 +308,7 @@ class DBHelper{
         prod.tags = tags
         prod.sale = sale
         prod.salePercentage = salePerc
+        prod.image = image
         do{
             try context!.save()
             print("data saved")
