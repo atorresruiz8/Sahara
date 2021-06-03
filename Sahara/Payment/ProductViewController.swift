@@ -10,18 +10,30 @@ import UIKit
 class ProductViewController: UIViewController {
     var ud = UserDefaults.standard
     var product : Product?
+    var user : User?
     @IBOutlet weak var reviewView: UITextView!
     @IBOutlet weak var priceLB: UILabel!
     @IBOutlet weak var productLB: UILabel!
     @IBOutlet weak var productIMG: UIImageView!
-    
+    @IBOutlet weak var checkoutBut: CustomButton!
+    @IBOutlet weak var submitReviewBut: CustomButton!
+    @IBOutlet weak var productRating: CosmosView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         loadProduct()
         
-        reviewView.clearsOnInsertion = true 
+        reviewView.clearsOnInsertion = true
+        
+        if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
+            reviewView.isHidden = true
+            submitReviewBut.isHidden = true
+            checkoutBut.isHidden = true
+            productRating.isHidden = true
+        }
+        
+        user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
     }
     
     func loadProduct() {
@@ -32,11 +44,11 @@ class ProductViewController: UIViewController {
     }
     
     @IBAction func addToCart(_ sender: Any) {
-        
+        //DBHelper.inst.addToCart(prodID: product!.id!, uName: user!.name!)
     }
     
     @IBAction func addToWishlist(_ sender: Any) {
-        
+        DBHelper.inst.addToWishlist(prodID: product!.id!, uName: user!.name!)
     }
     
     @IBAction func checkOut(_ sender: Any) {
@@ -50,6 +62,21 @@ class ProductViewController: UIViewController {
         prof.selectedIndex = 0
         prof.modalPresentationStyle = .fullScreen
         present(prof, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func submitFeedback(_ sender: Any) {
+        productRating.settings.fillMode = .full
+        DBHelper.inst.addReview(prod: product!, usr: user!, review: reviewView.text!, rating: productRating.rating)
+        reviewView.text = ""
+    }
+    
+    
+    @IBAction func showAllReviews(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+        let rev = sb.instantiateViewController(withIdentifier: "Review") as! ReviewProductViewController
+        rev.modalPresentationStyle = .fullScreen
+        present(rev, animated: true, completion: nil)
     }
     
     /*

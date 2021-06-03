@@ -24,6 +24,7 @@ class DBHelper{
        
         let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context!) as! User
         user.balance = 0.0
+        user.wishlist = []
         
         if((object["email"]) != nil){
             user.email = object["email"]
@@ -45,6 +46,7 @@ class DBHelper{
         let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context!) as! User
         let randInt = Int.random(in: 1000000...9999999)
         user.name = "_" + String(randInt)
+        user.wishlist = []
         
         do{
             try context!.save()
@@ -132,6 +134,7 @@ class DBHelper{
     func fetchUser(query : String) -> User?
     {
         if(query.prefix(1) == "_"){
+            print("temp")
             return DBHelper.inst.fetchTempUser(query: query)
         }
         if(query.contains("@")){
@@ -411,13 +414,9 @@ class DBHelper{
     
     func addToWishlist(prodID : String, uName : String){
         let user = fetchUser(query: uName)
-        let prod = fetchProduct(id : prodID)
-        if(user!.wishlist == nil){
-            user!.wishlist = [prod!]
-        }
-        else{
-            user!.wishlist!.append(prod!)
-        }
+        
+        user!.wishlist! = user!.wishlist! + [prodID]
+        
         do {
             try context!.save()
             print("data saved")
@@ -443,7 +442,7 @@ class DBHelper{
     
     func removeFromWishlist(prodID : String, uName : String){
         let user = fetchUser(query: uName)
-        user!.wishlist = user!.wishlist!.filter({$0.id != prodID})
+        user!.wishlist = user!.wishlist!.filter({$0 != prodID})
 
         do {
             try context!.save()
@@ -452,4 +451,51 @@ class DBHelper{
             print("data not saved")
         }
     }
+    
+    func addReview(prod: Product, usr: User, review: String, rating: Double) {
+        let r = NSEntityDescription.insertNewObject(forEntityName: "Review", into: context!) as! Review
+        r.comment = review
+        r.rating = rating
+        r.user = usr
+        r.product = prod
+        
+        prod.addToReview(r)
+        usr.addToReview(r)
+        
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
+    
+//    func addToCart(prodID : String, uName : String){
+//        let user = fetchUser(query: uName)
+//        let prod = fetchProduct(id : prodID)
+//        if(user!.cart == nil){
+//            user!.cart = [prod!]
+//        }
+//        else{
+//            user!.cart!.append(prod!)
+//        }
+//        do {
+//            try context!.save()
+//            print("data saved")
+//        } catch {
+//            print("data not saved")
+//        }
+//    }
+//
+//    func removeFromCart(prodID: String, uName: String) {
+//        let user = fetchUser(query: uName)
+//        user!.cart = user!.cart!.filter({$0.id != prodID})
+//
+//        do {
+//            try context!.save()
+//            print("data saved")
+//        } catch {
+//            print("data not saved")
+//        }
+//    }
 }

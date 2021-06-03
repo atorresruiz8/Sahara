@@ -7,15 +7,48 @@
 
 import UIKit
 
-class ReviewProductViewController: UIViewController {
+class ReviewProductViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var ud = UserDefaults.standard
+    var prod : Product?
+    var rev : [Review] = []
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var productName: UILabel!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (prod!.review!.count == 0) {
+            tableView.isHidden = true
+            // put an alert to say no reviews exist
+            return 0
+        } else {
+            return prod!.review!.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Review", for: indexPath) as! ReviewTableViewCell
+        let r = rev[indexPath.row]
+        //cell.username.text
+        cell.productReview.text = r.comment
+        cell.username.text = r.user!.name!
+        cell.userRating.text = "Rating: " + String(r.rating) + "/5"
+        return cell
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.rowHeight = 128
+        prod = DBHelper.inst.fetchProduct(id: ud.string(forKey: "currProd")!)
+        productName.text = prod!.name!
+        rev = prod!.review!.allObjects as! [Review]
     }
     
-
+    @IBAction func returnToProduct(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

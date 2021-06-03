@@ -18,7 +18,7 @@ extension User {
 
     @NSManaged public var address: Address?
     @NSManaged public var balance: Double
-    @NSManaged public var cart: NSObject?
+    @NSManaged public var cart: [String]?
     @NSManaged public var creditCard: NSObject?
     @NSManaged public var email: String?
     @NSManaged public var name: String?
@@ -27,7 +27,7 @@ extension User {
     @NSManaged public var phoneNumber: String?
     @NSManaged public var profilePicture: NSObject?
     @NSManaged public var searchHistory: [String]?
-    @NSManaged public var wishlist: [Product]?
+    @NSManaged public var wishlist: [String]?
     @NSManaged public var bought: NSSet?
     @NSManaged public var review: NSSet?
 

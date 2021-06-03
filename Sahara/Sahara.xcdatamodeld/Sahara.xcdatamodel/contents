@@ -22,7 +22,7 @@
     </entity>
     <entity name="Review" representedClassName="Review" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String"/>
-        <attribute name="rating" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
         <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="review" inverseEntity="Product"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="review" inverseEntity="User"/>
     </entity>

@@ -12,17 +12,23 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     var user : User?
+    var prod : Product?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(user!.wishlist == nil){
+        user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
+        
+        if(user!.wishlist!.count == 0) {
             return 0
         }
+        
         return user!.wishlist!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WishListTableViewCell
-        cell.itemName.text  = user!.wishlist![indexPath.row].name
-        cell.itemPrice.text = String(user!.wishlist![indexPath.row].price)
+        prod = DBHelper.inst.fetchProduct(id: user!.wishlist![indexPath.row])
+        cell.itemName.text = prod!.name!
+        cell.itemPrice.text = String(format: "$%.2f", prod!.price * prod!.salePercentage)
+        cell.itemImg.image = UIImage(named: prod!.image!)
         return cell
     }
     
@@ -34,7 +40,7 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
             self.tableView.isHidden = true
         }
 
-        
+        tableView.rowHeight = 128
     }
     
     

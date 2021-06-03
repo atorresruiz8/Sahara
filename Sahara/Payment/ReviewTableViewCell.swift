@@ -1,18 +1,17 @@
 //
-//  WishListTableViewCell.swift
+//  ReviewTableViewCell.swift
 //  Sahara
 //
-//  Created by Peter G on 5/26/21.
+//  Created by Antonio Torres-Ruiz on 6/3/21.
 //
 
 import UIKit
 
-class WishListTableViewCell: UITableViewCell {
+class ReviewTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var itemName: UILabel!
-    @IBOutlet weak var itemPrice: UILabel!
-    @IBOutlet weak var itemImg: UIImageView!
-    
+    @IBOutlet weak var userRating: UILabel!
+    @IBOutlet weak var productReview: UILabel!
+    @IBOutlet weak var username: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
