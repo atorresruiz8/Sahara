@@ -30,6 +30,7 @@ class SearchResultsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.rowHeight = 124
     }
 
     // MARK: - Table view data source
@@ -63,7 +64,6 @@ class SearchResultsTableViewController: UITableViewController {
                     self.dismiss(animated: true, completion: nil)
                 }))
                 present(alert, animated: true)
-                //self.dismiss(animated: true, completion: nil)
                 return 0
             }
         } else {
@@ -101,10 +101,14 @@ class SearchResultsTableViewController: UITableViewController {
             
             let sale = prodArr[indexPath.row].salePercentage * prodArr[indexPath.row].price
             cell.priceLB.text = String(format: "$%.2f", sale)
+            cell.productIMG.image = UIImage(named: prodArr[indexPath.row].image!)
+            cell.productIMG.contentMode = .scaleAspectFit
         } else { // check if search contains a product name as a string
             cell.productLB.text = oneSearch[indexPath.row].name
             let sale = oneSearch[indexPath.row].salePercentage * oneSearch[indexPath.row].price
             cell.priceLB.text = String(format: "$%.2f", sale)
+            cell.productIMG.image = UIImage(named: oneSearch[indexPath.row].image!)
+            cell.productIMG.contentMode = .scaleAspectFit
         }
         
 

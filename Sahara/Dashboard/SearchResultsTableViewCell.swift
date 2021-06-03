@@ -9,6 +9,7 @@ import UIKit
 
 class SearchResultsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var productIMG: UIImageView!
     @IBOutlet weak var productLB: UILabel!
     @IBOutlet weak var priceLB: UILabel!
     override func awakeFromNib() {
