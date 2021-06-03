@@ -162,8 +162,6 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
                 deliverToUser.setTitle("Deliver to \(String(describing: user!.name!)) - City: N/A, Zip Code: N/A", for: UIButton.State.normal)
             }
         }
-        
-        searchQuery.text! = MainStoreViewController.search
     }
     
     /*
