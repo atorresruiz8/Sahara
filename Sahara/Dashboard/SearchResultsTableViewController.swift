@@ -7,13 +7,6 @@
 
 import UIKit
 
-/* If search results produce no results, display “No search results could be found”
- 
- Implement searching by checking for specific tags based on the products
- 
- Also implement a check for parsing the user input string to see if it “contains” specific keywords that correspond to product names
- */
-
 class SearchResultsTableViewController: UITableViewController {
     
     // Using the static variable "search" from Main Store VC to parse the search text field from said VC
@@ -79,50 +72,57 @@ class SearchResultsTableViewController: UITableViewController {
         // Configure the cell...
         if (search == "") { // empty search
             cell.productLB.text = "You did not search for anything. Please try again."
-        } else if (search.hasPrefix("#")) {
+        } else if (search.hasPrefix("#")) { // searched a tag
             if (search.contains("#tech")) {
                 prodArr.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.electronics[indexPath.row])!)
-                cell.productLB.text = prodArr[indexPath.row].name
             } else if (search.contains("#clothing")) {
                 prodArr.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.clothing[indexPath.row])!)
-                cell.productLB.text = prodArr[indexPath.row].name
             } else if (search.contains("#decoration")) {
                 prodArr.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.decorations[indexPath.row])!)
-                cell.productLB.text = prodArr[indexPath.row].name
             } else if (search.contains("#outdoor")) {
                 prodArr.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.outdoors[indexPath.row])!)
-                cell.productLB.text = prodArr[indexPath.row].name
             } else if (search.contains("#cooking")) {
                 prodArr.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.cooking[indexPath.row])!)
-                cell.productLB.text = prodArr[indexPath.row].name
             } else {
                 cell.productLB.text = "Could not find anything. Please try a new search."
             }
             
+            cell.productLB.text = prodArr[indexPath.row].name
+            
             let sale = prodArr[indexPath.row].salePercentage * prodArr[indexPath.row].price
+            
             cell.priceLB.text = String(format: "$%.2f", sale)
+            
             cell.productIMG.image = UIImage(named: prodArr[indexPath.row].image!)
+            
             cell.productIMG.contentMode = .scaleAspectFit
         } else { // check if search contains a product name as a string
             cell.productLB.text = oneSearch[indexPath.row].name
+            
             let sale = oneSearch[indexPath.row].salePercentage * oneSearch[indexPath.row].price
+            
             cell.priceLB.text = String(format: "$%.2f", sale)
+            
             cell.productIMG.image = UIImage(named: oneSearch[indexPath.row].image!)
+            
             cell.productIMG.contentMode = .scaleAspectFit
         }
         
-
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (search != "") {
-            ud.setValue(indexPath.row, forKey: "prodID")
+            if (search.hasPrefix("#")) {
+                ud.setValue(prodArr[indexPath.row].id, forKey: "currProd")
+            } else {
+                ud.setValue(oneSearch[indexPath.row].id, forKey: "currProd")
+            }
+            
             let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
             let prod = sb.instantiateViewController(withIdentifier: "Product") as! ProductViewController
-            //prod.modalPresentationStyle = .fullScreen
+            prod.modalPresentationStyle = .fullScreen
             present(prod, animated: true, completion: nil)
-        
         }
     }
 

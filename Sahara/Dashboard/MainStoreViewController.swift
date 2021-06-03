@@ -8,7 +8,13 @@
 import UIKit
 import Speech
 class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
-
+    var exploreProd : [Product] = []
+    var dailyProd : [Product] = []
+    var wishProd : [Product] = []
+    var recentProd : [Product] = []
+    
+    // put an oasis background behind the big logo (?)
+    
     @IBOutlet weak var recentIMG: UIImageView!
     @IBOutlet weak var wishlistItemsIMG: UIImageView!
     @IBOutlet weak var exploreItemsIMG: UIImageView!
@@ -98,20 +104,44 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
 
         dailyDeal()
         exploreItems()
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        wishlistItems()
+        recentItems()
+        let dailyTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
             dailyDealPic.isUserInteractionEnabled = true
-            dailyDealPic.addGestureRecognizer(tapGestureRecognizer)
-        exploreItemsIMG.isUserInteractionEnabled = true
-        exploreItemsIMG.addGestureRecognizer(tapGestureRecognizer)
+            dailyDealPic.addGestureRecognizer(dailyTap)
+        let exploreTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            exploreItemsIMG.isUserInteractionEnabled = true
+            exploreItemsIMG.addGestureRecognizer(exploreTap)
+        let wishlistTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            exploreItemsIMG.isUserInteractionEnabled = true
+            exploreItemsIMG.addGestureRecognizer(wishlistTap)
+        let recentTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            exploreItemsIMG.isUserInteractionEnabled = true
+            exploreItemsIMG.addGestureRecognizer(recentTap)
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
+        
+        switch tappedImage.image {
+        case dailyDealPic.image:
+            ud.setValue(dailyProd[0].id, forKey: "currProd")
+            print("hi")
+        case exploreItemsIMG.image:
+            ud.setValue(exploreProd[0].id, forKey: "currProd")
+            print("hello")
+        case wishlistItemsIMG.image:
+            print("hey")
+        case recentIMG.image:
+            print("it works")
+        default:
+            print("no view was pushed")
+        }
 
         // Your action
         let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
         let prod = sb.instantiateViewController(withIdentifier: "Product") as! ProductViewController
-        //prod.modalPresentationStyle = .fullScreen
+        prod.modalPresentationStyle = .fullScreen
         present(prod, animated: true, completion: nil)
     }
     
@@ -131,35 +161,46 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
         let rand = "abcdefghijklmnopqrstuvwxyz"
         let randInt = Int.random(in: 0...25)
         let randChar = Array(rand)[randInt]
-        var dailyProd = DBHelper.inst.fetchProduct(name: String(randChar))
-        dailyProd = dailyProd!.filter({$0.sale == true})
-        if (dailyProd!.count == 0) {
+        dailyProd = DBHelper.inst.fetchProduct(name: String(randChar))!
+        dailyProd = dailyProd.filter({$0.sale == true})
+        if (dailyProd.count == 0) {
             dailyDeal()
             return
         } else {
-            dailyProd = shuffle(array: dailyProd!)
+            dailyProd = shuffle(array: dailyProd)
         }
         
-        dailySavings.text = "Save on... " + dailyProd![0].name! + "!"
-        priceOfDailySavings.text = "Original " + String(format: "$%.2f", dailyProd![0].price) + "/Currently " + String(format: "$%.2f", dailyProd![0].price * dailyProd![0].salePercentage)
-        dailyDealPic.image = UIImage(named: dailyProd![0].image!)
+        dailySavings.text = "Save on... " + dailyProd[0].name! + "!"
+        priceOfDailySavings.text = "Original " + String(format: "$%.2f", dailyProd[0].price) + "/Currently " + String(format: "$%.2f", dailyProd[0].price * dailyProd[0].salePercentage)
+        dailyDealPic.image = UIImage(named: dailyProd[0].image!)
         dailyDealPic.contentMode = .scaleAspectFit
+        
+        ud.setValue(dailyProd[0].id, forKey: "currProd")
     }
     
     func exploreItems() {
         let rand = "abcdefghijklmnopqrstuvwxyz"
         let randInt = Int.random(in: 0...25)
         let randChar = Array(rand)[randInt]
-        var exploreProd = DBHelper.inst.fetchProduct(name: String(randChar))
-        exploreProd = exploreProd!.filter({$0.sale == true})
-        if (exploreProd!.count == 0) {
+        exploreProd = DBHelper.inst.fetchProduct(name: String(randChar))!
+        if (exploreProd.count == 0) {
             exploreItems()
             return
         } else {
-            exploreProd = shuffle(array: exploreProd!)
+            exploreProd = shuffle(array: exploreProd)
         }
-        exploreItemsIMG.image = UIImage(named: exploreProd![0].image!)
+        exploreItemsIMG.image = UIImage(named: exploreProd[0].image!)
         exploreItemsIMG.contentMode = .scaleAspectFit
+        
+        ud.setValue(exploreProd[0].id, forKey: "currProd")
+    }
+    
+    func wishlistItems() {
+        
+    }
+    
+    func recentItems() {
+        
     }
     
     @IBAction func delivery(_ sender: Any) {

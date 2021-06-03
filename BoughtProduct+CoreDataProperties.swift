@@ -23,6 +23,7 @@ extension BoughtProduct {
     @NSManaged public var image: String?
     @NSManaged public var name: String?
     @NSManaged public var owner: User?
+    @NSManaged public var amount: Double
 
 }
 

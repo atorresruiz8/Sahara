@@ -8,28 +8,39 @@
 import UIKit
 
 class ProductViewController: UIViewController {
-
+    var ud = UserDefaults.standard
+    var product : Product?
+    @IBOutlet weak var reviewView: UITextView!
     @IBOutlet weak var priceLB: UILabel!
     @IBOutlet weak var productLB: UILabel!
     @IBOutlet weak var productIMG: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         loadProduct()
+        
+        reviewView.clearsOnInsertion = true 
     }
     
     func loadProduct() {
-        
+        product = DBHelper.inst.fetchProduct(id: ud.string(forKey: "currProd")!)
+        productLB.text = product!.name
+        productIMG.image = UIImage(named: product!.image!)
+        priceLB.text = String(format: "$%.2f", (product!.price * product!.salePercentage))
     }
     
     @IBAction func addToCart(_ sender: Any) {
+        
     }
     
     @IBAction func addToWishlist(_ sender: Any) {
+        
     }
     
     @IBAction func checkOut(_ sender: Any) {
+        
     }
     
     
