@@ -9,11 +9,17 @@ import UIKit
 import Speech
 class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
 
+    @IBOutlet weak var recentIMG: UIImageView!
+    @IBOutlet weak var wishlistItemsIMG: UIImageView!
+    @IBOutlet weak var exploreItemsIMG: UIImageView!
+    @IBOutlet weak var dailyDealPic: UIImageView!
     @IBOutlet weak var priceOfDailySavings: UILabel!
     @IBOutlet weak var dailySavings: UILabel!
+    
     let ud = UserDefaults.standard
     var user : User?
     static var search = ""
+    
     @IBOutlet weak var dailyDealView: UIView!
     @IBOutlet weak var recentView: UIView!
     @IBOutlet weak var inspiredView: UIView!
@@ -91,6 +97,22 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
 
         dailyDeal()
+        exploreItems()
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            dailyDealPic.isUserInteractionEnabled = true
+            dailyDealPic.addGestureRecognizer(tapGestureRecognizer)
+        exploreItemsIMG.isUserInteractionEnabled = true
+        exploreItemsIMG.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+
+        // Your action
+        let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+        let prod = sb.instantiateViewController(withIdentifier: "Product") as! ProductViewController
+        //prod.modalPresentationStyle = .fullScreen
+        present(prod, animated: true, completion: nil)
     }
     
     func shuffle(array : [Product]) -> [Product] {
@@ -119,8 +141,25 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
         
         dailySavings.text = "Save on... " + dailyProd![0].name! + "!"
-        priceOfDailySavings.text = "Original " + String(format: "$%.2f", dailyProd![0].price) + "/SALE!!!! " + String(format: "$%.2f", dailyProd![0].price * dailyProd![0].salePercentage)
-        // have it display the product's image here too
+        priceOfDailySavings.text = "Original " + String(format: "$%.2f", dailyProd![0].price) + "/Currently " + String(format: "$%.2f", dailyProd![0].price * dailyProd![0].salePercentage)
+        dailyDealPic.image = UIImage(named: dailyProd![0].image!)
+        dailyDealPic.contentMode = .scaleAspectFit
+    }
+    
+    func exploreItems() {
+        let rand = "abcdefghijklmnopqrstuvwxyz"
+        let randInt = Int.random(in: 0...25)
+        let randChar = Array(rand)[randInt]
+        var exploreProd = DBHelper.inst.fetchProduct(name: String(randChar))
+        exploreProd = exploreProd!.filter({$0.sale == true})
+        if (exploreProd!.count == 0) {
+            exploreItems()
+            return
+        } else {
+            exploreProd = shuffle(array: exploreProd!)
+        }
+        exploreItemsIMG.image = UIImage(named: exploreProd![0].image!)
+        exploreItemsIMG.contentMode = .scaleAspectFit
     }
     
     @IBAction func delivery(_ sender: Any) {
