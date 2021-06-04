@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		491FF54F265C500C0037E0D0 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 491FF54E265C500C0037E0D0 /* Payment.storyboard */; };
+		492704902669213C005844B8 /* Original_Doge_meme.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4927048F2669213B005844B8 /* Original_Doge_meme.jpg */; };
+		492FFEA72666805C007DD6FE /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492FFEA62666805C007DD6FE /* CartViewController.swift */; };
+		49EC95C3266A70F4005EA7ED /* currentOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC95C2266A70F4005EA7ED /* currentOrdersViewController.swift */; };
+		49FB6A92266967AB00325C43 /* paymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB6A91266967AB00325C43 /* paymentMethodViewController.swift */; };
 		8B17AB802658146700CDAA01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB7F2658146700CDAA01 /* AppDelegate.swift */; };
 		8B17AB822658146700CDAA01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB812658146700CDAA01 /* SceneDelegate.swift */; };
 		8B17AB842658146700CDAA01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B17AB832658146700CDAA01 /* ViewController.swift */; };
@@ -27,6 +31,10 @@
 
 /* Begin PBXFileReference section */
 		491FF54E265C500C0037E0D0 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
+		4927048F2669213B005844B8 /* Original_Doge_meme.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Original_Doge_meme.jpg; path = ../../../Downloads/Original_Doge_meme.jpg; sourceTree = "<group>"; };
+		492FFEA62666805C007DD6FE /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		49EC95C2266A70F4005EA7ED /* currentOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentOrdersViewController.swift; sourceTree = "<group>"; };
+		49FB6A91266967AB00325C43 /* paymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentMethodViewController.swift; sourceTree = "<group>"; };
 		8B17AB7C2658146700CDAA01 /* Sahara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sahara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B17AB7F2658146700CDAA01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B17AB812658146700CDAA01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,10 +94,14 @@
 			children = (
 				8B17AB7F2658146700CDAA01 /* AppDelegate.swift */,
 				491FF54E265C500C0037E0D0 /* Payment.storyboard */,
+				49EC95C2266A70F4005EA7ED /* currentOrdersViewController.swift */,
+				49FB6A91266967AB00325C43 /* paymentMethodViewController.swift */,
+				492FFEA62666805C007DD6FE /* CartViewController.swift */,
 				8B17AB812658146700CDAA01 /* SceneDelegate.swift */,
 				8B17AB832658146700CDAA01 /* ViewController.swift */,
 				8B17AB852658146700CDAA01 /* Main.storyboard */,
 				8B17AB8B2658146A00CDAA01 /* Assets.xcassets */,
+				4927048F2669213B005844B8 /* Original_Doge_meme.jpg */,
 				8B17AB8D2658146A00CDAA01 /* LaunchScreen.storyboard */,
 				8B17AB902658146A00CDAA01 /* Info.plist */,
 				8B17AB882658146700CDAA01 /* Sahara.xcdatamodeld */,
@@ -156,6 +168,7 @@
 			files = (
 				8B17AB8F2658146A00CDAA01 /* LaunchScreen.storyboard in Resources */,
 				8B17AB8C2658146A00CDAA01 /* Assets.xcassets in Resources */,
+				492704902669213C005844B8 /* Original_Doge_meme.jpg in Resources */,
 				8B17AB872658146700CDAA01 /* Main.storyboard in Resources */,
 				491FF54F265C500C0037E0D0 /* Payment.storyboard in Resources */,
 			);
@@ -173,10 +186,13 @@
 				8B17AB802658146700CDAA01 /* AppDelegate.swift in Sources */,
 				8B17AB9F26581B6000CDAA01 /* User+CoreDataProperties.swift in Sources */,
 				8B17AB822658146700CDAA01 /* SceneDelegate.swift in Sources */,
+				49EC95C3266A70F4005EA7ED /* currentOrdersViewController.swift in Sources */,
 				8B17AB8A2658146700CDAA01 /* Sahara.xcdatamodeld in Sources */,
+				492FFEA72666805C007DD6FE /* CartViewController.swift in Sources */,
 				8B17ABA226581B6000CDAA01 /* Product+CoreDataClass.swift in Sources */,
 				8B17ABA526581B6000CDAA01 /* Review+CoreDataProperties.swift in Sources */,
 				8B17ABA426581B6000CDAA01 /* Review+CoreDataClass.swift in Sources */,
+				49FB6A92266967AB00325C43 /* paymentMethodViewController.swift in Sources */,
 				8B17ABA026581B6000CDAA01 /* BoughtProduct+CoreDataClass.swift in Sources */,
 				8B17ABA126581B6000CDAA01 /* BoughtProduct+CoreDataProperties.swift in Sources */,
 				8B17AB9E26581B6000CDAA01 /* User+CoreDataClass.swift in Sources */,
