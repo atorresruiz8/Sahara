@@ -26,7 +26,7 @@ class DBHelper{
         user.balance = 0.0
         user.wishlist = []
         user.cart = []
-        
+        user.cartCount = []
         if((object["email"]) != nil){
             user.email = object["email"]
         }
@@ -474,9 +474,11 @@ class DBHelper{
     
     func addToCart(prodID : String, uName : String){
         let user = fetchUser(query: uName)
-        
+        if(user!.cart!.contains(prodID)){
+            return
+        }
         user!.cart! = user!.cart! + [prodID]
-        
+        user!.cartCount! = user!.cartCount! + [1]
         do {
             try context!.save()
             print("data saved")
@@ -487,7 +489,9 @@ class DBHelper{
 
     func removeFromCart(prodID: String, uName: String) {
         let user = fetchUser(query: uName)
+        let position = user!.cart!.firstIndex(where:{ $0 == prodID})
         user!.cart = user!.cart!.filter({$0 != prodID})
+        user!.cartCount!.remove(at: position!)
 
         do {
             try context!.save()

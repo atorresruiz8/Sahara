@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CbY-ci-70C">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18092"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -577,10 +577,10 @@ your wishlist</string>
             </objects>
             <point key="canvasLocation" x="2037.68115942029" y="-1060.0446428571429"/>
         </scene>
-        <!--Cart Table View Controller-->
+        <!--Cart View Controller-->
         <scene sceneID="3vQ-vh-M3e">
             <objects>
-                <viewController storyboardIdentifier="cart" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wbh-u3-AU4" customClass="CartTableViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cart" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wbh-u3-AU4" customClass="CartViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GBa-9i-Pre">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -607,66 +607,6 @@ your wishlist</string>
                                         <state key="normal" title=" Deliver to [User] - [City, Zip Code]" image="location" catalog="system">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
-                                        <connections>
-                                            <action selector="deliveryAddress:" destination="wbh-u3-AU4" eventType="touchUpInside" id="hrW-Ti-fOU"/>
-                                        </connections>
-                                    </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PJ0-Fs-5Ox">
-                                        <rect key="frame" x="8" y="161" width="399" height="416"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cart" rowHeight="423" id="nXc-rf-DAf" customClass="CartTableViewCell" customModule="Sahara" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="24.5" width="399" height="423"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nXc-rf-DAf" id="LqW-gl-MQ3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="399" height="423"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5z-hQ-L1Z">
-                                                            <rect key="frame" x="13" y="11" width="93" height="93"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-pf-q3h">
-                                                            <rect key="frame" x="114" y="11" width="192" height="76"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YK3-dL-Yal">
-                                                            <rect key="frame" x="314" y="38" width="78" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                                <accessibility key="accessibilityConfiguration" identifier="cell"/>
-                                                <connections>
-                                                    <outlet property="productImg" destination="O5z-hQ-L1Z" id="DTZ-2b-PNT"/>
-                                                    <outlet property="productName" destination="bG5-pf-q3h" id="80x-eU-4Jq"/>
-                                                    <outlet property="productPrice" destination="YK3-dL-Yal" id="1t4-ju-hp6"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
-                                        <connections>
-                                            <outlet property="dataSource" destination="wbh-u3-AU4" id="rwo-zS-RR9"/>
-                                            <outlet property="delegate" destination="wbh-u3-AU4" id="pdc-ar-jBn"/>
-                                        </connections>
-                                    </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u38-G6-qb4" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="597" width="398" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Proceed to Checkout">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="purchase:" destination="wbh-u3-AU4" eventType="touchUpInside" id="Q0w-l4-dR0"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -677,10 +617,7 @@ your wishlist</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="cart" catalog="system" selectedImage="cart.fill" id="ywn-8u-XKW"/>
                     <connections>
-                        <outlet property="bodyView" destination="ikp-wg-Y6g" id="iLt-rm-9fq"/>
-                        <outlet property="deliveryAddress" destination="NDZ-Ds-dtZ" id="6Xn-hH-dgI"/>
-                        <outlet property="headerView" destination="wKz-VH-yC8" id="wAC-X1-fUA"/>
-                        <outlet property="tableView" destination="PJ0-Fs-5Ox" id="0SO-4w-xuF"/>
+                        <outlet property="deliveryAddress" destination="NDZ-Ds-dtZ" id="HsQ-dg-B3k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTo-22-If7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

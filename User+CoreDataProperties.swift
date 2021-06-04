@@ -30,6 +30,7 @@ extension User {
     @NSManaged public var wishlist: [String]?
     @NSManaged public var bought: NSSet?
     @NSManaged public var review: NSSet?
+    @NSManaged public var cartCount: [Int32]?
 
 }
 

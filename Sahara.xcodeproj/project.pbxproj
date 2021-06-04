@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49BC16C2266ABA6900F08AED /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC16BF266ABA6900F08AED /* CartViewController.swift */; };
 		49BC16C3266ABA6900F08AED /* currentOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC16C0266ABA6900F08AED /* currentOrdersViewController.swift */; };
 		49BC16C4266ABA6900F08AED /* paymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC16C1266ABA6900F08AED /* paymentMethodViewController.swift */; };
+		49BC16C6266ABFCB00F08AED /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC16C5266ABFCB00F08AED /* CartViewController.swift */; };
 		6546DBA348220171788A67ED /* Pods_Sahara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F9D13C5B467F213A6B832E /* Pods_Sahara.framework */; };
 		840A6327265BFC13005485C5 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840A6326265BFC13005485C5 /* Account.storyboard */; };
 		840A6338265C3CFE005485C5 /* address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A6337265C3CFE005485C5 /* address.swift */; };
@@ -82,9 +82,9 @@
 
 /* Begin PBXFileReference section */
 		42F5B530A184F95444900CD6 /* Pods-Sahara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sahara.debug.xcconfig"; path = "Target Support Files/Pods-Sahara/Pods-Sahara.debug.xcconfig"; sourceTree = "<group>"; };
-		49BC16BF266ABA6900F08AED /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartViewController.swift; path = ../../../PickAndPay/Sahara/CartViewController.swift; sourceTree = "<group>"; };
 		49BC16C0266ABA6900F08AED /* currentOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = currentOrdersViewController.swift; path = ../../../PickAndPay/Sahara/currentOrdersViewController.swift; sourceTree = "<group>"; };
 		49BC16C1266ABA6900F08AED /* paymentMethodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = paymentMethodViewController.swift; path = ../../../PickAndPay/Sahara/paymentMethodViewController.swift; sourceTree = "<group>"; };
+		49BC16C5266ABFCB00F08AED /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		840A6326265BFC13005485C5 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		840A6337265C3CFE005485C5 /* address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = address.swift; sourceTree = "<group>"; };
 		848BB539266A7B250033F022 /* CosmosLayerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosLayerHelper.swift; sourceTree = "<group>"; };
@@ -248,7 +248,6 @@
 				8B2E31FA26657DCE00ACDC0B /* ProductViewController.swift */,
 				8B2E31FC26657E7900ACDC0B /* CheckoutViewController.swift */,
 				8B2E31FE26657E8100ACDC0B /* RefundViewController.swift */,
-				49BC16BF266ABA6900F08AED /* CartViewController.swift */,
 				49BC16C0266ABA6900F08AED /* currentOrdersViewController.swift */,
 				49BC16C1266ABA6900F08AED /* paymentMethodViewController.swift */,
 				8B2E320026657E8A00ACDC0B /* PaymentViewController.swift */,
@@ -262,6 +261,7 @@
 		8BB157FC265BFC9F003F7AA3 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				49BC16C5266ABFCB00F08AED /* CartViewController.swift */,
 				8BB1580F265BFE97003F7AA3 /* DashboardViewController.swift */,
 				8BB1580D265BFE6C003F7AA3 /* MainStoreViewController.swift */,
 				8BB157FF265BFCDA003F7AA3 /* ProfileViewController.swift */,
@@ -454,7 +454,6 @@
 				8B17ABA326581B6000CDAA01 /* Product+CoreDataProperties.swift in Sources */,
 				848BB54B266A7B260033F022 /* CosmosText.swift in Sources */,
 				8B2E320126657E8A00ACDC0B /* PaymentViewController.swift in Sources */,
-				49BC16C2266ABA6900F08AED /* CartViewController.swift in Sources */,
 				84F6262A2661913A00D9EF6D /* ProfileEditorViewController.swift in Sources */,
 				8B2CACD6265FE9D800BB4131 /* WishListViewController.swift in Sources */,
 				8B17AB842658146700CDAA01 /* ViewController.swift in Sources */,
@@ -482,6 +481,7 @@
 				8B17ABA226581B6000CDAA01 /* Product+CoreDataClass.swift in Sources */,
 				8B17ABA526581B6000CDAA01 /* Review+CoreDataProperties.swift in Sources */,
 				8B17ABA426581B6000CDAA01 /* Review+CoreDataClass.swift in Sources */,
+				49BC16C6266ABFCB00F08AED /* CartViewController.swift in Sources */,
 				848BB556266A7B260033F022 /* CosmosLayers.swift in Sources */,
 				84F6263A2666814800D9EF6D /* makeProducts.swift in Sources */,
 				8B978B192669A27E00171F97 /* CartTableViewCell.swift in Sources */,
