@@ -217,11 +217,11 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
             wishlistItemsIMG.image = UIImage(named: "SaharaLogo")
         } else {
             // Used to display a random item from each of the 5 tags
-            let randElec = Int.random(in: 0...DBHelper.inst.electronics.count)
-            let randOut = Int.random(in: 0...DBHelper.inst.outdoors.count)
-            let randCloth = Int.random(in: 0...DBHelper.inst.clothing.count)
-            let randCook = Int.random(in: 0...DBHelper.inst.cooking.count)
-            let randDeco = Int.random(in: 0...DBHelper.inst.decorations.count)
+            let randElec = Int.random(in: 0...DBHelper.inst.electronics.count - 1)
+            let randOut = Int.random(in: 0...DBHelper.inst.outdoors.count - 1)
+            let randCloth = Int.random(in: 0...DBHelper.inst.clothing.count - 1)
+            let randCook = Int.random(in: 0...DBHelper.inst.cooking.count - 1)
+            let randDeco = Int.random(in: 0...DBHelper.inst.decorations.count - 1)
             
             // first item in your wishlist
             let wp = user!.wishlist![0]

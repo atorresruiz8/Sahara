@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18092"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -175,10 +176,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiU-xz-vBq" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="37" width="82" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiU-xz-vBq">
+                                        <rect key="frame" x="8" y="51" width="51" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="&lt; Back"/>
+                                        <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
+                                        </state>
                                         <connections>
                                             <action selector="returnToProduct:" destination="IMn-DU-aHr" eventType="touchUpInside" id="R12-sU-927"/>
                                         </connections>
@@ -734,12 +738,16 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="0yv-Sh-FFG">
+            <size key="intrinsicContentSize" width="170" height="30"/>
+        </designable>
         <designable name="GdD-dG-bdR">
             <size key="intrinsicContentSize" width="320" height="60"/>
         </designable>
     </designables>
     <resources>
         <image name="SaharaLogo" width="1024" height="896"/>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="greaterthan" catalog="system" width="128" height="111"/>
         <image name="plus" catalog="system" width="128" height="113"/>

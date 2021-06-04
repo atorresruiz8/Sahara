@@ -7,10 +7,11 @@
 
 import UIKit
 
-class ProductViewController: UIViewController {
+class ProductViewController: UIViewController, UITextViewDelegate {
     var ud = UserDefaults.standard
     var product : Product?
     var user : User?
+    
     @IBOutlet weak var reviewView: UITextView!
     @IBOutlet weak var priceLB: UILabel!
     @IBOutlet weak var productLB: UILabel!
@@ -18,13 +19,16 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var checkoutBut: CustomButton!
     @IBOutlet weak var submitReviewBut: CustomButton!
     @IBOutlet weak var productRating: CosmosView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         loadProduct()
         
-        reviewView.clearsOnInsertion = true
+        reviewView.delegate = self
+        reviewView.text = "Please leave your review..."
+        reviewView.textColor = UIColor.lightGray
         
         if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
             reviewView.isHidden = true
@@ -34,6 +38,20 @@ class ProductViewController: UIViewController {
         }
         
         user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
+    }
+    
+    func textViewDidBeginEditing(_ textView : UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView : UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Please leave your review..."
+            textView.textColor = UIColor.lightGray
+        }
     }
     
     func loadProduct() {
@@ -59,7 +77,10 @@ class ProductViewController: UIViewController {
     }
     
     @IBAction func checkOut(_ sender: Any) {
-        
+        let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+        let check = sb.instantiateViewController(withIdentifier: "Checkout") as! CheckoutViewController
+        check.modalPresentationStyle = .fullScreen
+        present(check, animated: true, completion: nil)
     }
     
     
