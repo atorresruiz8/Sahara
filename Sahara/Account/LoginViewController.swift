@@ -15,7 +15,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var uPass: UITextField! //password text input
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if ud.bool(forKey: "rem"){
+            uName.text = ud.string(forKey: "uName")
+            uPass.text = ud.string(forKey: "uPass")
+            remState.isOn = true
+        }
+        else{
+            remState.isOn = false
+        }
         // Do any additional setup after loading the view.
         // initializes the arrays with the products filtered by tags
         DBHelper.inst.arrayMaker()
@@ -40,6 +47,12 @@ class LoginViewController: UIViewController {
             if(DBHelper.inst.validateEmailPass(uName: uName.text!, uPass: String(describing: hashed))){
                 print("here")
                 ud.setValue(uName.text!, forKey: "currUser")
+                if(remState.isOn){
+                    ud.setValue(uName.text!, forKey: "uName")
+                    ud.setValue(uPass.text!, forKey: "uPass")
+                    ud.setValue(true, forKey: "rem")
+                }
+                
 
                 let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let dash = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
@@ -50,7 +63,12 @@ class LoginViewController: UIViewController {
         else{
             if(DBHelper.inst.validatePhonePass(uName: uName.text!, uPass: String(describing: hashed))){
                 ud.setValue(uName.text!, forKey: "currUser")
-
+                if(remState.isOn){
+                    ud.setValue(uName.text!, forKey: "uName")
+                    ud.setValue(uPass.text!, forKey: "uPass")
+                    ud.setValue(true, forKey: "rem")
+                }
+                
                 let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let dash = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
                 dash.modalPresentationStyle = .fullScreen
