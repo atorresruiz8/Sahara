@@ -9,7 +9,8 @@ import UIKit
 
 class ReviewTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var userRating: UILabel!
+    
+    @IBOutlet weak var userRating: CosmosView!
     @IBOutlet weak var productReview: UILabel!
     @IBOutlet weak var username: UILabel!
     override func awakeFromNib() {

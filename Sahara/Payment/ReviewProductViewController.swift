@@ -18,6 +18,9 @@ class ReviewProductViewController: UIViewController, UITableViewDelegate, UITabl
         if (prod!.review!.count == 0) {
             tableView.isHidden = true
             // put an alert to say no reviews exist
+            let alert = UIAlertController(title: "No Reviews Found.", message: "No one has reviewed this product before. Be the first to let people know how the product is!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
+            present(alert, animated: true)
             return 0
         } else {
             return prod!.review!.count
@@ -27,10 +30,10 @@ class ReviewProductViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Review", for: indexPath) as! ReviewTableViewCell
         let r = rev[indexPath.row]
-        //cell.username.text
+        
         cell.productReview.text = r.comment
         cell.username.text = r.user!.name!
-        cell.userRating.text = "Rating: " + String(r.rating) + "/5"
+        cell.userRating.rating = r.rating
         return cell
     }
     

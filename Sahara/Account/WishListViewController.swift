@@ -36,6 +36,7 @@ class WishListViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
+        
         if(user?.wishlist == nil){
             self.tableView.isHidden = true
         }

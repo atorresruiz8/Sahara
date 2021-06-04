@@ -45,11 +45,17 @@ class ProductViewController: UIViewController {
     }
     
     @IBAction func addToCart(_ sender: Any) {
-        DBHelper.inst.addToCart(prodID: product!.id!, uName: user!.name!)
+        if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
+            let alert = UIAlertController(title: "No Cart Found.", message: "Guests do not have a cart. Please make a full account to access your cart.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
+            present(alert, animated: true)
+        } else {
+            DBHelper.inst.addToCart(prodID: product!.id!, uName: ud.string(forKey: "currUser")!)
+        }
     }
     
     @IBAction func addToWishlist(_ sender: Any) {
-        DBHelper.inst.addToWishlist(prodID: product!.id!, uName: user!.name!)
+        DBHelper.inst.addToWishlist(prodID: product!.id!, uName: ud.string(forKey: "currUser")!)
     }
     
     @IBAction func checkOut(_ sender: Any) {
