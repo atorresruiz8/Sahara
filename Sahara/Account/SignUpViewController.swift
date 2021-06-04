@@ -120,8 +120,8 @@ class SignUpViewController: UIViewController {
             alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
             self.present(alert, animated: true)
             return false
-        }
-        if(newEm[0].count == 0 || newEm[1].count == 0){
+        } 
+        if(newEm[0].count == 0 || newEm[1].count == 0 || newEm[0].hasPrefix("_")){
             let alMess = "not a valid email"
             let alert = UIAlertController(title: "Error Invalid Email", message: alMess, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))

@@ -7,13 +7,13 @@
 
 import UIKit
 import Speech
+import DropDown
 class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
+    @IBOutlet weak var dropDownView: UIView!
     var exploreProd : [Product] = []
     var dailyProd : [Product] = []
     var wishProd : [Product] = []
     var recentProd : Product?
-    
-    // put an oasis background behind the big logo (?)
     
     @IBOutlet weak var recentIMG: UIImageView!
     @IBOutlet weak var wishlistItemsIMG: UIImageView!
@@ -25,6 +25,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
     let ud = UserDefaults.standard
     var user : User?
     static var search = ""
+    let dropDown = DropDown()
     
     @IBOutlet weak var dailyDealView: UIView!
     @IBOutlet weak var recentView: UIView!
@@ -100,8 +101,6 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
                 deliverToUser.setTitle("Deliver to \(String(describing: user!.name!)) - City: N/A, Zip Code: N/A", for: UIButton.State.normal)
             }
         }
-        
-        //ud.setValue("", forKey: "lastProd")
 
         dailyDeal()
         exploreItems()
@@ -123,6 +122,20 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
         let recentTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
             recentIMG.isUserInteractionEnabled = true
             recentIMG.addGestureRecognizer(recentTap)
+        
+        dropDown.anchorView = dropDownView
+        dropDown.direction = .any
+        dropDown.dataSource = ["#tech", "#clothing", "#cooking", "#outdoor", "#decoration"]
+        
+        
+        searchQuery.addTarget(self, action: #selector(MainStoreViewController.textDidChange), for: .editingChanged)
+    }
+    
+    @objc func textDidChange() {
+        dropDown.show()
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            searchQuery.text = item
+        }
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -236,8 +249,8 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
     }
     
-    func recentItems() { // we need to set it so the initial key in "lastProd" is nothing, but then it returns actual "lastProd" when we've seen a page before
-        if (DBHelper.inst.fetchProduct(id: ud.string(forKey: "lastProd")!) != nil) {
+    func recentItems() {
+        if (ud.string(forKey: "lastProd") != nil) {
             recentProd = DBHelper.inst.fetchProduct(id: ud.string(forKey: "lastProd")!)
             recentIMG.image = UIImage(named: recentProd!.image!)
             recentIMG.contentMode = .scaleAspectFit

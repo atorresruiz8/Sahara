@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6546DBA348220171788A67ED /* Pods_Sahara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F9D13C5B467F213A6B832E /* Pods_Sahara.framework */; };
 		840A6327265BFC13005485C5 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840A6326265BFC13005485C5 /* Account.storyboard */; };
 		840A6338265C3CFE005485C5 /* address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A6337265C3CFE005485C5 /* address.swift */; };
 		84F6262A2661913A00D9EF6D /* ProfileEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F626292661913900D9EF6D /* ProfileEditorViewController.swift */; };
@@ -44,6 +45,7 @@
 		8B5A95F5266131B0003BD812 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B5A95F4266131B0003BD812 /* Payment.storyboard */; };
 		8B75180C266408B500556E0C /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B75180B266408B500556E0C /* SearchResultsTableViewController.swift */; };
 		8B978B192669A27E00171F97 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B978B182669A27E00171F97 /* CartTableViewCell.swift */; };
+		8B9E5DDF266A748A00BA663E /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9E5DDE266A748A00BA663E /* iOSDropDown.framework */; };
 		8BB15800265BFCDA003F7AA3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB157FF265BFCDA003F7AA3 /* ProfileViewController.swift */; };
 		8BB15804265BFCF0003F7AA3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB15803265BFCF0003F7AA3 /* SettingsViewController.swift */; };
 		8BB15806265BFD08003F7AA3 /* ReviewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB15805265BFD08003F7AA3 /* ReviewProductViewController.swift */; };
@@ -76,6 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42F5B530A184F95444900CD6 /* Pods-Sahara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sahara.debug.xcconfig"; path = "Target Support Files/Pods-Sahara/Pods-Sahara.debug.xcconfig"; sourceTree = "<group>"; };
 		840A6326265BFC13005485C5 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		840A6337265C3CFE005485C5 /* address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = address.swift; sourceTree = "<group>"; };
 		84F626292661913900D9EF6D /* ProfileEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditorViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 		8B5A95F4266131B0003BD812 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
 		8B75180B266408B500556E0C /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		8B978B182669A27E00171F97 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		8B9E5DDE266A748A00BA663E /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB157FF265BFCDA003F7AA3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8BB15803265BFCF0003F7AA3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8BB15805265BFD08003F7AA3 /* ReviewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProductViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 		8BE3E973266959CE00E70EB6 /* StarLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarLayer.swift; sourceTree = "<group>"; };
 		8BE3E974266959CE00E70EB6 /* StarFillMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarFillMode.swift; sourceTree = "<group>"; };
 		8BE3E975266959CE00E70EB6 /* CosmosLayers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosLayers.swift; sourceTree = "<group>"; };
+		91F55A8EB021FD8204EA8E08 /* Pods-Sahara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sahara.release.xcconfig"; path = "Target Support Files/Pods-Sahara/Pods-Sahara.release.xcconfig"; sourceTree = "<group>"; };
+		D5F9D13C5B467F213A6B832E /* Pods_Sahara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sahara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6546DBA348220171788A67ED /* Pods_Sahara.framework in Frameworks */,
+				8B9E5DDF266A748A00BA663E /* iOSDropDown.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +198,8 @@
 				8B17AB7E2658146700CDAA01 /* Sahara */,
 				8B17AB7D2658146700CDAA01 /* Products */,
 				8BE13805265D60DB001E0662 /* Recovered References */,
+				9527670311C683E11C6662E4 /* Pods */,
+				926F577061E94C6FC33D2768 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -297,6 +307,24 @@
 			path = CosmosView;
 			sourceTree = "<group>";
 		};
+		926F577061E94C6FC33D2768 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B9E5DDE266A748A00BA663E /* iOSDropDown.framework */,
+				D5F9D13C5B467F213A6B832E /* Pods_Sahara.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9527670311C683E11C6662E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42F5B530A184F95444900CD6 /* Pods-Sahara.debug.xcconfig */,
+				91F55A8EB021FD8204EA8E08 /* Pods-Sahara.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,9 +332,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B17AB932658146A00CDAA01 /* Build configuration list for PBXNativeTarget "Sahara" */;
 			buildPhases = (
+				4C55BB651CD3E134D2622C5C /* [CP] Check Pods Manifest.lock */,
 				8B17AB782658146700CDAA01 /* Sources */,
 				8B17AB792658146700CDAA01 /* Frameworks */,
 				8B17AB7A2658146700CDAA01 /* Resources */,
+				FBDE47BE708381AC6CCEBD7B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -363,6 +393,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C55BB651CD3E134D2622C5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sahara-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBDE47BE708381AC6CCEBD7B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sahara/Pods-Sahara-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sahara/Pods-Sahara-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sahara/Pods-Sahara-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8B17AB782658146700CDAA01 /* Sources */ = {
@@ -573,6 +645,7 @@
 		};
 		8B17AB942658146A00CDAA01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42F5B530A184F95444900CD6 /* Pods-Sahara.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -592,6 +665,7 @@
 		};
 		8B17AB952658146A00CDAA01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91F55A8EB021FD8204EA8E08 /* Pods-Sahara.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

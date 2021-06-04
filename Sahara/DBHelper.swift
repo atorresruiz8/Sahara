@@ -301,7 +301,7 @@ class DBHelper{
                 let usr = try context!.fetch(fetchReq)
                 let users = usr as! [Product]
                 idChecked = !(users.count > 0)
-            }
+            } 
             catch{
                idChecked = true
             }

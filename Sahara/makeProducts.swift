@@ -6,7 +6,7 @@
 //
 
 
-import Foundation
+import Foundation 
 class ProductCreator{
     let names = ["Camping Chair", "Grill", "Uninteruptable power source", "macBook Air", "GUCCI handbag", "Playstation 5", "Nonstick Cooking Pan", "Me and the Boys Beans Shirt", "Horse Mask", "Zebra Mask", "Re Zero Rem Girl's Anime Body Pillow", "Wireless Mouse", "SSD External Storage", "Health Mask", "Sad Frog Plushie", "Segway Smart Self-Balance", "Nintendo Switch Pro", "Gaming Office Chair", "Table", "Blue Yeti Microphone", "Mic Stand with Pop Filter", "Dual Monitor Adjustable Vesa Stand", "Elder Scrolls: Cooking Book", "Go the F to Sleep by Adam Mansback", "Kiddie Pool for Pets", "The Nut Button Toy", "OK Boomer Button Toy", "Xbox 720", "Soulja Boy Game Console", "SkyTech Shadow Gaming PC"]
     let images = ["campChair", "grill", "ups", "macbook","gucciHand", "playstation5", "pan", "beans", "horseMask", "zebraMask", "remBody", "wirelessMouse", "externalHarddrive", "helthMask", "sadPepe", "segway", "nintendoSwitchPro", "chair", "table", "microphone", "micStand", "vesaStand", "elderCookbook", "goToSleep", "kiddiePool","nutButton", "boomerButton", "Xbox720", "souljaBoy", "computer"]

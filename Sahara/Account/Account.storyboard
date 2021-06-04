@@ -173,6 +173,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4E-Vz-EMk" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="559" width="380" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Create a Full Account"/>
+                                        <connections>
+                                            <action selector="createFullAcct:" destination="kLv-Ut-tSk" eventType="touchUpInside" id="gWd-cL-oGm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </view>
@@ -238,6 +246,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="tempAcctBut" destination="l4E-Vz-EMk" id="muq-SE-w4p"/>
                         <outlet property="userEmail" destination="iuH-tk-8nN" id="tUT-xz-Hwo"/>
                         <outlet property="userName" destination="qWm-Da-f7O" id="0PV-sA-RkX"/>
                         <outlet property="userPhone" destination="nb5-Kj-KPS" id="Pif-IK-Vhs"/>
@@ -369,7 +378,7 @@
         <!--Temp To Real View Controller-->
         <scene sceneID="Cs8-aF-fQw">
             <objects>
-                <viewController id="2xd-nt-L4j" customClass="TempToRealViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Temp" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2xd-nt-L4j" customClass="TempToRealViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gbq-fZ-M3U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

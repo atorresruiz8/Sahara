@@ -336,10 +336,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Sahara..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cjy-0R-3Tn">
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search product name, click a tag, or push mic to talk..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cjy-0R-3Tn">
                                         <rect key="frame" x="18" y="57" width="355" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVN-TG-GBu">
@@ -484,6 +484,11 @@ your wishlist</string>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t37-mT-WLY">
+                                        <rect key="frame" x="18" y="-29" width="353" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.89882361889999995" green="0.97683888669999996" blue="0.69045907259999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -498,6 +503,7 @@ your wishlist</string>
                         <outlet property="dailyDealView" destination="XMT-lh-MzZ" id="Yte-fb-uMG"/>
                         <outlet property="dailySavings" destination="01Z-1H-KKc" id="k09-Pr-TLc"/>
                         <outlet property="deliverToUser" destination="nfP-Md-n3w" id="gn7-6A-Llb"/>
+                        <outlet property="dropDownView" destination="t37-mT-WLY" id="i2b-76-D0Z"/>
                         <outlet property="exploreItemView" destination="qel-PT-v4o" id="mYv-WI-NVg"/>
                         <outlet property="exploreItemsIMG" destination="zoZ-9a-bEz" id="qt0-pZ-5IW"/>
                         <outlet property="headerView" destination="ZBk-Lp-Vls" id="UEt-d5-NbP"/>

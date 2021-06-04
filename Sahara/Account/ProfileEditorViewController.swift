@@ -12,6 +12,7 @@ class ProfileEditorViewController: UIViewController {
     var user : User?
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var userPhone: UITextField!
+    @IBOutlet weak var tempAcctBut: CustomButton!
     
     @IBOutlet weak var userEmail: UITextField!
     override func viewDidLoad() {
@@ -21,6 +22,12 @@ class ProfileEditorViewController: UIViewController {
         userEmail.text = user!.email
         userPhone.text = user!.phoneNumber
         // Do any additional setup after loading the view.
+        
+        tempAcctBut.isHidden = true
+        
+        if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
+            tempAcctBut.isHidden = false
+        }
     }
     
 
@@ -110,4 +117,12 @@ class ProfileEditorViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func createFullAcct(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+        let temp = sb.instantiateViewController(withIdentifier: "Temp") as! TempToRealViewController
+        temp.modalPresentationStyle = .fullScreen
+        present(temp, animated: true, completion: nil)
+    }
+    
 }
