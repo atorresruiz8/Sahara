@@ -8,36 +8,32 @@
 import UIKit
 
 class currentOrdersViewController: UIViewController {
-    var currentOrderArray : [currentOrderItem] = []
+    var currentOrderArray : [currentOrderView] = []
     func testCurrentOrders(){
         currentOrderArray = []
-        currentOrderArray.append(currentOrderItem(cOrderName: "Doggo", cOrderPrice: "55.11", deliver: true))
-        currentOrderArray.append(currentOrderItem(cOrderName: "Gato", cOrderPrice: "111.11", deliver: true))
-        
+        let test1 = currentOrderView(currentOrder: currentOrderItem(cOrderName: "Doggo", cOrderPrice: "55.11", deliver: false))
+        currentOrderArray.append(test1)
+        let test2 = currentOrderView(currentOrder: currentOrderItem(cOrderName: "Gato", cOrderPrice: "515.11", deliver: false))
+        currentOrderArray.append(test2)
     }
     func addCurrentOrdersToSubView(){
         let selectPayment = UILabel()
-        selectPayment.text = "Select a Payment Method"
+        selectPayment.text = "Current Orders"
         selectPayment.frame = CGRect(x: 50, y: 50, width: Int(UIScreen.main.bounds.width) - 100, height: 100)
         view.addSubview(selectPayment)
-        for i in 0...viewPaymentItemArray.count-1{
-            viewPaymentItemArray[i].backgroundColor = .red
-            view.addSubview(viewPaymentItemArray[i])
+        for i in 0...currentOrderArray.count-1{
+            currentOrderArray[i].backgroundColor = .red
+            view.addSubview(currentOrderArray[i])
             view.subviews[i+1].frame = CGRect(x:50, y:(150 + 100*(i)), width: Int(UIScreen.main.bounds.width) - 100, height: 75)
         }
         let addPayment = UIButton()
-        addPayment.setTitle("Add a Payment Method", for: .normal)
+        addPayment.setTitle("Go Back", for: .normal)
         addPayment.backgroundColor = .black
         print(addPayment.frame)
         view.addSubview(addPayment)
  
-        view.subviews[viewPaymentItemArray.count+1].frame = CGRect(x:50, y:(150 + 100*(viewPaymentItemArray.count)), width: Int(UIScreen.main.bounds.width) - 100, height: 50)
+        view.subviews[currentOrderArray.count+1].frame = CGRect(x:50, y:(150 + 100*(currentOrderArray.count)), width: Int(UIScreen.main.bounds.width) - 100, height: 50)
         
-        let continueButton = UIButton()
-        continueButton.setTitle("Continue", for: .normal)
-        continueButton.backgroundColor = .black
-        view.addSubview(continueButton)
-        view.subviews[viewPaymentItemArray.count+2].frame = CGRect(x:50, y:(150 + 100*(viewPaymentItemArray.count+1)), width: Int(UIScreen.main.bounds.width) - 100, height: 50)
     }
     override func viewDidLoad() {
         testCurrentOrders()

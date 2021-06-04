@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="113.83928571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Current Orders View Controller-->
         <scene sceneID="UeA-Ro-lxX">
             <objects>
-                <viewController id="bmS-Fl-eJX" sceneMemberID="viewController">
+                <viewController id="bmS-Fl-eJX" customClass="currentOrdersViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ETS-IQ-uev">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,15 +243,6 @@
                     <view key="view" contentMode="scaleToFill" id="MGO-1K-q3y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Orders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBv-iz-Sa2">
-                                <rect key="frame" x="20" y="44" width="374" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cDa-Jw-hIt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
