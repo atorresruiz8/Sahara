@@ -9,7 +9,7 @@ import UIKit
 class CartTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let ud = UserDefaults.standard
     var user : User?
-
+    var prod : Product?
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var bodyView: UIView!
@@ -23,12 +23,11 @@ class CartTableViewController: UIViewController, UITableViewDelegate, UITableVie
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
         
         if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
             deliveryAddress.isHidden = true
-        } else {
-            user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
-            
+        } else {            
             if (user!.address != nil) {
                 deliveryAddress.setTitle(" Deliver to \(String(describing: user!.name!)) - City: \(String(describing: user!.address!.city)), Zip Code: \(String(describing: user!.address!.zipcode))", for: UIButton.State.normal)
             } else {
@@ -36,8 +35,11 @@ class CartTableViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
         
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        if (user?.cart == nil) {
+            tableView.isHidden = true
+        }
+        
+        tableView.rowHeight = 128
     }
 
     // MARK: - Table view data source
@@ -49,15 +51,23 @@ class CartTableViewController: UIViewController, UITableViewDelegate, UITableVie
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
+        if (user!.cart!.count == 0) {
+            return 0
+        }
+        
+        return user!.cart!.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cart", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cart", for: indexPath) as! CartTableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = "Cart is empty."
+        prod = DBHelper.inst.fetchProduct(id: user!.cart![indexPath.row])
+        cell.productName.text = prod!.name!
+        cell.productPrice.text = String(format: "$%.2f", prod!.price * prod!.salePercentage)
+        cell.productImg.image = UIImage(named: prod!.image!)
         return cell
     }
     

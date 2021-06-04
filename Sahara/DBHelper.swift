@@ -25,6 +25,7 @@ class DBHelper{
         let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context!) as! User
         user.balance = 0.0
         user.wishlist = []
+        user.cart = []
         
         if((object["email"]) != nil){
             user.email = object["email"]
@@ -47,6 +48,7 @@ class DBHelper{
         let randInt = Int.random(in: 1000000...9999999)
         user.name = "_" + String(randInt)
         user.wishlist = []
+        user.cart = []
         
         do{
             try context!.save()
@@ -470,32 +472,28 @@ class DBHelper{
         }
     }
     
-//    func addToCart(prodID : String, uName : String){
-//        let user = fetchUser(query: uName)
-//        let prod = fetchProduct(id : prodID)
-//        if(user!.cart == nil){
-//            user!.cart = [prod!]
-//        }
-//        else{
-//            user!.cart!.append(prod!)
-//        }
-//        do {
-//            try context!.save()
-//            print("data saved")
-//        } catch {
-//            print("data not saved")
-//        }
-//    }
-//
-//    func removeFromCart(prodID: String, uName: String) {
-//        let user = fetchUser(query: uName)
-//        user!.cart = user!.cart!.filter({$0.id != prodID})
-//
-//        do {
-//            try context!.save()
-//            print("data saved")
-//        } catch {
-//            print("data not saved")
-//        }
-//    }
+    func addToCart(prodID : String, uName : String){
+        let user = fetchUser(query: uName)
+        
+        user!.cart! = user!.cart! + [prodID]
+        
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
+
+    func removeFromCart(prodID: String, uName: String) {
+        let user = fetchUser(query: uName)
+        user!.cart = user!.cart!.filter({$0 != prodID})
+
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
 }

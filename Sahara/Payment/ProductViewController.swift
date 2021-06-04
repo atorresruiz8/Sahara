@@ -41,10 +41,11 @@ class ProductViewController: UIViewController {
         productLB.text = product!.name
         productIMG.image = UIImage(named: product!.image!)
         priceLB.text = String(format: "$%.2f", (product!.price * product!.salePercentage))
+        ud.setValue(product!.id!, forKey: "lastProd")
     }
     
     @IBAction func addToCart(_ sender: Any) {
-        //DBHelper.inst.addToCart(prodID: product!.id!, uName: user!.name!)
+        DBHelper.inst.addToCart(prodID: product!.id!, uName: user!.name!)
     }
     
     @IBAction func addToWishlist(_ sender: Any) {

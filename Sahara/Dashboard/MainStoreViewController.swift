@@ -11,7 +11,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
     var exploreProd : [Product] = []
     var dailyProd : [Product] = []
     var wishProd : [Product] = []
-    var recentProd : [Product] = []
+    var recentProd : Product?
     
     // put an oasis background behind the big logo (?)
     
@@ -67,7 +67,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
                 return
             }
             
-            let search = resp?.bestTranscription.formattedString
+            let search = resp?.bestTranscription.formattedString.lowercased()
             print(search!)
             self.searchQuery.text = search
         })
@@ -87,13 +87,12 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
         // Do any additional setup after loading the view.
         if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
             welcomeMessage.text = "Hi, Guest"
             deliverToUser.isHidden = true
         } else {
-            user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
             welcomeMessage.text = "Hi, \(String(describing: user!.name!))"
             if (user!.address != nil) {
                 deliverToUser.setTitle(" Deliver to \(String(describing: user!.name!)) - City: \(String(describing: user!.address!.city)), Zip Code: \(String(describing: user!.address!.zipcode))", for: UIButton.State.normal)
@@ -101,44 +100,49 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
                 deliverToUser.setTitle("Deliver to \(String(describing: user!.name!)) - City: N/A, Zip Code: N/A", for: UIButton.State.normal)
             }
         }
+        
+        //ud.setValue("", forKey: "lastProd")
 
         dailyDeal()
         exploreItems()
         wishlistItems()
         recentItems()
+        
         let dailyTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
             dailyDealPic.isUserInteractionEnabled = true
             dailyDealPic.addGestureRecognizer(dailyTap)
+        
         let exploreTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
             exploreItemsIMG.isUserInteractionEnabled = true
             exploreItemsIMG.addGestureRecognizer(exploreTap)
+        
         let wishlistTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-            exploreItemsIMG.isUserInteractionEnabled = true
-            exploreItemsIMG.addGestureRecognizer(wishlistTap)
+            wishlistItemsIMG.isUserInteractionEnabled = true
+            wishlistItemsIMG.addGestureRecognizer(wishlistTap)
+        
         let recentTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-            exploreItemsIMG.isUserInteractionEnabled = true
-            exploreItemsIMG.addGestureRecognizer(recentTap)
+            recentIMG.isUserInteractionEnabled = true
+            recentIMG.addGestureRecognizer(recentTap)
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         
+        // check to see which image was tapped to determine which product to load
         switch tappedImage.image {
         case dailyDealPic.image:
             ud.setValue(dailyProd[0].id, forKey: "currProd")
-            print("hi")
         case exploreItemsIMG.image:
             ud.setValue(exploreProd[0].id, forKey: "currProd")
-            print("hello")
         case wishlistItemsIMG.image:
-            print("hey")
+            ud.setValue(wishProd[0].id, forKey: "currProd")
         case recentIMG.image:
-            print("it works")
+            ud.setValue(recentProd!.id, forKey: "currProd")
         default:
             print("no view was pushed")
         }
 
-        // Your action
+        // instantiate the view controller with the current product
         let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
         let prod = sb.instantiateViewController(withIdentifier: "Product") as! ProductViewController
         prod.modalPresentationStyle = .fullScreen
@@ -196,10 +200,51 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
     
     func wishlistItems() {
-        
+        if (user!.wishlist!.count == 0) {
+            wishlistItemsIMG.image = UIImage(named: "SaharaLogo")
+        } else {
+            // Used to display a random item from each of the 5 tags
+            let randElec = Int.random(in: 0...DBHelper.inst.electronics.count)
+            let randOut = Int.random(in: 0...DBHelper.inst.outdoors.count)
+            let randCloth = Int.random(in: 0...DBHelper.inst.clothing.count)
+            let randCook = Int.random(in: 0...DBHelper.inst.cooking.count)
+            let randDeco = Int.random(in: 0...DBHelper.inst.decorations.count)
+            
+            // first item in your wishlist
+            let wp = user!.wishlist![0]
+            
+            // fetch a product with the same id as the first item in your wishlist
+            let w = DBHelper.inst.fetchProduct(id: wp)
+            
+            // check which tag the item has in its first tag slot and then add a random object from said tag
+            if (w!.tags![0].contains("Electronics")) {
+                wishProd.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.electronics[randElec])!)
+            } else if (w!.tags![0].contains("Outdoors")) {
+                wishProd.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.outdoors[randOut])!)
+            } else if (w!.tags![0].contains("Clothing")) {
+                wishProd.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.clothing[randCloth])!)
+            } else if (w!.tags![0].contains("Cooking")) {
+                wishProd.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.cooking[randCook])!)
+            } else if (w!.tags![0].contains("Decorations")) {
+                wishProd.append(DBHelper.inst.fetchProduct(id: DBHelper.inst.decorations[randDeco])!)
+            }
+            
+            // display a random product from your related first item in wishlist's tags
+            wishlistItemsIMG.image = UIImage(named: wishProd[0].image!)
+            wishlistItemsIMG.contentMode = .scaleAspectFit
+            ud.setValue(wishProd[0].id, forKey: "currProd")
+        }
     }
     
-    func recentItems() {
+    func recentItems() { // we need to set it so the initial key in "lastProd" is nothing, but then it returns actual "lastProd" when we've seen a page before
+        if (DBHelper.inst.fetchProduct(id: ud.string(forKey: "lastProd")!) != nil) {
+            recentProd = DBHelper.inst.fetchProduct(id: ud.string(forKey: "lastProd")!)
+            recentIMG.image = UIImage(named: recentProd!.image!)
+            recentIMG.contentMode = .scaleAspectFit
+            ud.setValue(recentProd!.id, forKey: "currProd")
+        } else {
+            recentIMG.image = UIImage(named: "SaharaLogo")
+        }
         
     }
     
