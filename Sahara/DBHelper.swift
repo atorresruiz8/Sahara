@@ -565,4 +565,27 @@ class DBHelper{
             print("data not saved")
         }
     }
+    func fetchCurrentOrder(uNam: String) ->[BoughtProduct]?{
+        var prods = DBHelper.inst.fetchBoughtProduct(uName: uNam)
+        prods!.filter({$0.trackingStatus != "Delivered!"})
+        return prods
+    }
+    func progressTracking(boughtID : String){
+        var prod = DBHelper.inst.fetchBoughtProduct(boughtProdID: boughtID)
+        if(prod!.trackingStatus == "Sahara Distribution Center"){
+            prod!.trackingStatus = "On its way!"
+        }
+        else if(prod!.trackingStatus == "On its way!"){
+            prod!.trackingStatus = "Delivered!"
+        }
+        else{
+            print("this product has already been delivered")
+        }
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
 }
