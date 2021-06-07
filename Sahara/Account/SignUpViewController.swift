@@ -83,7 +83,10 @@ class SignUpViewController: UIViewController {
             object = ["phoneNumber" : phoneText.text!, "name" : nameField.text!, "password" : String(describing : hashed)]
          
             DBHelper.inst.addNewUser(object: object)
-            
+            let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+            let dash = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            dash.modalPresentationStyle = .fullScreen
+            present(dash, animated: true, completion: nil)
             
         }
         //if number empty and email works
@@ -95,6 +98,10 @@ class SignUpViewController: UIViewController {
             object = ["email" : emailText.text!, "name" : nameField.text!, "password" : String(describing : hashed)]
             
             DBHelper.inst.addNewUser(object: object)
+            let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+            let dash = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            dash.modalPresentationStyle = .fullScreen
+            present(dash, animated: true, completion: nil)
         }
         //if both email and number works
         else if(numCheck && emCheck){
@@ -105,6 +112,10 @@ class SignUpViewController: UIViewController {
             object = ["email" : emailText.text!, "phoneNumber" : phoneText.text!, "name" : nameField.text!, "password" : String(describing : hashed)]
            
             DBHelper.inst.addNewUser(object: object)
+            let sb : UIStoryboard = UIStoryboard(name: "Account", bundle: nil)
+            let dash = sb.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            dash.modalPresentationStyle = .fullScreen
+            present(dash, animated: true, completion: nil)
         }
         //if we can't make a new user
         else{
