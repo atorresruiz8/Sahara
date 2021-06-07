@@ -25,6 +25,9 @@
 		848BB554266A7B260033F022 /* CosmosRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BB545266A7B260033F022 /* CosmosRating.swift */; };
 		848BB555266A7B260033F022 /* CosmosSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BB546266A7B260033F022 /* CosmosSize.swift */; };
 		848BB556266A7B260033F022 /* CosmosLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BB547266A7B260033F022 /* CosmosLayers.swift */; };
+		84B927A5266ABE9D00739096 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B927A4266ABE9D00739096 /* CartViewController.swift */; };
+		84B927A8266ABEA600739096 /* currentOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B927A7266ABEA600739096 /* currentOrdersViewController.swift */; };
+		84B927AB266ABEAC00739096 /* paymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B927AA266ABEAC00739096 /* paymentMethodViewController.swift */; };
 		84F6262A2661913A00D9EF6D /* ProfileEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F626292661913900D9EF6D /* ProfileEditorViewController.swift */; };
 		84F626322661937C00D9EF6D /* ProductMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F626312661937C00D9EF6D /* ProductMaker.swift */; };
 		84F6263A2666814800D9EF6D /* makeProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F626392666814800D9EF6D /* makeProducts.swift */; };
@@ -100,6 +103,9 @@
 		848BB546266A7B260033F022 /* CosmosSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosSize.swift; sourceTree = "<group>"; };
 		848BB547266A7B260033F022 /* CosmosLayers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosLayers.swift; sourceTree = "<group>"; };
 		848BB558266A7B2D0033F022 /* Cosmos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cosmos.h; sourceTree = "<group>"; };
+		84B927A4266ABE9D00739096 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		84B927A7266ABEA600739096 /* currentOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currentOrdersViewController.swift; sourceTree = "<group>"; };
+		84B927AA266ABEAC00739096 /* paymentMethodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = paymentMethodViewController.swift; sourceTree = "<group>"; };
 		84F626292661913900D9EF6D /* ProfileEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditorViewController.swift; sourceTree = "<group>"; };
 		84F626312661937C00D9EF6D /* ProductMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMaker.swift; sourceTree = "<group>"; };
 		84F626392666814800D9EF6D /* makeProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeProducts.swift; sourceTree = "<group>"; };
@@ -250,6 +256,9 @@
 				84F626312661937C00D9EF6D /* ProductMaker.swift */,
 				8B2E31FA26657DCE00ACDC0B /* ProductViewController.swift */,
 				8B2E31FC26657E7900ACDC0B /* CheckoutViewController.swift */,
+				84B927A7266ABEA600739096 /* currentOrdersViewController.swift */,
+				84B927A4266ABE9D00739096 /* CartViewController.swift */,
+				84B927AA266ABEAC00739096 /* paymentMethodViewController.swift */,
 				8B2E31FE26657E8100ACDC0B /* RefundViewController.swift */,
 				8B2E320026657E8A00ACDC0B /* PaymentViewController.swift */,
 				8BB15805265BFD08003F7AA3 /* ReviewProductViewController.swift */,
@@ -456,6 +465,7 @@
 				8B2E320126657E8A00ACDC0B /* PaymentViewController.swift in Sources */,
 				8B07D1E6266ABE190044F373 /* CartViewController.swift in Sources */,
 				84F6262A2661913A00D9EF6D /* ProfileEditorViewController.swift in Sources */,
+				84B927AB266ABEAC00739096 /* paymentMethodViewController.swift in Sources */,
 				8B2CACD6265FE9D800BB4131 /* WishListViewController.swift in Sources */,
 				8B17AB842658146700CDAA01 /* ViewController.swift in Sources */,
 				848BB548266A7B260033F022 /* CosmosLayerHelper.swift in Sources */,
@@ -482,6 +492,7 @@
 				8B17ABA226581B6000CDAA01 /* Product+CoreDataClass.swift in Sources */,
 				8B17ABA526581B6000CDAA01 /* Review+CoreDataProperties.swift in Sources */,
 				8B17ABA426581B6000CDAA01 /* Review+CoreDataClass.swift in Sources */,
+				84B927A5266ABE9D00739096 /* CartViewController.swift in Sources */,
 				848BB556266A7B260033F022 /* CosmosLayers.swift in Sources */,
 				84F6263A2666814800D9EF6D /* makeProducts.swift in Sources */,
 				8B978B192669A27E00171F97 /* CartTableViewCell.swift in Sources */,
@@ -502,6 +513,7 @@
 				8B17ABA126581B6000CDAA01 /* BoughtProduct+CoreDataProperties.swift in Sources */,
 				848BB550266A7B260033F022 /* CosmosTouch.swift in Sources */,
 				8BE1380F265D9964001E0662 /* CustomButton.swift in Sources */,
+				84B927A8266ABEA600739096 /* currentOrdersViewController.swift in Sources */,
 				8BE13816265DA243001E0662 /* CustomView.swift in Sources */,
 				8BE13811265D9FA1001E0662 /* BodyView.swift in Sources */,
 				848BB555266A7B260033F022 /* CosmosSize.swift in Sources */,
