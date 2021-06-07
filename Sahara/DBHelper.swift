@@ -513,7 +513,8 @@ class DBHelper{
         bp.deliveryDate = futureDate
         bp.image = prod!.image!
         bp.name = prod!.name!
-        
+        let randInt = Int.random(in: 100000000...999999999)
+        bp.bProdID = String(randInt)
         do {
             try context!.save()
             print("data saved")
@@ -525,7 +526,7 @@ class DBHelper{
     func fetchBoughtProduct(boughtProdID: String)->BoughtProduct? {
         var b: BoughtProduct?
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "BoughtProduct")
-        fetchReq.predicate = NSPredicate(format: "bProdID %@", boughtProdID)
+        fetchReq.predicate = NSPredicate(format: "bProdID == %@", boughtProdID)
         do {
             let bProd = try context!.fetch(fetchReq)
             let bProds = bProd as! [BoughtProduct]
@@ -543,9 +544,17 @@ class DBHelper{
         return b
     }
     
+    func fetchBoughtProduct(uName: String)->[BoughtProduct]? {
+        var b: [BoughtProduct]?
+        let user = DBHelper.inst.fetchUser(query: uName)
+        let array = user!.bought!.allObjects as! [BoughtProduct]
+        b = array
+        return b
+    }
+    
     func refundProduct(boughtProdID: String, uName: String) {
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "BoughtProduct")
-        fetchReq.predicate = NSPredicate(format: "bProdID %@", boughtProdID)
+        fetchReq.predicate = NSPredicate(format: "bProdID == %@", boughtProdID)
         let user = DBHelper.inst.fetchUser(query: uName)
         let bProd = DBHelper.inst.fetchBoughtProduct(boughtProdID: boughtProdID)!
         user!.balance += bProd.price
