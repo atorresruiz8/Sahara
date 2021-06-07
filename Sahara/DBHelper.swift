@@ -496,4 +496,26 @@ class DBHelper{
             print("data not saved")
         }
     }
+    func makeBoughtProduct(prodID : String, uName : String){
+        let bp = NSEntityDescription.insertNewObject(forEntityName: "BoughtProduct", into: context!) as! BoughtProduct
+        bp.trackingStatus = "Sahara Distribution Center"
+        let prod = fetchProduct(id: prodID)
+        bp.price = (prod!.price * prod!.salePercentage)
+        bp.owner = fetchUser(query : uName)
+        let today = NSDate()
+        let cal = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+        let nextWeek = cal!.date(byAdding: NSCalendar.Unit.day, value: 7, to: today as Date, options: NSCalendar.Options.matchLast)
+        bp.deliveryDate = nextWeek
+        bp.name = prod!.name
+        bp.image = prod!.image
+        let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context!) as! User
+        let randInt = Int.random(in: 100000000...999999999)
+        bp.bProdID = Int32(randInt)
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
 }
