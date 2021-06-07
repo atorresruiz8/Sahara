@@ -567,7 +567,7 @@ class DBHelper{
     }
     func fetchCurrentOrder(uNam: String) ->[BoughtProduct]?{
         var prods = DBHelper.inst.fetchBoughtProduct(uName: uNam)
-        prods!.filter({$0.trackingStatus != "Delivered!"})
+        prods!.filter{$0.trackingStatus != "Delivered!"}
         return prods
     }
     func progressTracking(boughtID : String){
