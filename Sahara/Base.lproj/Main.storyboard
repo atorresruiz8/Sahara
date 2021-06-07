@@ -608,6 +608,12 @@ your wishlist</string>
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                     </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wNr-x9-cRE">
+                                        <rect key="frame" x="0.0" y="161" width="414" height="652"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="uhe-bO-ZjL"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="WV5-Ht-X2H"/>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -618,6 +624,7 @@ your wishlist</string>
                     <tabBarItem key="tabBarItem" title="" image="cart" catalog="system" selectedImage="cart.fill" id="ywn-8u-XKW"/>
                     <connections>
                         <outlet property="deliveryAddress" destination="NDZ-Ds-dtZ" id="HsQ-dg-B3k"/>
+                        <outlet property="mainView" destination="wNr-x9-cRE" id="gHf-fJ-0Iz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTo-22-If7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
