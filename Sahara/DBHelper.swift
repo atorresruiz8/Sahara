@@ -496,4 +496,65 @@ class DBHelper{
             print("data not saved")
         }
     }
+    
+    func addBoughtProduct(uName: String, pID: String){
+        let bp = NSEntityDescription.insertNewObject(forEntityName: "BoughtProduct", into: context!) as! BoughtProduct
+        bp.trackingStatus = "Sahara Distribution Center"
+        bp.amount = 1
+        let user = DBHelper.inst.fetchUser(query: uName)
+        let prod = DBHelper.inst.fetchProduct(id: pID)
+        bp.owner = user
+        bp.price = (prod!.price * prod!.salePercentage)
+
+        let currDate = Date()
+        var dateComp = DateComponents()
+        dateComp.day = 7
+        let futureDate = Calendar.current.date(byAdding: dateComp, to: currDate)
+        bp.deliveryDate = futureDate
+        bp.image = prod!.image!
+        bp.name = prod!.name!
+        
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
+    
+    func fetchBoughtProduct(boughtProdID: String)->BoughtProduct? {
+        var b: BoughtProduct?
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "BoughtProduct")
+        fetchReq.predicate = NSPredicate(format: "bProdID %@", boughtProdID)
+        do {
+            let bProd = try context!.fetch(fetchReq)
+            let bProds = bProd as! [BoughtProduct]
+            for data in bProds{
+                if(data.bProdID == boughtProdID){
+                    b = data
+                    DBHelper.dataCheck = true
+                    return b
+                }
+            }
+        } catch {
+            print("data not fetched")
+        }
+        
+        return b
+    }
+    
+    func refundProduct(boughtProdID: String, uName: String) {
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "BoughtProduct")
+        fetchReq.predicate = NSPredicate(format: "bProdID %@", boughtProdID)
+        let user = DBHelper.inst.fetchUser(query: uName)
+        let bProd = DBHelper.inst.fetchBoughtProduct(boughtProdID: boughtProdID)!
+        user!.balance += bProd.price
+        do {
+            context!.delete(bProd)
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
 }
