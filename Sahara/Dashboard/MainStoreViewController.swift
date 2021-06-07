@@ -15,6 +15,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
     var wishProd : [Product] = []
     var recentProd : Product?
     
+    @IBOutlet weak var wishlistTagDisplay: UILabel!
     @IBOutlet weak var recentIMG: UIImageView!
     @IBOutlet weak var wishlistItemsIMG: UIImageView!
     @IBOutlet weak var exploreItemsIMG: UIImageView!
@@ -215,6 +216,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
     func wishlistItems() {
         if (user!.wishlist!.count == 0) {
             wishlistItemsIMG.image = UIImage(named: "SaharaLogo")
+            wishlistTagDisplay.isHidden = true
         } else {
             // Used to display a random item from each of the 5 tags
             let randElec = Int.random(in: 0...DBHelper.inst.electronics.count - 1)
@@ -244,6 +246,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
             
             // display a random product from your related first item in wishlist's tags
             wishlistItemsIMG.image = UIImage(named: wishProd[0].image!)
+            wishlistTagDisplay.text = "You like " + wishProd[0].tags![0] + "!"
             wishlistItemsIMG.contentMode = .scaleAspectFit
             ud.setValue(wishProd[0].id, forKey: "currProd")
         }
