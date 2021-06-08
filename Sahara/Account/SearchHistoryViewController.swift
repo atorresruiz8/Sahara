@@ -21,10 +21,15 @@ class SearchHistoryViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! SearchHistoryTableViewCell
         myCell.search.text  = user!.searchHistory![indexPath.row]
+        myCell.search.sizeToFit()
+        myCell.search.numberOfLines = 0
         return myCell
     }
     
-
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableView.automaticDimension
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)

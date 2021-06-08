@@ -819,14 +819,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocf-DE-00n">
-                                                    <rect key="frame" x="29" y="11" width="365" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocf-DE-00n">
+                                                    <rect key="frame" x="30" y="16" width="374" height="45"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ocf-DE-00n" firstAttribute="top" secondItem="F6E-rI-HNu" secondAttribute="topMargin" constant="5" id="1FJ-YI-hq8"/>
+                                                <constraint firstItem="ocf-DE-00n" firstAttribute="leading" secondItem="F6E-rI-HNu" secondAttribute="leadingMargin" constant="10" id="DpO-rD-NBS"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ocf-DE-00n" secondAttribute="bottom" constant="5" id="OhL-qk-P9o"/>
+                                                <constraint firstItem="ocf-DE-00n" firstAttribute="trailing" secondItem="F6E-rI-HNu" secondAttribute="trailingMargin" constant="10" id="rOB-g7-V1M"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="search" destination="ocf-DE-00n" id="6la-Nh-X9P"/>
