@@ -666,10 +666,10 @@
             </objects>
             <point key="canvasLocation" x="963.76811594202911" y="916.74107142857133"/>
         </scene>
-        <!--Wish List View Controller-->
+        <!--Cats-->
         <scene sceneID="L7T-t2-yIB">
             <objects>
-                <viewController storyboardIdentifier="Wish" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AJZ-LH-6l3" customClass="WishListViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreviousWishlists" title="Cats" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AJZ-LH-6l3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ar6-VG-4Sb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -756,7 +756,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAt-8r-Lxy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634.7826086956522" y="916.74107142857133"/>
+            <point key="canvasLocation" x="1242" y="1498"/>
         </scene>
         <!--Search History View Controller-->
         <scene sceneID="70p-O9-6Aa">
@@ -850,6 +850,71 @@
             </objects>
             <point key="canvasLocation" x="2305.7971014492755" y="916.74107142857133"/>
         </scene>
+        <!--Wish List View Controller-->
+        <scene sceneID="GL7-82-VVH">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ioh-Oz-6fF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Wish" id="LMg-By-YRG" customClass="WishListViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9wF-xx-6gh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9uB-8u-JeL" customClass="BodyView" customModule="Sahara" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="906"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9CW-EL-T95" customClass="HeaderView" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SaharaLogo" translatesAutoresizingMaskIntoConstraints="NO" id="J9L-At-cIP">
+                                                <rect key="frame" x="167" y="33" width="81" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2U-vV-mjg">
+                                                <rect key="frame" x="0.0" y="52" width="75" height="42"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="arrow.backward" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="returnToProfile:" destination="LMg-By-YRG" eventType="touchUpInside" id="3B0-8T-Ess"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.16048464079999999" green="0.36521553379999999" blue="0.62876457249999995" alpha="0.22095070419999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbf-U5-KqE">
+                                        <rect key="frame" x="8" y="131" width="399" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title=" Deliver to [User] - [City, Zip Code]">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                    </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91e-bj-i4Z">
+                                        <rect key="frame" x="0.0" y="161" width="414" height="745"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="hcK-fy-Jjo"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="bvH-hr-gsg"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dlg-wE-QE5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mainView" destination="91e-bj-i4Z" id="Obo-n6-sip"/>
+                        <outlet property="welcomeMessage" destination="Lbf-U5-KqE" id="rwr-0U-ioz"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1647.826086956522" y="916.74107142857133"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jVT-GR-sdI"/>
@@ -857,6 +922,9 @@
     <resources>
         <image name="SaharaLogo" width="1024" height="896"/>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
