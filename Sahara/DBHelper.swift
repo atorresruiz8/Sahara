@@ -607,4 +607,25 @@ class DBHelper{
             print("data not saved")
         }
     }
+    func makeCreditCard(uName : String, cName : String, cNum : String, cExDate : String, ccv : String){
+        let user = fetchUser(query: uName)
+        let cCard = CreditCard(name: cName, number: cNum, expDate: cExDate, CCV: ccv)
+        user!.creditCard = cCard
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
+    func setNetBanking(uName : String, rout : String){
+        let user = fetchUser(query: uName)
+        user!.netBanking = rout
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
 }

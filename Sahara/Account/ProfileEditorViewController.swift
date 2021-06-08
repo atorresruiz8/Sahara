@@ -30,7 +30,13 @@ class ProfileEditorViewController: UIViewController {
         }
     }
     
-
+    @IBAction func paymentAdder(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+        let temp = sb.instantiateViewController(withIdentifier: "makePayMeth") as! PaymentMakerViewController
+        temp.modalPresentationStyle = .fullScreen
+        present(temp, animated: true, completion: nil)
+    }
+    
     @IBAction func editname(_ sender: Any) {
         userName.isUserInteractionEnabled = true
     }
