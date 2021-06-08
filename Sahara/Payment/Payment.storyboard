@@ -797,6 +797,27 @@
                                             <action selector="addCreditCard:" destination="v4i-Mr-dYt" eventType="touchUpInside" id="N5O-6T-jBa"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Routing Number for Online Banking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7c-C8-ptD">
+                                        <rect key="frame" x="18" y="438" width="268" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rj-VS-d4j">
+                                        <rect key="frame" x="17" y="491" width="285" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ON-6V-F2r" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="140" y="565" width="135" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Add Online Banking"/>
+                                        <connections>
+                                            <action selector="addRoutNum:" destination="v4i-Mr-dYt" eventType="touchUpInside" id="mp7-H1-5UA"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                             </view>
@@ -809,6 +830,7 @@
                         <outlet property="CCV" destination="zij-nR-t2w" id="6aF-bI-Ags"/>
                         <outlet property="cName" destination="Xi9-9u-SOm" id="B4q-CM-tzS"/>
                         <outlet property="monthExp" destination="ut7-Yy-OtT" id="kSG-cp-pDu"/>
+                        <outlet property="routNum" destination="7rj-VS-d4j" id="PkL-7Z-cX8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9K-Wr-WDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

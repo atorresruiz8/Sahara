@@ -8,6 +8,7 @@
 import UIKit
 
 class PaymentMakerViewController: UIViewController {
+    @IBOutlet weak var routNum: UITextField!
     let ud = UserDefaults.standard
     @IBOutlet weak var CCN: UITextField!
     @IBOutlet weak var cName: UITextField!
@@ -33,9 +34,24 @@ class PaymentMakerViewController: UIViewController {
         if(cName.text != "" && CCN.text !=  "" && CCN.text!.count == 16 && CCV.text != "" && CCV.text!.count == 3 && monthExp.text != ""){
             DBHelper.inst.makeCreditCard(uName: ud.string(forKey: "currUser")!, cName: cName.text!, cNum: CCN.text!, cExDate: monthExp.text!, ccv: CCV.text!)
         }
+        else{
+            let alert = UIAlertController(title: "Invalid Information", message: "there was a problem with some of hte information that you provided", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        }
     }
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func addRoutNum(_ sender: Any) {
+        if(routNum.text != 0){
+            DBHelper.inst.setNetBanking(uName: ud.string(forKey: "currUser"), rout: routNum.text!)
+        }
+        else{
+            let alert = UIAlertController(title: "Invalid Information", message: "there was a problem with some of hte information that you provided", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"Try Again", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        }
     }
 }
