@@ -46,7 +46,7 @@ class PaymentMakerViewController: UIViewController {
     }
     @IBAction func addRoutNum(_ sender: Any) {
         if(routNum.text != ""){
-            DBHelper.inst.setNetBanking(uName: ud.string(forKey: "currUser"), rout: routNum.text!)
+            DBHelper.inst.setNetBanking(uName: ud.string(forKey: "currUser")!, rout: routNum.text!)
         }
         else{
             let alert = UIAlertController(title: "Invalid Information", message: "there was a problem with some of hte information that you provided", preferredStyle: .alert)
