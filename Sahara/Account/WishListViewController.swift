@@ -78,7 +78,7 @@ class WishListViewController: UIViewController {
         }
     }
     func closeView(){
-        var sb = UIStoryboard(name: "Account", bundle: nil)
+        let sb = UIStoryboard(name: "Account", bundle: nil)
         let wish = sb.instantiateViewController(withIdentifier: "Wish") as! WishListViewController
         wish.modalPresentationStyle = .fullScreen
         present(wish, animated: true, completion: nil)
@@ -104,7 +104,7 @@ class WishListViewController: UIViewController {
     }
 
     @IBAction func returnToProfile(_ sender: Any) {
-        var sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
 
         let account = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
         account.modalPresentationStyle = .fullScreen

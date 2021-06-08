@@ -145,13 +145,29 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
         // check to see which image was tapped to determine which product to load
         switch tappedImage.image {
         case dailyDealPic.image:
-            ud.setValue(dailyProd[0].id, forKey: "currProd")
+            if(dailyProd.count > 0){
+                ud.setValue(dailyProd[0].id, forKey: "currProd")
+            }
+            else{
+                return
+            }
         case exploreItemsIMG.image:
-            ud.setValue(exploreProd[0].id, forKey: "currProd")
+            if(exploreProd.count > 0){
+                ud.setValue(exploreProd[0].id, forKey: "currProd")
+            }
+            else{
+                return
+            }
         case wishlistItemsIMG.image:
-            ud.setValue(wishProd[0].id, forKey: "currProd")
+            if(wishProd.count > 0){
+                ud.setValue(wishProd[0].id, forKey: "currProd")
+            }
+            else{
+                return
+            }
         case recentIMG.image:
             ud.setValue(recentProd!.id, forKey: "currProd")
+            
         default:
             print("no view was pushed")
         }
