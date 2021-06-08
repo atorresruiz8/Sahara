@@ -25,7 +25,7 @@ extension BoughtProduct {
     @NSManaged public var owner: User?
     @NSManaged public var amount: Double
     @NSManaged public var bProdID: String?
-    @NSManaged public var paid: Boolean
+    @NSManaged public var paid: Bool
 
 }
 
