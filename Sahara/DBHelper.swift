@@ -496,6 +496,7 @@ class DBHelper{
             print("data not saved")
         }
     }
+    
     func addBoughtProduct(uName: String, pID: String){
         let bp = NSEntityDescription.insertNewObject(forEntityName: "BoughtProduct", into: context!) as! BoughtProduct
         bp.trackingStatus = "Sahara Distribution Center"
@@ -581,6 +582,18 @@ class DBHelper{
         else{
             print("this product has already been delivered")
         }
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
+    
+    func clearCart(uName: String) {
+        let user = fetchUser(query: uName)
+        user!.cart = []
+
         do {
             try context!.save()
             print("data saved")
