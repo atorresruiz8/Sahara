@@ -501,7 +501,7 @@ class DBHelper{
         }
     }
     
-    func addBoughtProduct(uName: String, pID: String){
+    func addBoughtProduct(uName: String, pID: String, paid: Bool){
         let bp = NSEntityDescription.insertNewObject(forEntityName: "BoughtProduct", into: context!) as! BoughtProduct
         bp.trackingStatus = "Sahara Distribution Center"
         bp.amount = 1
@@ -517,6 +517,7 @@ class DBHelper{
         bp.deliveryDate = futureDate
         bp.image = prod!.image!
         bp.name = prod!.name!
+        bp.paid = paid
         let randInt = Int.random(in: 100000000...999999999)
         bp.bProdID = String(randInt)
         do {
@@ -582,6 +583,7 @@ class DBHelper{
         }
         else if(prod!.trackingStatus == "On its way!"){
             prod!.trackingStatus = "Delivered!"
+            prod!.paid = true
         }
         else{
             print("this product has already been delivered")
