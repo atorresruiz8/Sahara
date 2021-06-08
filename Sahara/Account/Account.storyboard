@@ -797,10 +797,10 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.16048464079999999" green="0.36521553379999999" blue="0.62876457249999995" alpha="0.22095070419999999" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbf-U5-KqE">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbf-U5-KqE">
                                         <rect key="frame" x="8" y="131" width="399" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title=" Deliver to [User] - [City, Zip Code]">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>

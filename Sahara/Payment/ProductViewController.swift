@@ -16,7 +16,6 @@ class ProductViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var priceLB: UILabel!
     @IBOutlet weak var productLB: UILabel!
     @IBOutlet weak var productIMG: UIImageView!
-    @IBOutlet weak var checkoutBut: CustomButton!
     @IBOutlet weak var submitReviewBut: CustomButton!
     @IBOutlet weak var productRating: CosmosView!
     
@@ -33,7 +32,6 @@ class ProductViewController: UIViewController, UITextViewDelegate {
         if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
             reviewView.isHidden = true
             submitReviewBut.isHidden = true
-            checkoutBut.isHidden = true
             productRating.isHidden = true
         }
         
@@ -74,13 +72,6 @@ class ProductViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func addToWishlist(_ sender: Any) {
         DBHelper.inst.addToWishlist(prodID: product!.id!, uName: ud.string(forKey: "currUser")!)
-    }
-    
-    @IBAction func checkOut(_ sender: Any) {
-        let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
-        let check = sb.instantiateViewController(withIdentifier: "Checkout") as! CheckoutViewController
-        check.modalPresentationStyle = .fullScreen
-        present(check, animated: true, completion: nil)
     }
     
     

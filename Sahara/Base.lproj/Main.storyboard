@@ -616,19 +616,35 @@ your wishlist</string>
                                         <color key="backgroundColor" red="0.16048464079999999" green="0.36521553379999999" blue="0.62876457249999995" alpha="0.22095070419999999" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDZ-Ds-dtZ">
-                                        <rect key="frame" x="8" y="131" width="399" height="22"/>
+                                        <rect key="frame" x="7" y="131" width="399" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title=" Deliver to [User] - [City, Zip Code]" image="location" catalog="system">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbC-bF-mJk" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="22" y="161" width="370" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Proceed to Checkout"/>
+                                        <connections>
+                                            <action selector="Proceed:" destination="wbh-u3-AU4" eventType="touchUpInside" id="tOd-pM-4cB"/>
+                                        </connections>
+                                    </button>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wNr-x9-cRE">
-                                        <rect key="frame" x="0.0" y="161" width="414" height="652"/>
+                                        <rect key="frame" x="0.0" y="254" width="414" height="559"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <viewLayoutGuide key="contentLayoutGuide" id="uhe-bO-ZjL"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="WV5-Ht-X2H"/>
                                     </scrollView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your cart is loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8e-x2-3fo">
+                                        <rect key="frame" x="21" y="222" width="370" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -638,6 +654,7 @@ your wishlist</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="cart" catalog="system" selectedImage="cart.fill" id="ywn-8u-XKW"/>
                     <connections>
+                        <outlet property="cartTotal" destination="f8e-x2-3fo" id="fsI-c8-BSM"/>
                         <outlet property="deliveryAddress" destination="NDZ-Ds-dtZ" id="HsQ-dg-B3k"/>
                         <outlet property="mainView" destination="wNr-x9-cRE" id="gHf-fJ-0Iz"/>
                     </connections>

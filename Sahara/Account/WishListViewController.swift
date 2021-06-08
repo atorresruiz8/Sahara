@@ -40,31 +40,31 @@ class WishListViewController: UIViewController {
         var prodImage : String
         var index: Int
         init(name: String, price: String, pImage : String, pIndex: Int) {
-            WishListItemName = name
-            WishListItemPrice = price
-            prodImage = pImage
-            index = pIndex
-            super.init(frame: CGRect(x: 50, y: 100, width: UIScreen.main.bounds.width - 100, height: 100))
-            let title = UILabel()
-            title.text = WishListItemName
-            self.addSubview(title)
-            let image = UIImageView(image:UIImage(named: prodImage))
-            image.frame = CGRect(x: 0, y: 22.5, width: 100, height: 100)
-            image.contentMode = .scaleAspectFit
-            image.clipsToBounds = true
-            self.addSubview(image)
-            let delete = CustomButton()
-            delete.setTitle("Delete", for: .normal)
-            delete.frame = CGRect(x: 170, y: 75, width: 70, height: 50)
-            delete.tag = index
-            
-            delete.addTarget(self, action: #selector(deleteWishListItem), for: .touchUpInside)
-            self.addSubview(delete)
-            let price = UILabel()
-            price.text = (String(WishListItemPrice))
-            price.frame = CGRect(x: 270, y: 60, width: 100, height: 20)
-            self.addSubview(price)
-            title.translatesAutoresizingMaskIntoConstraints = false
+                WishListItemName = name
+                WishListItemPrice = price
+                prodImage = pImage
+                index = pIndex
+                super.init(frame: CGRect(x: 50, y: 100, width: UIScreen.main.bounds.width - 100, height: 100))
+                let title = UILabel(frame: CGRect(x: 150, y: 10, width: 200, height: 50))
+                title.numberOfLines = 0
+                title.text = WishListItemName
+                self.addSubview(title)
+                let image = UIImageView(image:UIImage(named: prodImage))
+                image.frame = CGRect(x: 10, y: 22.5, width: 120, height: 100)
+                image.contentMode = .scaleAspectFit
+                image.clipsToBounds = true
+                self.addSubview(image)
+                let delete = CustomButton()
+                delete.setTitle("Delete", for: .normal)
+                delete.frame = CGRect(x: 200, y: 75, width: 70, height: 50)
+                delete.tag = index
+                delete.addTarget(self, action: #selector(deleteWishListItem), for: .touchUpInside)
+                self.addSubview(delete)
+                let price = UILabel()
+                price.text = (String(WishListItemPrice))
+                price.frame = CGRect(x: 300, y: 90, width: 100, height: 20)
+                self.addSubview(price)
+                title.translatesAutoresizingMaskIntoConstraints = false
         }
         
         required init?(coder: NSCoder) {
@@ -89,6 +89,15 @@ class WishListViewController: UIViewController {
         addWishlistItemsToSubView()
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+
+        if(DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)!.wishlist!.count == 0){
+            let alert = UIAlertController(title: "Your wishlist was Empty.", message: "Your wishlist is currently empty, please add some items to it.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
+            WishListViewController.inst.present(alert, animated: true)
+            return
+        }
+    }
     override func viewDidLoad() {//        testCart()
         
         super.viewDidLoad()
@@ -101,8 +110,16 @@ class WishListViewController: UIViewController {
         } else {
             welcomeMessage.setTitle("Hi, \(String(describing: user!.name!))", for: UIButton.State.normal)
         }
+        if(DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)!.wishlist!.count == 0){
+            let alert = UIAlertController(title: "Your wishlist was Empty.", message: "Your wishlist is currently empty, please add some items to it.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
+            WishListViewController.inst.present(alert, animated: true)
+            return
+        }
+        
         WishListViewController.displayWishlist()
         configureSubView()
+        
     }
 
     @IBAction func returnToProfile(_ sender: Any) {
@@ -120,10 +137,8 @@ class WishListViewController: UIViewController {
         for i in 0...(WishListViewController.wishListArray.count-1){// change to cart items
             mainView!.addSubview(WishListViewController.wishListArray[i])
             mainView!.translatesAutoresizingMaskIntoConstraints = false//
-            mainView!.subviews[i+2].frame = CGRect(x: 20, y: (100 + 150 * (i)), width: Int(UIScreen.main.bounds.width) - 40, height: 130)
-//            view.subviews[i+1].subviews[0] = CGRect(x:300, y:150, width: view.subviews[i+1].frame.width, height: 100)
-//            mainView!.subviews[i+3].subviews[0].topAnchor.constraint(equalTo: mainView!.subviews[i+3].topAnchor, constant: 20).isActive = true
-//            mainView!.subviews[i+3].subviews[0].leadingAnchor.constraint(equalTo: mainView!.subviews[i+3].leadingAnchor, constant: 120).isActive = true
+            mainView!.subviews[i+2].frame = CGRect(x: 20, y: (50 + 150 * (i)), width: Int(UIScreen.main.bounds.width) - 40, height: 130)
+            mainView!.subviews[i+2].backgroundColor = UIColor(red: 240/255, green: 147/255, blue: CGFloat(150 * abs(sin((Double(i) / 4 * Double.pi))))/255, alpha: 0.80)
 
         }
 
