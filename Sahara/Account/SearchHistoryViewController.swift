@@ -23,6 +23,8 @@ class SearchHistoryViewController: UIViewController, UITableViewDataSource, UITa
         myCell.search.text  = user!.searchHistory![indexPath.row]
         myCell.search.sizeToFit()
         myCell.search.numberOfLines = 0
+        myCell.backgroundColor = UIColor(red: 240/255, green: 147/255, blue: CGFloat(150 * abs(sin((Double(indexPath.row) / 4 * Double.pi))))/255, alpha: 0.80)
+     
         return myCell
     }
     
