@@ -45,7 +45,7 @@ class PaymentMakerViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func addRoutNum(_ sender: Any) {
-        if(routNum.text != 0){
+        if(routNum.text != ""){
             DBHelper.inst.setNetBanking(uName: ud.string(forKey: "currUser"), rout: routNum.text!)
         }
         else{
