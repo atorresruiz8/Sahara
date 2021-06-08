@@ -24,6 +24,7 @@ extension BoughtProduct {
     @NSManaged public var name: String?
     @NSManaged public var owner: User?
     @NSManaged public var amount: Double
+    @NSManaged public var bProdID: String?
 
 }
 

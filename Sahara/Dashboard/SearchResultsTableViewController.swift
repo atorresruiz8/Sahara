@@ -107,7 +107,7 @@ class SearchResultsTableViewController: UITableViewController {
             
             cell.productIMG.contentMode = .scaleAspectFit
         }
-        
+        cell.backgroundColor = UIColor(red: 240/255, green: 147/255, blue: CGFloat(150 * abs(sin((Double(indexPath.row) / 4 * Double.pi))))/255, alpha: 0.80)
         return cell
     }
     
