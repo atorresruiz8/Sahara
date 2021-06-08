@@ -589,4 +589,16 @@ class DBHelper{
             print("data not saved")
         }
     }
+    
+    func clearCart(uName: String) {
+        let user = fetchUser(query: uName)
+        user!.cart = []
+
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
 }
