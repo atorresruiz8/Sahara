@@ -20,6 +20,7 @@ class CartViewController: UIViewController {
         let ud2 = UserDefaults.standard
         let user2 = DBHelper.inst.fetchUser(query: ud2.string(forKey: "currUser")!)
         var prod : Product?
+        
         for i in 0...user2!.cart!.count-1{
             
             prod = DBHelper.inst.fetchProduct(id: user2!.cart![i])
@@ -85,7 +86,7 @@ class CartViewController: UIViewController {
         }
     }
     func closeView(){
-        var sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
 
         let cart = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
         cart.modalPresentationStyle = .fullScreen
@@ -110,6 +111,18 @@ cart.selectedIndex = 2
                 deliveryAddress.setTitle("Deliver to \(String(describing: user!.name!)) - City: N/A, Zip Code: N/A", for: UIButton.State.normal)
             }
         }
+        if(ud.string(forKey: "currUser")!.hasPrefix("_")){
+            let alert = UIAlertController(title: "No cart exists", message: "Guests do not have a cart.  Please convert your account to a full version.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
+            CartViewController.inst.present(alert, animated: true)
+            return
+        }
+        else if(CartViewController.cartArray.count == 0){
+            let alert = UIAlertController(title: "Your cart was Empty.", message: "Your cart is currently empty, please add some items to it.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
+            CartViewController.inst.present(alert, animated: true)
+            return
+        }
         CartViewController.displayCart()
         configureSubView()
         print(user!.cart!)
@@ -118,7 +131,7 @@ cart.selectedIndex = 2
 
     func addCartItemsToSubView(){
                 mainView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height + 800)
-            
+       
         for i in 0...(CartViewController.cartArray.count-1){// change to cart items
             mainView!.addSubview(CartViewController.cartArray[i])
             mainView!.translatesAutoresizingMaskIntoConstraints = false//

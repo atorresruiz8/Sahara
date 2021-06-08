@@ -11,17 +11,17 @@ class paymentMethodViewController: UIViewController {
     var viewPaymentItemArray : [viewPaymentItem] = []
     func testPaymentItem(){
         viewPaymentItemArray = []
-        var COD = paymentItem()
+        let COD = paymentItem()
         COD.paymentItemType = "Cash On Delivery"
         COD.paymentItemName = "ID required"
         COD.paymentItemNumber = ""
         COD.paymentItemDate = ""
-        var test1 = paymentItem()
+        let test1 = paymentItem()
         test1.paymentItemType = "Debit"
         test1.paymentItemName = "Justin Horner"
         test1.paymentItemDate = "12/24"
         test1.paymentItemNumber = "4444"
-        var test2 = paymentItem()
+        let test2 = paymentItem()
         test2.paymentItemType = "Debit"
         test2.paymentItemName = "Phil Mickleson"
         test2.paymentItemDate = "12/22"
