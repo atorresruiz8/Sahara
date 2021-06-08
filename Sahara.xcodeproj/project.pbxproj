@@ -28,6 +28,7 @@
 		848BB556266A7B260033F022 /* CosmosLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BB547266A7B260033F022 /* CosmosLayers.swift */; };
 		84B927A8266ABEA600739096 /* currentOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B927A7266ABEA600739096 /* currentOrdersViewController.swift */; };
 		84B927AB266ABEAC00739096 /* paymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B927AA266ABEAC00739096 /* paymentMethodViewController.swift */; };
+		84B927EB267017DB00739096 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B927EA267017DB00739096 /* CreditCard.swift */; };
 		84F6262A2661913A00D9EF6D /* ProfileEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F626292661913900D9EF6D /* ProfileEditorViewController.swift */; };
 		84F626322661937C00D9EF6D /* ProductMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F626312661937C00D9EF6D /* ProductMaker.swift */; };
 		84F6263A2666814800D9EF6D /* makeProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F626392666814800D9EF6D /* makeProducts.swift */; };
@@ -105,6 +106,7 @@
 		848BB558266A7B2D0033F022 /* Cosmos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cosmos.h; sourceTree = "<group>"; };
 		84B927A7266ABEA600739096 /* currentOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currentOrdersViewController.swift; sourceTree = "<group>"; };
 		84B927AA266ABEAC00739096 /* paymentMethodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = paymentMethodViewController.swift; sourceTree = "<group>"; };
+		84B927EA267017DB00739096 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		84F626292661913900D9EF6D /* ProfileEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditorViewController.swift; sourceTree = "<group>"; };
 		84F626312661937C00D9EF6D /* ProductMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMaker.swift; sourceTree = "<group>"; };
 		84F626392666814800D9EF6D /* makeProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeProducts.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				8BE13808265D777C001E0662 /* DBHelper.swift */,
 				840A6337265C3CFE005485C5 /* address.swift */,
 				84F626392666814800D9EF6D /* makeProducts.swift */,
+				84B927EA267017DB00739096 /* CreditCard.swift */,
 			);
 			path = Sahara;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				84F6262A2661913A00D9EF6D /* ProfileEditorViewController.swift in Sources */,
 				84B927AB266ABEAC00739096 /* paymentMethodViewController.swift in Sources */,
 				8B2CACD6265FE9D800BB4131 /* WishListViewController.swift in Sources */,
+				84B927EB267017DB00739096 /* CreditCard.swift in Sources */,
 				8B17AB842658146700CDAA01 /* ViewController.swift in Sources */,
 				848BB548266A7B260033F022 /* CosmosLayerHelper.swift in Sources */,
 				8B17AB802658146700CDAA01 /* AppDelegate.swift in Sources */,

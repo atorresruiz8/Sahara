@@ -36,7 +36,7 @@
         <attribute name="creditCard" optional="YES" attributeType="Transformable"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="netBanking" optional="YES" attributeType="Transformable"/>
+        <attribute name="netBanking" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
         <attribute name="profilePicture" optional="YES" attributeType="Transformable"/>
@@ -49,6 +49,6 @@
         <element name="BoughtProduct" positionX="-18" positionY="153" width="128" height="193"/>
         <element name="Product" positionX="-54" positionY="72" width="128" height="149"/>
         <element name="Review" positionX="-36" positionY="108" width="128" height="89"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="254"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="268"/>
     </elements>
 </model>

@@ -19,10 +19,10 @@ extension User {
     @NSManaged public var address: Address?
     @NSManaged public var balance: Double
     @NSManaged public var cart: [String]?
-    @NSManaged public var creditCard: NSObject?
+    @NSManaged public var creditCard: CreditCard?
     @NSManaged public var email: String?
     @NSManaged public var name: String?
-    @NSManaged public var netBanking: NSObject?
+    @NSManaged public var netBanking: String?
     @NSManaged public var password: String?
     @NSManaged public var phoneNumber: String?
     @NSManaged public var profilePicture: NSObject?
