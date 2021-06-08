@@ -84,8 +84,6 @@
 
 /* Begin PBXFileReference section */
 		42F5B530A184F95444900CD6 /* Pods-Sahara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sahara.debug.xcconfig"; path = "Target Support Files/Pods-Sahara/Pods-Sahara.debug.xcconfig"; sourceTree = "<group>"; };
-		49BC16C0266ABA6900F08AED /* currentOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = currentOrdersViewController.swift; path = ../../../PickAndPay/Sahara/currentOrdersViewController.swift; sourceTree = "<group>"; };
-		49BC16C1266ABA6900F08AED /* paymentMethodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = paymentMethodViewController.swift; path = ../../../PickAndPay/Sahara/paymentMethodViewController.swift; sourceTree = "<group>"; };
 		49BC16C5266ABFCB00F08AED /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		840A6326265BFC13005485C5 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		840A6337265C3CFE005485C5 /* address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = address.swift; sourceTree = "<group>"; };
@@ -258,8 +256,6 @@
 				84B927A7266ABEA600739096 /* currentOrdersViewController.swift */,
 				84B927AA266ABEAC00739096 /* paymentMethodViewController.swift */,
 				8B2E31FE26657E8100ACDC0B /* RefundViewController.swift */,
-				49BC16C0266ABA6900F08AED /* currentOrdersViewController.swift */,
-				49BC16C1266ABA6900F08AED /* paymentMethodViewController.swift */,
 				8B2E320026657E8A00ACDC0B /* PaymentViewController.swift */,
 				8BB15805265BFD08003F7AA3 /* ReviewProductViewController.swift */,
 				8BE3E962266955D800E70EB6 /* ReviewTableViewCell.swift */,
