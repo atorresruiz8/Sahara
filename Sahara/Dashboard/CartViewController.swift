@@ -44,26 +44,30 @@ class CartViewController: UIViewController {
             prodImage = pImage
             index = pIndex
             super.init(frame: CGRect(x: 50, y: 100, width: UIScreen.main.bounds.width - 100, height: 100))
-            let title = UILabel()
+            let title = UILabel(frame: CGRect(x: 150, y: 10, width: 150, height: 50))
+            title.numberOfLines = 0
             title.text = cartItemName
             self.addSubview(title)
             let image = UIImageView(image:UIImage(named: prodImage))
-            image.frame = CGRect(x: 0, y: 22.5, width: 100, height: 100)
+            image.frame = CGRect(x: 10, y: 22.5, width: 120, height: 100)
+            image.contentMode = .scaleAspectFit
+            image.clipsToBounds = true
+            
             self.addSubview(image)
             let quan = UILabel()
             quan.text = String(quantity)
             quan.font = UIFont(name: "arial", size: 25)
-            quan.frame = CGRect(x: 120, y: 80, width: 10, height: 40)
+            quan.frame = CGRect(x: 150, y: 80, width: 10, height: 40)
             self.addSubview(quan)
             let delete = CustomButton()
             delete.setTitle("Delete", for: .normal)
-            delete.frame = CGRect(x: 170, y: 75, width: 70, height: 50)
+            delete.frame = CGRect(x: 200, y: 75, width: 70, height: 50)
             delete.tag = index
             delete.addTarget(self, action: #selector(deleteCartItem), for: .touchUpInside)
             self.addSubview(delete)
             let price = UILabel()
             price.text = (String(cartItemPrice))
-            price.frame = CGRect(x: 270, y: 60, width: 100, height: 20)
+            price.frame = CGRect(x: 300, y: 90, width: 100, height: 20)
             self.addSubview(price)
             title.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -91,8 +95,6 @@ cart.selectedIndex = 2
     func configureSubView(){
         addCartItemsToSubView()
     }
-
-    var titleLabel = UILabel()
     override func viewDidLoad() {
         
         super.viewDidLoad()

@@ -50,6 +50,8 @@ class WishListViewController: UIViewController {
             self.addSubview(title)
             let image = UIImageView(image:UIImage(named: prodImage))
             image.frame = CGRect(x: 0, y: 22.5, width: 100, height: 100)
+            image.contentMode = .scaleAspectFit
+            image.clipsToBounds = true
             self.addSubview(image)
             let delete = CustomButton()
             delete.setTitle("Delete", for: .normal)
