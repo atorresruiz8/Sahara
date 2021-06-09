@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CbY-ci-70C">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18092"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,17 +25,6 @@
                                         <rect key="frame" x="17" y="85" width="380" height="314"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4R-Lf-um6" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                                <rect key="frame" x="216" y="208" width="121" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                <state key="normal" title="Current Orders">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="showCurrentOrders:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="74L-q7-Iwo"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDv-jM-rQ7">
                                                 <rect key="frame" x="8" y="8" width="361" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -52,6 +41,17 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="showAllOrders:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="bKM-al-zay"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3C-IV-xH8" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="51" y="63" width="113" height="42"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <state key="normal" title="View Cart">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showCart:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="yyh-1s-t1j"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Orders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4Y-55-fBo">
@@ -72,15 +72,15 @@
                                                     <action selector="showWishlist:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="YJr-hZ-kkQ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3C-IV-xH8" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                                <rect key="frame" x="55" y="62" width="113" height="42"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4R-Lf-um6" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="216" y="208" width="121" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                <state key="normal" title="View Cart">
+                                                <state key="normal" title="Current Orders">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="showCart:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="yyh-1s-t1j"/>
+                                                    <action selector="showCurrentOrders:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="74L-q7-Iwo"/>
                                                 </connections>
                                             </button>
                                         </subviews>

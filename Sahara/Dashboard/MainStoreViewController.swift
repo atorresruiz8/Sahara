@@ -159,6 +159,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
                 return
             }
         case wishlistItemsIMG.image:
+            
             if(wishProd.count > 0){
                 ud.setValue(wishProd[0].id, forKey: "currProd")
             }
@@ -265,6 +266,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
             wishlistTagDisplay.text = "You like " + w!.tags![0] + "!"
             wishlistItemsIMG.contentMode = .scaleAspectFit
             ud.setValue(wishProd[0].id, forKey: "currProd")
+           
         }
     }
     
