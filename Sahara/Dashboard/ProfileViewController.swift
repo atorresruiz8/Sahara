@@ -34,7 +34,14 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func showCurrentOrders(_ sender: Any) {
-        
+        if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
+            let alert = UIAlertController(title: "No Orders Found.", message: "Guests cannot order anything. Please make a full account to order products.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
+            present(alert, animated: true)
+        } else {
+            // instantiate current orders screen here
+            print("hi")
+        }
     }
     
     
@@ -47,7 +54,14 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func showAllOrders(_ sender: Any) {
-
+        if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
+            let alert = UIAlertController(title: "No Orders Found.", message: "Guests cannot order anything. Please make a full account to order products.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
+            present(alert, animated: true)
+        } else {
+            // instantiate all orders screen here
+            print("hi")
+        }
     }
     
     @IBAction func showCart(_ sender: Any) {
@@ -65,10 +79,16 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func showRefunds(_ sender: Any) {
-        let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
-        let refund = sb.instantiateViewController(withIdentifier: "Refund") as! RefundViewController
-        refund.modalPresentationStyle = .fullScreen
-        present(refund, animated: true, completion: nil)
+        if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
+            let alert = UIAlertController(title: "No Orders Found.", message: "Guests cannot order anything. Please make a full account to order products.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
+            present(alert, animated: true)
+        } else {
+            let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+            let refund = sb.instantiateViewController(withIdentifier: "Refund") as! RefundViewController
+            refund.modalPresentationStyle = .fullScreen
+            present(refund, animated: true, completion: nil)
+        }
     }
     
     
