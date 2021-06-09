@@ -97,7 +97,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
         } else {
             welcomeMessage.text = "Hi, \(String(describing: user!.name!))"
             if (user!.address != nil) {
-                deliverToUser.setTitle(" Deliver to \(String(describing: user!.name!)) - City: \(String(describing: user!.address!.city)), Zip Code: \(String(describing: user!.address!.zipcode))", for: UIButton.State.normal)
+                deliverToUser.setTitle(" Deliver to \(String(describing: user!.name!)) : \(String(describing: user!.address!.city)), \(String(describing: user!.address!.zipcode))", for: UIButton.State.normal)
             } else {
                 deliverToUser.setTitle("Deliver to \(String(describing: user!.name!)) - City: N/A, Zip Code: N/A", for: UIButton.State.normal)
             }
@@ -314,7 +314,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
             user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
             welcomeMessage.text = "Hi, \(String(describing: user!.name!))"
             if (user!.address != nil) {
-                deliverToUser.setTitle(" Deliver to \(String(describing: user!.name!)) - City: \(String(describing: user!.address!.city)), Zip Code: \(String(describing: user!.address!.zipcode))", for: UIButton.State.normal)
+                deliverToUser.setTitle(" Deliver to \(String(describing: user!.name!)) : \(String(describing: user!.address!.city)), \(String(describing: user!.address!.zipcode))", for: UIButton.State.normal)
             } else {
                 deliverToUser.setTitle("Deliver to \(String(describing: user!.name!)) - City: N/A, Zip Code: N/A", for: UIButton.State.normal)
             }

@@ -55,7 +55,7 @@ class CheckoutViewController: UIViewController {
             
         }
         if(user!.creditCard != nil){
-            cCardInfo.text = "Credit card ending in" + user!.creditCard!.number.suffix(4)
+            cCardInfo.text = "Credit Card ending in " + user!.creditCard!.number.suffix(4)
             paycCardbutt.isHidden = false
         }
         else{
@@ -65,7 +65,7 @@ class CheckoutViewController: UIViewController {
 
         }
         if(user!.netBanking != nil){
-            netBankInfo.text = "net Banking ending in" + user!.netBanking!.suffix(4)
+            netBankInfo.text = "Net Banking ending in " + user!.netBanking!.suffix(4)
             paynetBankButt.isHidden = false
         }
         else{
@@ -150,6 +150,7 @@ class CheckoutViewController: UIViewController {
         for item in user!.cart!{
             DBHelper.inst.addBoughtProduct(uName: ud.string(forKey: "currUser")!, pID: item, paid: true)
         }
+        DBHelper.inst.subUserBalance(uName: ud.string(forKey: "currUser")!, amount: totalPrice)
         DBHelper.inst.clearCart(uName: ud.string(forKey: "currUser")!)
         let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let main = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
@@ -164,6 +165,7 @@ class CheckoutViewController: UIViewController {
         for item in user!.cart!{
             DBHelper.inst.addBoughtProduct(uName: ud.string(forKey: "currUser")!, pID: item, paid: true)
         }
+        DBHelper.inst.subUserBalance(uName: ud.string(forKey: "currUser")!, amount: totalPrice)
         DBHelper.inst.clearCart(uName: ud.string(forKey: "currUser")!)
         let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let main = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
@@ -171,5 +173,12 @@ class CheckoutViewController: UIViewController {
         main.selectedIndex = 0
         present(main, animated: true, completion: nil)
        
+    }
+    @IBAction func paymentOptions(_ sender: Any) {
+        let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+        let main = sb.instantiateViewController(withIdentifier: "meth") as! PaymentMakerViewController
+        main.modalPresentationStyle = .fullScreen
+        present(main, animated: true, completion: nil)
+        
     }
 }

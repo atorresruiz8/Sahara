@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
             
             helloMessage.text = "\(String(describing: user!.name!))"
             
-            walletBalance.text = "Wallet Balance: $\(user!.balance)"
+            walletBalance.text = "Wallet Balance: " + String(format: "$%.2f", user!.balance)
         }
     }
     
@@ -115,7 +115,7 @@ class ProfileViewController: UIViewController {
     
     @IBAction func paymentInfo(_ sender: Any) {
         let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
-        let pay = sb.instantiateViewController(withIdentifier: "Payment") as! PaymentViewController
+        let pay = sb.instantiateViewController(withIdentifier: "meth") as! PaymentMakerViewController
         pay.modalPresentationStyle = .fullScreen
         present(pay, animated: true, completion: nil)
     }

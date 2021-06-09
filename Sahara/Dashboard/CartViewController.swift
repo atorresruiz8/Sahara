@@ -129,7 +129,7 @@ cart.selectedIndex = 2
             deliveryAddress.isHidden = true
         } else {
             if (user!.address != nil) {
-                deliveryAddress.setTitle(" Deliver to \(String(describing: user!.name!)) - City: \(String(describing: user!.address!.city)), Zip Code: \(String(describing: user!.address!.zipcode))", for: UIButton.State.normal)
+                deliveryAddress.setTitle(" Deliver to \(String(describing: user!.name!)) : \(String(describing: user!.address!.city)), \(String(describing: user!.address!.zipcode))", for: UIButton.State.normal)
             } else {
                 deliveryAddress.setTitle("Deliver to \(String(describing: user!.name!)) - City: N/A, Zip Code: N/A", for: UIButton.State.normal)
             }

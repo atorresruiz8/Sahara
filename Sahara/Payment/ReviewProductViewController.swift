@@ -30,7 +30,9 @@ class ReviewProductViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Review", for: indexPath) as! ReviewTableViewCell
         let r = rev[indexPath.row]
-        
+        if(r.comment == "Please leave your review..." ){
+            r.comment = " "
+        }
         cell.productReview.text = r.comment
         cell.username.text = r.user!.name!
         cell.userRating.rating = r.rating
