@@ -774,7 +774,7 @@
         <!--Wish List View Controller-->
         <scene sceneID="GL7-82-VVH">
             <objects>
-                <viewController storyboardIdentifier="Wish" id="LMg-By-YRG" customClass="WishListViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="current" id="LMg-By-YRG" customClass="WishListViewController" customModule="Sahara" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9wF-xx-6gh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
