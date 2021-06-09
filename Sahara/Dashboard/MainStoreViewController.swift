@@ -262,7 +262,7 @@ class MainStoreViewController: UIViewController, SFSpeechRecognizerDelegate {
             
             // display a random product from your related first item in wishlist's tags
             wishlistItemsIMG.image = UIImage(named: wishProd[0].image!)
-            wishlistTagDisplay.text = "You like " + wishProd[0].tags![0] + "!"
+            wishlistTagDisplay.text = "You like " + w!.tags![0] + "!"
             wishlistItemsIMG.contentMode = .scaleAspectFit
             ud.setValue(wishProd[0].id, forKey: "currProd")
         }
