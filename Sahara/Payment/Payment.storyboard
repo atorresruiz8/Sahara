@@ -264,11 +264,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="07o-Zc-GJd" customClass="CustomView" customModule="Sahara" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="367" width="374" height="60"/>
+                                        <rect key="frame" x="20" y="367" width="374" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Payment Method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1v-zD-oZk">
-                                                <rect key="frame" x="8" y="0.0" width="139" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Payment Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1v-zD-oZk">
+                                                <rect key="frame" x="8" y="0.0" width="140" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -281,8 +281,22 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="net Banking ending in " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fph-k7-9gi">
+                                                <rect key="frame" x="8" y="60" width="216" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cash on Delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0U-1j-IMv">
+                                                <rect key="frame" x="8" y="89" width="216" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTh-5f-GTa">
-                                                <rect key="frame" x="344" y="19" width="16" height="22"/>
+                                                <rect key="frame" x="350" y="49" width="16" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" image="greaterthan" catalog="system"/>
@@ -384,9 +398,28 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81P-CK-SBv" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="449" width="374" height="78"/>
+                                        <rect key="frame" x="20" y="496" width="374" height="78"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Order Now"/>
+                                        <state key="normal" title="Pay with Credit Card"/>
+                                        <connections>
+                                            <action selector="paycCard:" destination="ELb-bQ-U55" eventType="touchUpInside" id="kWA-ov-hqv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwn-V3-90K" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="582" width="374" height="78"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Pay with Net Banking"/>
+                                        <connections>
+                                            <action selector="payNetBanking:" destination="ELb-bQ-U55" eventType="touchUpInside" id="KW2-6L-Zr7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45z-o9-oKQ" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="668" width="374" height="78"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Pay on Delivery"/>
+                                        <connections>
+                                            <action selector="payDelivery:" destination="ELb-bQ-U55" eventType="touchUpInside" id="PdQ-KU-db5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -439,11 +472,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="cCardInfo" destination="74I-vG-ai5" id="4Hf-Ly-6dp"/>
                         <outlet property="clientAddr" destination="buB-VK-lF7" id="ZAc-rK-gsF"/>
                         <outlet property="clientName" destination="H5C-TT-c57" id="AE1-OI-XfK"/>
                         <outlet property="costOfItems" destination="YSP-yn-DiZ" id="2Ep-20-LHC"/>
                         <outlet property="deliveryDate" destination="EdW-7k-X0I" id="7w8-n6-jXC"/>
+                        <outlet property="netBankInfo" destination="Fph-k7-9gi" id="iiF-Gp-5XP"/>
                         <outlet property="orderTotal" destination="qdG-us-ZR1" id="vg1-6s-OmZ"/>
+                        <outlet property="paycCardbutt" destination="81P-CK-SBv" id="qJz-xu-Pk2"/>
+                        <outlet property="paynetBankButt" destination="dwn-V3-90K" id="a5q-wd-3f3"/>
                         <outlet property="shippingAddress" destination="fDG-kC-dbT" id="960-Dc-arj"/>
                         <outlet property="shippingHandling" destination="SC4-oT-emh" id="XLd-pM-Yas"/>
                     </connections>
