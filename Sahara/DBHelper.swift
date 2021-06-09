@@ -628,4 +628,30 @@ class DBHelper{
             print("data not saved")
         }
     }
+    func addUserBalance(uName : String, amount : Double){
+        let user = fetchUser(query: uName)
+        user!.balance += amount
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
+    func subUserBalance(uName : String, amount : Double){
+        let user = fetchUser(query: uName)
+        if(amount > user!.balance){
+            user!.balance = 0
+        }
+        else{
+            user!.balance -= amount
+        }
+        
+        do {
+            try context!.save()
+            print("data saved")
+        } catch {
+            print("data not saved")
+        }
+    }
 }
