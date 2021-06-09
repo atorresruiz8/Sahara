@@ -25,17 +25,6 @@
                                         <rect key="frame" x="17" y="85" width="380" height="314"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4R-Lf-um6" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                                <rect key="frame" x="51" y="62" width="121" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                <state key="normal" title="Current Orders">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="showCurrentOrders:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="74L-q7-Iwo"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDv-jM-rQ7">
                                                 <rect key="frame" x="8" y="8" width="361" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -55,7 +44,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3C-IV-xH8" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                                <rect key="frame" x="220" y="208" width="113" height="42"/>
+                                                <rect key="frame" x="51" y="63" width="113" height="42"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <state key="normal" title="View Cart">
@@ -81,6 +70,17 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="showWishlist:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="YJr-hZ-kkQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4R-Lf-um6" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
+                                                <rect key="frame" x="216" y="208" width="121" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <state key="normal" title="Current Orders">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showCurrentOrders:" destination="sxb-gZ-4aP" eventType="touchUpInside" id="74L-q7-Iwo"/>
                                                 </connections>
                                             </button>
                                         </subviews>
