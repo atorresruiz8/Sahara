@@ -243,7 +243,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acy-v0-iqQ" customClass="CustomButton" customModule="Sahara" customModuleProvider="target">
-                                <rect key="frame" x="20" y="481" width="162" height="40"/>
+                                <rect key="frame" x="20" y="481" width="172" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Clear Search History"/>
                                 <connections>
