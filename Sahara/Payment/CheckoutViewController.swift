@@ -56,16 +56,21 @@ class CheckoutViewController: UIViewController {
         }
         if(user!.creditCard != nil){
             cCardInfo.text = "Credit card ending in" + user!.creditCard!.number.suffix(4)
+            paycCardbutt.isHidden = false
         }
         else{
             cCardInfo.isHidden = true
+            paycCardbutt.isHidden = true
             
+
         }
         if(user!.netBanking != nil){
             netBankInfo.text = "net Banking ending in" + user!.netBanking!.suffix(4)
+            paynetBankButt.isHidden = false
         }
         else{
             netBankInfo.isHidden = true
+            paynetBankButt.isHidden = true
         }
     
     }
@@ -129,10 +134,42 @@ class CheckoutViewController: UIViewController {
     }
 
     @IBAction func payDelivery(_ sender: Any) {
+        for item in user!.cart!{
+            DBHelper.inst.addBoughtProduct(uName: ud.string(forKey: "currUser")!, pID: item, paid: false)
+            
+        }
+        DBHelper.inst.clearCart(uName: ud.string(forKey: "currUser")!)
+        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let main = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
+        main.modalPresentationStyle = .fullScreen
+        main.selectedIndex = 0
+        present(main, animated: true, completion: nil)
     }
     @IBAction func paycCard(_ sender: Any) {
+        //actual method to withdraw funds would go here.
+        for item in user!.cart!{
+            DBHelper.inst.addBoughtProduct(uName: ud.string(forKey: "currUser")!, pID: item, paid: true)
+        }
+        DBHelper.inst.clearCart(uName: ud.string(forKey: "currUser")!)
+        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let main = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
+        main.modalPresentationStyle = .fullScreen
+        main.selectedIndex = 0
+        present(main, animated: true, completion: nil)
+       
     }
     
     @IBAction func payNetBanking(_ sender: Any) {
+        //actual method to withdraw funds would go here.
+        for item in user!.cart!{
+            DBHelper.inst.addBoughtProduct(uName: ud.string(forKey: "currUser")!, pID: item, paid: true)
+        }
+        DBHelper.inst.clearCart(uName: ud.string(forKey: "currUser")!)
+        let sb : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let main = sb.instantiateViewController(withIdentifier: "Dash") as! DashboardViewController
+        main.modalPresentationStyle = .fullScreen
+        main.selectedIndex = 0
+        present(main, animated: true, completion: nil)
+       
     }
 }
