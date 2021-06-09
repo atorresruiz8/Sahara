@@ -562,7 +562,9 @@ class DBHelper{
         fetchReq.predicate = NSPredicate(format: "bProdID == %@", boughtProdID)
         let user = DBHelper.inst.fetchUser(query: uName)
         let bProd = DBHelper.inst.fetchBoughtProduct(boughtProdID: boughtProdID)!
-        user!.balance += bProd.price
+        if(bProd.paid){
+            user!.balance += bProd.price
+        }
         do {
             context!.delete(bProd)
             try context!.save()
