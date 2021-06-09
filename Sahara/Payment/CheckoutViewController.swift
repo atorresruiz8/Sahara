@@ -10,10 +10,14 @@ import UIKit
 class CheckoutViewController: UIViewController {
 
     @IBOutlet weak var shippingAddress: UILabel!
+    @IBOutlet weak var paycCardbutt: CustomButton!
+    @IBOutlet weak var paynetBankButt: CustomButton!
     var ud = UserDefaults.standard
     var user : User?
     var totalPrice = 0.00
     @IBOutlet weak var orderTotal: UILabel!
+    @IBOutlet weak var cCardInfo: UILabel!
+    @IBOutlet weak var netBankInfo: UILabel!
     @IBOutlet weak var deliveryDate: UILabel!
     @IBOutlet weak var shippingHandling: UILabel!
     @IBOutlet weak var costOfItems: UILabel!
@@ -49,6 +53,19 @@ class CheckoutViewController: UIViewController {
         else {
             clientAddr.text =  "Please Click the arrow to add your Address"
             
+        }
+        if(user!.creditCard != nil){
+            cCardInfo.text = "Credit card ending in" + user!.creditCard!.number.suffix(4)
+        }
+        else{
+            cCardInfo.isHidden = true
+            
+        }
+        if(user!.netBanking != nil){
+            netBankInfo.text = "net Banking ending in" + user!.netBanking!.suffix(4)
+        }
+        else{
+            netBankInfo.isHidden = true
         }
     
     }
@@ -111,5 +128,11 @@ class CheckoutViewController: UIViewController {
         
     }
 
-
+    @IBAction func payDelivery(_ sender: Any) {
+    }
+    @IBAction func paycCard(_ sender: Any) {
+    }
+    
+    @IBAction func payNetBanking(_ sender: Any) {
+    }
 }
