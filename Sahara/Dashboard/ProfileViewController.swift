@@ -40,7 +40,10 @@ class ProfileViewController: UIViewController {
             present(alert, animated: true)
         } else {
             // instantiate current orders screen here
-            print("hi")
+            let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+            let current = sb.instantiateViewController(withIdentifier: "current") as! currentOrdersViewController
+            current.modalPresentationStyle = .fullScreen
+            present(current, animated: true, completion: nil)
         }
     }
     
@@ -60,7 +63,10 @@ class ProfileViewController: UIViewController {
             present(alert, animated: true)
         } else {
             // instantiate all orders screen here
-            print("hi")
+            let sb : UIStoryboard = UIStoryboard(name: "Payment", bundle: nil)
+            let order = sb.instantiateViewController(withIdentifier: "Order") as! OrdersViewController
+            order.modalPresentationStyle = .fullScreen
+            present(order, animated: true, completion: nil)
         }
     }
     

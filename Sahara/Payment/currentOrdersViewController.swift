@@ -13,20 +13,19 @@ class currentOrdersViewController: UIViewController {
     static var inst = currentOrdersViewController()
     static var currentOrderArray: [currentOrder] = []
     @IBOutlet weak var mainView: UIScrollView!
-    @IBOutlet weak var welcomeMessage: UIButton!
     var subviewSize = 0
         let ud = UserDefaults.standard
         var user : User?
         var prod : Product?
-    static var boughtItems : [BoughtProduct]?
+    static var boughtItems : [BoughtProduct]? = []
     static func displayCurrentOrder(){
         currentOrdersViewController.currentOrderArray = []
         let ud2 = UserDefaults.standard
         let user2 = DBHelper.inst.fetchUser(query: ud2.string(forKey: "currUser")!)
         var prod : Product?
-        boughtItems = DBHelper.inst.fetchCurrentOrder(uNam: (user2?.name!)!)
+        boughtItems = DBHelper.inst.fetchCurrentOrder(uNam: ud2.string(forKey: "currUser")!)
         for item in boughtItems!{
-            currentOrdersViewController.currentOrderArray.append(currentOrder(name: item.name!, price: String(format: "$%.2f", item.price), pImage: item.image!))
+            currentOrdersViewController.currentOrderArray.append(currentOrder(name: item.name!, price: String(format: "$%.2f", item.price), pImage: item.image!, pTracking: item.trackingStatus!, pDelivery: item.deliveryDate!))
             
         }
         
@@ -38,7 +37,7 @@ class currentOrdersViewController: UIViewController {
         var currentOrderItemName: String
         var currentOrderPrice: String
         var prodImage : String
-        init(name: String, price: String, pImage : String) {
+        init(name: String, price: String, pImage : String, pTracking : String, pDelivery : Date) {
                 currentOrderItemName = name
                 currentOrderPrice = price
                 prodImage = pImage
@@ -56,6 +55,19 @@ class currentOrdersViewController: UIViewController {
                 price.text = (String(currentOrderPrice))
                 price.frame = CGRect(x: 300, y: 90, width: 100, height: 20)
                 self.addSubview(price)
+                let delivery = UILabel(frame: CGRect(x: 150, y: 45, width: 200, height: 40))
+            delivery.numberOfLines = 0
+                let df = DateFormatter()
+                df.dateFormat = "dd MMM, YYYY"
+                let dStr = df.string(from: pDelivery)
+                delivery.text = "Expected on: " + dStr
+                let tracking = UILabel(frame: CGRect(x: 150, y: 70, width: 200, height: 40))
+            tracking.numberOfLines = 0
+            tracking.text = "Status: " + pTracking
+            delivery.font = UIFont(name: "arial", size: 15)
+            tracking.font = UIFont(name: "arial", size: 15)
+            self.addSubview(delivery)
+            self.addSubview(tracking)
                 title.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -90,19 +102,15 @@ class currentOrdersViewController: UIViewController {
         currentOrdersViewController.inst = self
         user = DBHelper.inst.fetchUser(query: ud.string(forKey: "currUser")!)
         
-        if (ud.string(forKey: "currUser")!.hasPrefix("_")) {
-            welcomeMessage.setTitle("Guest Current Orders", for: UIButton.State.normal)
-        } else {
-            welcomeMessage.setTitle("Hi, \(String(describing: user!.name!))", for: UIButton.State.normal)
-        }
+
+        
+        currentOrdersViewController.displayCurrentOrder()
         if(currentOrdersViewController.boughtItems!.count == 0){
             let alert = UIAlertController(title: "Your current order list is empty.", message: "Your current order list is currently empty, please buy some items.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: nil))
             currentOrdersViewController.inst.present(alert, animated: true)
             return
         }
-        
-        currentOrdersViewController.displayCurrentOrder()
         configureSubView()
         
     }
